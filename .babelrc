@@ -10,5 +10,5 @@
       }
     ]
   ],
-  "plugins": ["add-module-exports", "transform-export-extensions"]
+  "plugins": ["add-module-exports"]
 }
