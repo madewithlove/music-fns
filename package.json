@@ -1,0 +1,42 @@
+{
+  "name": "music-fns",
+  "version": "0.1.0-alpha.0",
+  "description": "JavaScript music utility library",
+  "main": "dist",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --config ./.eslintrc src",
+    "lint:fix": "npm run lint -- --fix",
+    "build": "babel src --out-dir dist --ignore test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madewithlove/music-fns.git"
+  },
+  "keywords": ["music", "utility", "audio"],
+  "author": "",
+  "files": ["dist"],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madewithlove/music-fns/issues"
+  },
+  "homepage": "https://github.com/madewithlove/music-fns#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "flow-bin": "^0.66.0",
+    "jest": "^22.4.2",
+    "prettier": "^1.10.2"
+  }
+}
