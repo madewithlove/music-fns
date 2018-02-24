@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/madewithlove/music-fns.git"
   },
-  "keywords": ["web", "audio", "music", "utility", "audio"],
+  "keywords": ["music", "utility", "audio"],
   "author": "",
   "files": ["dist"],
   "license": "MIT",
@@ -37,7 +37,6 @@
     "eslint-plugin-react": "^7.7.0",
     "flow-bin": "^0.66.0",
     "jest": "^22.4.2",
-    "prettier": "^1.10.2",
-    "rollup": "^0.56.2"
+    "prettier": "^1.10.2"
   }
 }
