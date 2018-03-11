@@ -3,6 +3,9 @@ import HARMONIC_MINOR from './HARMONIC_MINOR';
 import NATURAL_MINOR from './NATURAL_MINOR';
 import MAJOR from './MAJOR';
 
+import MAJOR_PENTATONIC from './MAJOR_PENTATONIC';
+import MINOR_PENTATONIC from './MINOR_PENTATONIC';
+
 import AEOLIAN from '../Mode/AEOLIAN';
 import IONIAN from '../Mode/IONIAN';
 
@@ -43,5 +46,21 @@ describe('Natural Minor Scale', () => {
 
   it(`should return ${scale}`, () => {
     expect(NATURAL_MINOR).toEqual(scale);
+  });
+});
+
+describe('Major Pentatonic Chord', () => {
+  const scale = [2, 2, 3, 2, 3];
+
+  it(`should return ${scale}`, () => {
+    expect(MAJOR_PENTATONIC).toEqual(scale);
+  });
+});
+
+describe('Minor Pentatonic Chord', () => {
+  const pitches = [3, 2, 2, 3, 2];
+
+  it(`should return ${pitches}`, () => {
+    expect(MINOR_PENTATONIC).toEqual(pitches);
   });
 });
