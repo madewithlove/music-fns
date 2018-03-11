@@ -44,7 +44,12 @@ describe('isMode', () => {
   });
 
   it('should return false when input is not a mode', () => {
-    const scale = [2, 1, 2, 2, 1, 3, 1];
+    const scale = [2, 1, 2, 1, 2, 2, 2];
+    expect(isMode(scale)).toBe(false);
+  });
+
+  it('should return false when input is not a mode', () => {
+    const scale = [2, 1, 2, 1, 3, 2, 2];
     expect(isMode(scale)).toBe(false);
   });
 
