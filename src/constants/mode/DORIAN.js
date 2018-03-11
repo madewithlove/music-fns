@@ -1,12 +1,6 @@
 // https://en.wikipedia.org/wiki/Dorian_mode
+// D, E, F, G, A, B, C, D
 
-import INTERVAL from '../interval/SHORT';
+import { T, S } from '../Interval/Short';
 
-const { T, S } = INTERVAL;
-export default [T, S, T, T, T, S, T];
-// https://en.wikipedia.org/wiki/Dorian_mode
-
-import INTERVAL from '../interval/SHORT';
-
-const { T, S } = INTERVAL;
 export default [T, S, T, T, T, S, T];

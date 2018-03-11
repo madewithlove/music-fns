@@ -1,6 +1,6 @@
 // https://en.wikipedia.org/wiki/Phrygian_mode
+// E, F, G, A, B, C, D, E
 
-import INTERVAL from '../interval/SHORT';
+import { T, S } from '../Interval/Short';
 
-const { T, S } = INTERVAL;
 export default [S, T, T, T, S, T, T];

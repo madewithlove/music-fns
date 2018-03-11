@@ -1,6 +1,6 @@
 // https://en.wikipedia.org/wiki/Ionian_mode
+// C, D, E, F, G, A, B, C
 
-import INTERVAL from '../interval/SHORT';
+import { T, S } from '../Interval/Short';
 
-const { T, S } = INTERVAL;
 export default [T, T, S, T, T, T, S];
