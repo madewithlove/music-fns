@@ -9,10 +9,12 @@ import LOCRIAN from './LOCRIAN';
 import MAJOR from '../Scale/MAJOR';
 import NATURAL_MINOR from '../Scale/NATURAL_MINOR';
 
+import isDiatonicScale from '../../isDiatonicScale';
+
 // C -> C (white keys)
 describe('Ionian Mode', () => {
-  it('should contain 7 pitches', () => {
-    expect(IONIAN.length).toEqual(7);
+  it('is a Diatonic Scale', () => {
+    expect(isDiatonicScale(IONIAN)).toEqual(true);
   });
 
   it('should be the same as Major Scale', () => {
@@ -26,8 +28,8 @@ describe('Ionian Mode', () => {
 
 // D -> D (white keys)
 describe('Dorian Mode', () => {
-  it('should contain 7 pitches', () => {
-    expect(DORIAN.length).toEqual(7);
+  it('is a Diatonic Scale', () => {
+    expect(isDiatonicScale(DORIAN)).toEqual(true);
   });
 
   it('should return [2, 1, 2, 2, 2, 1, 2]', () => {
@@ -37,8 +39,8 @@ describe('Dorian Mode', () => {
 
 // E -> E (white keys)
 describe('Phrygian Mode', () => {
-  it('should contain 7 pitches', () => {
-    expect(PHRYGIAN.length).toEqual(7);
+  it('is a Diatonic Scale', () => {
+    expect(isDiatonicScale(PHRYGIAN)).toEqual(true);
   });
 
   it('should return [1, 2, 2, 2, 1, 2, 2]', () => {
@@ -48,8 +50,8 @@ describe('Phrygian Mode', () => {
 
 // F -> F (white keys)
 describe('Lydian Mode', () => {
-  it('should contain 7 pitches', () => {
-    expect(LYDIAN.length).toEqual(7);
+  it('is a Diatonic Scale', () => {
+    expect(isDiatonicScale(LYDIAN)).toEqual(true);
   });
 
   it('should return [2, 2, 2, 1, 2, 2, 1]', () => {
@@ -59,8 +61,8 @@ describe('Lydian Mode', () => {
 
 // G -> G (white keys)
 describe('Mixolydian Mode', () => {
-  it('should contain 7 pitches', () => {
-    expect(MIXOLYDIAN.length).toEqual(7);
+  it('is a Diatonic Scale', () => {
+    expect(isDiatonicScale(MIXOLYDIAN)).toEqual(true);
   });
 
   it('should return [2, 2, 1, 2, 2, 1, 2]', () => {
@@ -70,8 +72,8 @@ describe('Mixolydian Mode', () => {
 
 // A -> A (white keys)
 describe('Aeolian Mode', () => {
-  it('should contain 7 pitches', () => {
-    expect(AEOLIAN.length).toEqual(7);
+  it('is a Diatonic Scale', () => {
+    expect(isDiatonicScale(AEOLIAN)).toEqual(true);
   });
 
   it('should be the same as Natural Minor Scale', () => {
@@ -85,8 +87,8 @@ describe('Aeolian Mode', () => {
 
 // B -> B (white keys)
 describe('Locrian Mode', () => {
-  it('should contain 7 pitches', () => {
-    expect(LOCRIAN.length).toEqual(7);
+  it('is a Diatonic Scale', () => {
+    expect(isDiatonicScale(LOCRIAN)).toEqual(true);
   });
 
   it('should return [1, 2, 2, 1, 2, 2, 2]', () => {

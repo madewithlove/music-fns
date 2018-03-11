@@ -6,6 +6,9 @@ import MAJOR from './MAJOR';
 import AEOLIAN from '../Mode/AEOLIAN';
 import IONIAN from '../Mode/IONIAN';
 
+import isDiatonicScale from '../../isDiatonicScale';
+import isHeptatonicScale from '../../isHeptatonicScale';
+
 describe('Chromatic Scale', () => {
   it('should contain 12 pitches', () => {
     expect(CHROMATIC.length).toEqual(12);
@@ -17,8 +20,8 @@ describe('Chromatic Scale', () => {
 });
 
 describe('Major Scale', () => {
-  it('should contain 7 pitches', () => {
-    expect(MAJOR.length).toEqual(7);
+  it('is a Diatonic Scale', () => {
+    expect(isDiatonicScale(MAJOR)).toEqual(true);
   });
 
   it('should be the same as Ionian Mode', () => {
@@ -31,8 +34,8 @@ describe('Major Scale', () => {
 });
 
 describe('Harmonic Minor Scale', () => {
-  it('should contain 7 pitches', () => {
-    expect(HARMONIC_MINOR.length).toEqual(7);
+  it('is a Heptatonic Scale', () => {
+    expect(isHeptatonicScale(HARMONIC_MINOR)).toEqual(true);
   });
 
   it('should return [2, 1, 2, 2, 1, 3, 1]', () => {
@@ -41,8 +44,8 @@ describe('Harmonic Minor Scale', () => {
 });
 
 describe('Natural Minor Scale', () => {
-  it('should contain 7 pitches', () => {
-    expect(NATURAL_MINOR.length).toEqual(7);
+  it('is a Diatonic Scale', () => {
+    expect(isDiatonicScale(NATURAL_MINOR)).toEqual(true);
   });
 
   it('should be the same as Aeolian Mode', () => {
