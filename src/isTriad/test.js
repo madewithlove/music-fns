@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Triad_(music)
+
 import isTriad from './';
 
 describe('isTriad', () => {

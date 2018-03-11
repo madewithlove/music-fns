@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Heptatonic_scale
+
 import isHeptatonicScale from './';
 
 describe('isHeptatonicScale', () => {

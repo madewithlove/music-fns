@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Mode_(music)
+
 import isMode from './';
 
 describe('isMode', () => {

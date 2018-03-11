@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Diatonic_scale
+
 import isDiatonicScale from './';
 
 describe('isDiatonicScale', () => {
