@@ -1,6 +1,6 @@
 // https://en.wikipedia.org/wiki/Major_scale
+// = https://en.wikipedia.org/wiki/Ionian_mode
 
-import INTERVAL from '../interval/SHORT';
+import IONIAN from '../Mode/IONIAN';
 
-const { T, S } = INTERVAL;
-export default [T, T, S, T, T, S, S];
+export default IONIAN;

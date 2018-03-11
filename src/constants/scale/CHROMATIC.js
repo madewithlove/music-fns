@@ -1,5 +1,5 @@
 // https://en.wikipedia.org/wiki/Chromatic_scale
 
-import INTERVAL from '../interval/LONG';
+import { O, S } from '../Interval/Short';
 
-export default Array.from({ length: INTERVAL.OCTAVE }, () => INTERVAL.SEMITONE);
+export default Array.from({ length: O }, () => S);
