@@ -3,6 +3,34 @@ import MinorMajor from './MinorMajor';
 import Short from './Short';
 import Names from './Names';
 
+describe('should return correct intervals for Short naming', () => {
+  const data = {
+    R: 0,
+    S: 1,
+    T: 2,
+    TT: 6,
+    O: 12
+  };
+
+  it(`should contain correct interval data`, () => {
+    expect(Short).toEqual(data);
+  });
+});
+
+describe('should return correct intervals for normal naming', () => {
+  const data = {
+    ROOT: 0,
+    SEMITONE: 1,
+    TONE: 2,
+    TRITONE: 6,
+    OCTAVE: 12
+  };
+
+  it(`should contain correct interval data`, () => {
+    expect(Names).toEqual(data);
+  });
+});
+
 describe('should return correct intervals for Augmented and Diminished', () => {
   const data = {
     DIMINISHED_SECOND: 0,
@@ -71,33 +99,5 @@ describe('should return correct intervals for Minor and Major', () => {
 
   it(`should contain correct interval data`, () => {
     expect(MinorMajor).toEqual(data);
-  });
-});
-
-describe('should return correct intervals for Short naming', () => {
-  const data = {
-    R: 0,
-    S: 1,
-    T: 2,
-    TT: 6,
-    O: 12
-  };
-
-  it(`should contain correct interval data`, () => {
-    expect(Short).toEqual(data);
-  });
-});
-
-describe('should return correct intervals for normal naming', () => {
-  const data = {
-    ROOT: 0,
-    SEMITONE: 1,
-    TONE: 2,
-    TRITONE: 6,
-    OCTAVE: 12
-  };
-
-  it(`should contain correct interval data`, () => {
-    expect(Names).toEqual(data);
   });
 });
