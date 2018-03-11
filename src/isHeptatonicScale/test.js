@@ -6,7 +6,7 @@ describe('isHeptatonicScale', () => {
     expect(isHeptatonicScale(scale)).toBe(true);
   });
 
-  it('should return false on Heptatonic Scale', () => {
+  it('should return false on non Heptatonic Scale', () => {
     const scale = [2, 2, 2, 2, 2, 2, 1, 2, 2];
     expect(isHeptatonicScale(scale)).toBe(false);
   });
