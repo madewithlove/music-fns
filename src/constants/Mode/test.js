@@ -9,15 +9,9 @@ import LOCRIAN from './LOCRIAN';
 import MAJOR from '../Scale/MAJOR';
 import NATURAL_MINOR from '../Scale/NATURAL_MINOR';
 
-import isDiatonicScale from '../../isDiatonicScale';
-
 // C -> C (white keys)
 describe('Ionian Mode', () => {
   const mode = [2, 2, 1, 2, 2, 2, 1];
-
-  it('is a Diatonic Scale', () => {
-    expect(isDiatonicScale(IONIAN)).toEqual(true);
-  });
 
   it('should be the same as Major Scale', () => {
     expect(IONIAN).toEqual(MAJOR);
@@ -32,10 +26,6 @@ describe('Ionian Mode', () => {
 describe('Dorian Mode', () => {
   const mode = [2, 1, 2, 2, 2, 1, 2];
 
-  it('is a Diatonic Scale', () => {
-    expect(isDiatonicScale(DORIAN)).toEqual(true);
-  });
-
   it(`should return ${mode}`, () => {
     expect(DORIAN).toEqual(mode);
   });
@@ -44,9 +34,6 @@ describe('Dorian Mode', () => {
 // E -> E (white keys)
 describe('Phrygian Mode', () => {
   const mode = [1, 2, 2, 2, 1, 2, 2];
-  it('is a Diatonic Scale', () => {
-    expect(isDiatonicScale(PHRYGIAN)).toEqual(true);
-  });
 
   it(`should return ${mode}`, () => {
     expect(PHRYGIAN).toEqual(mode);
@@ -57,10 +44,6 @@ describe('Phrygian Mode', () => {
 describe('Lydian Mode', () => {
   const mode = [2, 2, 2, 1, 2, 2, 1];
 
-  it('is a Diatonic Scale', () => {
-    expect(isDiatonicScale(LYDIAN)).toEqual(true);
-  });
-
   it(`should return ${mode}`, () => {
     expect(LYDIAN).toEqual(mode);
   });
@@ -70,10 +53,6 @@ describe('Lydian Mode', () => {
 describe('Mixolydian Mode', () => {
   const mode = [2, 2, 1, 2, 2, 1, 2];
 
-  it('is a Diatonic Scale', () => {
-    expect(isDiatonicScale(MIXOLYDIAN)).toEqual(true);
-  });
-
   it(`should return ${mode}`, () => {
     expect(MIXOLYDIAN).toEqual(mode);
   });
@@ -82,10 +61,6 @@ describe('Mixolydian Mode', () => {
 // A -> A (white keys)
 describe('Aeolian Mode', () => {
   const mode = [2, 1, 2, 2, 1, 2, 2];
-
-  it('is a Diatonic Scale', () => {
-    expect(isDiatonicScale(AEOLIAN)).toEqual(true);
-  });
 
   it('should be the same as Natural Minor Scale', () => {
     expect(AEOLIAN).toEqual(NATURAL_MINOR);
@@ -99,10 +74,6 @@ describe('Aeolian Mode', () => {
 // B -> B (white keys)
 describe('Locrian Mode', () => {
   const mode = [1, 2, 2, 1, 2, 2, 2];
-
-  it('is a Diatonic Scale', () => {
-    expect(isDiatonicScale(LOCRIAN)).toEqual(true);
-  });
 
   it(`should return ${mode}`, () => {
     expect(LOCRIAN).toEqual(mode);
