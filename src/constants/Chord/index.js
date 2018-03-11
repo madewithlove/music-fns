@@ -1,11 +1,21 @@
 import MAJOR from './MAJOR';
 import MINOR from './MINOR';
+
 import DIMINISHED from './DIMINISHED';
 import AUGMENTED from './AUGMENTED';
+
+import SEVENTH from './SEVENTH';
+import MAJOR_SEVENTH from './MAJOR_SEVENTH';
+import MINOR_MAJOR_SEVENTH from './MINOR_MAJOR_SEVENTH';
+import MINOR_SEVENTH from './MINOR_SEVENTH';
 
 export default {
   MAJOR,
   MINOR,
   DIMINISHED,
-  AUGMENTED
+  AUGMENTED,
+  SEVENTH,
+  MAJOR_SEVENTH,
+  MINOR_MAJOR_SEVENTH,
+  MINOR_SEVENTH
 };
