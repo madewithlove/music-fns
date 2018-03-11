@@ -3,8 +3,6 @@ import Mode from './constants/Mode';
 import Scale from './constants/Scale';
 import Chord from './constants/Chord';
 
-import noteToFrequency from './noteToFrequency';
-
 import isHemitonicScale from './isHemitonicScale';
 import isDiatonicScale from './isDiatonicScale';
 import isMode from './isMode';
@@ -18,8 +16,6 @@ export default {
   Mode,
   Scale,
   Chord,
-
-  noteToFrequency,
 
   isHemitonicScale,
   isDiatonicScale,
