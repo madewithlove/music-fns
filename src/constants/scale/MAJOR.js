@@ -3,4 +3,4 @@
 
 import IONIAN from '../Mode/IONIAN';
 
-export default IONIAN;
+export default [...IONIAN];

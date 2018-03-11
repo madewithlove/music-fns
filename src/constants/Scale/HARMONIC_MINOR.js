@@ -1,4 +1,4 @@
-// https://en.wikipedia.org/wiki/Minor_scale
+// https://en.wikipedia.org/wiki/Minor_scale#Harmonic_minor_scale
 
 import NATURAL_MINOR from './NATURAL_MINOR';
 
