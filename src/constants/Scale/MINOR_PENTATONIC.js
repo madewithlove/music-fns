@@ -1,4 +1,4 @@
-// https://en.wikipedia.org/wiki/Chromatic_scale
+// https://en.wikipedia.org/wiki/Pentatonic_scale
 
 import { T } from '../Interval/Short';
 import { A2 } from '../Interval/AugmentedDiminished';
