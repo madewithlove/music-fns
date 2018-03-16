@@ -1,16 +1,29 @@
-import CHROMATIC from './CHROMATIC';
-import MAJOR from './MAJOR';
-import NATURAL_MINOR from './NATURAL_MINOR';
-import HARMONIC_MINOR from './HARMONIC_MINOR';
+// https://www.scales-chords.com/scalenav.php
 
+import ALTERED from './ALTERED';
+import BLUES from './BLUES';
+import CHROMATIC from './CHROMATIC';
+import ENIGMATIC from './ENIGMATIC';
+import HARMONIC_MINOR from './HARMONIC_MINOR';
 import MAJOR_PENTATONIC from './MAJOR_PENTATONIC';
+import MAJOR from './MAJOR';
+import MELODIC_MINOR from './MELODIC_MINOR';
 import MINOR_PENTATONIC from './MINOR_PENTATONIC';
+import NATURAL_MINOR from './NATURAL_MINOR';
+import PROMETHEUS from './PROMETHEUS';
+import WHOLE_TONE from './WHOLE_TONE';
 
 export default {
+  ALTERED,
+  BLUES,
   CHROMATIC,
-  MAJOR,
-  NATURAL_MINOR,
+  ENIGMATIC,
   HARMONIC_MINOR,
   MAJOR_PENTATONIC,
-  MINOR_PENTATONIC
+  MAJOR,
+  MELODIC_MINOR,
+  MINOR_PENTATONIC,
+  NATURAL_MINOR,
+  PROMETHEUS,
+  WHOLE_TONE
 };
