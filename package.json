@@ -13,9 +13,15 @@
     "type": "git",
     "url": "git+https://github.com/madewithlove/music-fns.git"
   },
-  "keywords": ["music", "utility", "audio"],
+  "keywords": [
+    "music",
+    "utility",
+    "audio"
+  ],
   "author": "",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/madewithlove/music-fns/issues"
@@ -26,6 +32,7 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "eslint": "^4.18.1",
