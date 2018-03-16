@@ -1,26 +1,17 @@
-import MAJOR from './MAJOR';
-import MINOR from './MINOR';
-import DIMINISHED from './DIMINISHED';
 import AUGMENTED from './AUGMENTED';
-
-import SEVENTH from './SEVENTH';
+import DIMINISHED from './DIMINISHED';
 import MAJOR_SEVENTH from './MAJOR_SEVENTH';
+import MAJOR from './MAJOR';
 import MINOR_MAJOR_SEVENTH from './MINOR_MAJOR_SEVENTH';
 import MINOR_SEVENTH from './MINOR_SEVENTH';
+import MINOR from './MINOR';
+import SEVENTH from './SEVENTH';
 
-describe('Major Chord', () => {
-  const pitches = [0, 4, 7];
-
-  it(`should return ${pitches}`, () => {
-    expect(MAJOR).toEqual(pitches);
-  });
-});
-
-describe('Minor Chord', () => {
-  const pitches = [0, 3, 7];
+describe('Augmented Chord', () => {
+  const pitches = [0, 4, 8];
 
   it(`should return ${pitches}`, () => {
-    expect(MINOR).toEqual(pitches);
+    expect(AUGMENTED).toEqual(pitches);
   });
 });
 
@@ -32,27 +23,19 @@ describe('Diminished Chord', () => {
   });
 });
 
-describe('Augmented Chord', () => {
-  const pitches = [0, 4, 8];
-
-  it(`should return ${pitches}`, () => {
-    expect(AUGMENTED).toEqual(pitches);
-  });
-});
-
-describe('Seventh Chord', () => {
-  const pitches = [0, 4, 7, 10];
-
-  it(`should return ${pitches}`, () => {
-    expect(SEVENTH).toEqual(pitches);
-  });
-});
-
 describe('Major Seventh Chord', () => {
   const pitches = [0, 4, 7, 11];
 
   it(`should return ${pitches}`, () => {
     expect(MAJOR_SEVENTH).toEqual(pitches);
+  });
+});
+
+describe('Major Chord', () => {
+  const pitches = [0, 4, 7];
+
+  it(`should return ${pitches}`, () => {
+    expect(MAJOR).toEqual(pitches);
   });
 });
 
@@ -69,5 +52,21 @@ describe('Minor Seventh Chord', () => {
 
   it(`should return ${pitches}`, () => {
     expect(MINOR_SEVENTH).toEqual(pitches);
+  });
+});
+
+describe('Minor Chord', () => {
+  const pitches = [0, 3, 7];
+
+  it(`should return ${pitches}`, () => {
+    expect(MINOR).toEqual(pitches);
+  });
+});
+
+describe('Seventh Chord', () => {
+  const pitches = [0, 4, 7, 10];
+
+  it(`should return ${pitches}`, () => {
+    expect(SEVENTH).toEqual(pitches);
   });
 });
