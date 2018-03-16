@@ -1,6 +1,5 @@
 // https://en.wikipedia.org/wiki/Pentatonic_scale
 
-import { T } from '../Interval/Short';
-import { A2 } from '../Interval/AugmentedDiminished';
+import { S, T } from '../Interval/Short';
 
-export default [T, T, A2, T, A2];
+export default [T, T, T + S, T, T + S];
