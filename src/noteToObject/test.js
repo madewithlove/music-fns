@@ -44,6 +44,8 @@ describe('noteToObject', () => {
   it('should throw an error if the note is not valid', () => {
     const note = 'H';
 
-    expect(() => noteToObject(note)).toThrow(`"H" is not a valid scientific note.`);
+    expect(() => noteToObject(note)).toThrow(
+      `"H" is not a valid scientific note.`
+    );
   });
 });
