@@ -7,7 +7,16 @@
   },
   "env": {
     "node": true,
-    "jest": true,
-    "flow": true
+    "jest": true
+  },
+  "globals": {
+    "Accidental": true,
+    "Scale": true,
+    "Chord": true,
+    "ScientificNote": true,
+    "NoteObject": true,
+    "Interval": true,
+    "Note": true,
+    "Octave": true
   }
 }
