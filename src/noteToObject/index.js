@@ -3,7 +3,7 @@
 import NOTE_REGEX from '../constants/Regex/Note';
 import isValidNote from '../isValidNote';
 
-const noteToObject = (scientificNote: string): Note => {
+const noteToObject = (scientificNote: scientificNote): Note => {
   if (!isValidNote(scientificNote)) {
     throw new Error(
       `"${scientificNote}" is not a valid scientific note`

@@ -2,6 +2,6 @@
 
 import NOTE_REGEX from '../constants/Regex/Note';
 
-const isValidNote = (note: string) => NOTE_REGEX.test(note);
+const isValidNote = (scientificNote: scientificNote) => NOTE_REGEX.test(scientificNote);
 
 export default isValidNote;
