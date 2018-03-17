@@ -3,11 +3,9 @@
 import SCIENTIFIC_NOTE from '../constants/Regex/SCIENTIFIC_NOTE';
 import isValidNote from '../isValidNote';
 
-const noteToObject = (scientificNote: scientificNote): Note => {
+const noteToObject = (scientificNote: ScientificNote): NoteObject => {
   if (!isValidNote(scientificNote)) {
-    throw new Error(
-      `"${scientificNote}" is not a valid scientific note.`
-    );
+    throw new Error(`"${scientificNote}" is not a valid scientific note.`);
   }
 
   const [, note, accidental, octave] = SCIENTIFIC_NOTE.exec(scientificNote);

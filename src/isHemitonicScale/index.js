@@ -4,7 +4,7 @@
 
 import { S } from '../constants/Interval/Short';
 
-const isHemitonicScale = (scale: Array<number>) =>
+const isHemitonicScale = (scale: Scale) =>
   scale.filter(i => i === S).length > 0;
 
 export default isHemitonicScale;
