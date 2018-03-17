@@ -44,6 +44,6 @@ describe('parseNote', () => {
   it('should throw an error if the note is not valid', () => {
     const note = 'H';
 
-    expect(() => parseNote(note)).toThrow();
+    expect(() => parseNote(note)).toThrow(`"H" is not a valid scientific note`);
   });
 });

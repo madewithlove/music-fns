@@ -3,19 +3,19 @@
 import NOTE_REGEX from '../constants/Regex/Note';
 import isValidNote from '../isValidNote';
 
-const noteToObject = (note: string) : Note => {
-  if (!isValidNote(note)) {
+const noteToObject = (scientificNote: string): Note => {
+  if (!isValidNote(scientificNote)) {
     throw new Error(
-      'The note you are trying to convert to an object is not valid.'
+      `"${scientificNote}" is not a valid scientific note`
     );
   }
 
-  const result = NOTE_REGEX.exec(note);
+  const [, note, accidental, octave] = NOTE_REGEX.exec(scientificNote);
 
   return {
-    note: result[1] ? result[1].toUpperCase() : undefined,
-    accidental: result[2],
-    octave: result[3] ? Number(result[3]) : undefined
+    note: note.toUpperCase(),
+    accidental,
+    octave: octave ? Number(octave) : undefined
   };
 };
 
