@@ -15,3 +15,4 @@ declare type Interval = number;
 
 declare type Scale = Array<Interval>;
 declare type Chord = Array<Interval>;
+declare type ScientificNotes = Array<ScientificNote>;

@@ -17,6 +17,7 @@
     "NoteObject": true,
     "Interval": true,
     "Note": true,
+    "ScientificNotes": true,
     "Octave": true
   }
 }
