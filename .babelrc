@@ -12,6 +12,7 @@
   ],
   "plugins": [
     "add-module-exports",
-    "transform-object-rest-spread"
+    "transform-object-rest-spread",
+    "transform-modern-regexp"
   ]
 }
