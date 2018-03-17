@@ -5,7 +5,7 @@
 import isDiatonicScale from '../isDiatonicScale';
 import Mode from '../constants/Mode';
 
-const isMode = (scale: Array<number>) => {
+const isMode = (scale: Scale) => {
   if (!isDiatonicScale(scale)) return false;
 
   const modes = Object.keys(Mode).map(k => Mode[k]);

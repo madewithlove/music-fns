@@ -5,7 +5,7 @@
 import { S, T } from '../constants/Interval/Short';
 import isHeptatonicScale from '../isHeptatonicScale';
 
-const isDiatonicScale = (scale: Array<number>) => {
+const isDiatonicScale = (scale: Scale) => {
   if (!isHeptatonicScale(scale)) return false;
 
   const semitones = scale.filter(i => i === S).length;
