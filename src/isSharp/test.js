@@ -1,22 +1,22 @@
 import isFlat from './';
 
 describe('isFlat', () => {
-  it('should return false on "B#"', () => {
+  it('should return true on "B#"', () => {
     const note = 'B#';
     expect(isFlat(note)).toBe(true);
   });
 
-  it('should return false on "G♯"', () => {
+  it('should return true on "G♯"', () => {
     const note = 'G♯';
     expect(isFlat(note)).toBe(true);
   });
 
-  it('should return true on "Ab3"', () => {
+  it('should return false on "Ab3"', () => {
     const note = 'Ab3';
     expect(isFlat(note)).toBe(false);
   });
 
-  it('should return true on "C♭"', () => {
+  it('should return false on "C♭"', () => {
     const note = 'C♭';
     expect(isFlat(note)).toBe(false);
   });
