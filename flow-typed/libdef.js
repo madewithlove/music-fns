@@ -5,3 +5,5 @@ declare type Note = {
   accidental?: string,
   octave?: number
 };
+
+declare type scientificNote = string
