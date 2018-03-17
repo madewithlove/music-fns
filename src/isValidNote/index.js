@@ -1,7 +1,7 @@
 // @flow
 
-import NOTE_REGEX from '../constants/Regex/Note';
+import SCIENTIFIC_NOTE from '../constants/Regex/SCIENTIFIC_NOTE';
 
-const isValidNote = (scientificNote: scientificNote) => NOTE_REGEX.test(scientificNote);
+const isValidNote = (scientificNote: scientificNote) => SCIENTIFIC_NOTE.test(scientificNote);
 
 export default isValidNote;

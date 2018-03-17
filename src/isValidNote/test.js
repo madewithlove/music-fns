@@ -21,8 +21,8 @@ describe('isValidNote', () => {
     expect(isValidNote(note)).toBe(true);
   });
 
-  it('should return true on when it is a valid note with a accidental of ♮', () => {
-    const note = 'A♮';
+  it('should return true on when it is a valid note with a accidental of ♭', () => {
+    const note = 'A♭';
     expect(isValidNote(note)).toBe(true);
   });
 

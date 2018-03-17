@@ -1,16 +1,16 @@
 // @flow
 
-import NOTE_REGEX from '../constants/Regex/Note';
+import SCIENTIFIC_NOTE from '../constants/Regex/SCIENTIFIC_NOTE';
 import isValidNote from '../isValidNote';
 
 const noteToObject = (scientificNote: scientificNote): Note => {
   if (!isValidNote(scientificNote)) {
     throw new Error(
-      `"${scientificNote}" is not a valid scientific note`
+      `"${scientificNote}" is not a valid scientific note.`
     );
   }
 
-  const [, note, accidental, octave] = NOTE_REGEX.exec(scientificNote);
+  const [, note, accidental, octave] = SCIENTIFIC_NOTE.exec(scientificNote);
 
   return {
     note: note.toUpperCase(),
