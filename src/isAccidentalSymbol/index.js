@@ -6,7 +6,6 @@ import noteToObject from '../noteToObject';
 
 const isAccidentalSymbol = (scientificNote: ScientificNote) => {
   const { accidental } = noteToObject(scientificNote);
-
   return accidental === FLAT_SYMBOL || accidental === SHARP_SYMBOL;
 };
 
