@@ -11,6 +11,7 @@
   },
   "globals": {
     "Accidental": true,
+    "AccidentalType": true,
     "Scale": true,
     "Chord": true,
     "ScientificNote": true,
