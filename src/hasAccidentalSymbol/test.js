@@ -1,33 +1,33 @@
-import isAccidentalSymbol from './';
+import hasAccidentalSymbol from './';
 
-describe('isAccidentalSymbol', () => {
+describe('hasAccidentalSymbol', () => {
   it('return true on "B♯"', () => {
     const note = 'B♯';
-    expect(isAccidentalSymbol(note)).toBe(true);
+    expect(hasAccidentalSymbol(note)).toBe(true);
   });
 
   it('return true on "A♭3"', () => {
     const note = 'A♭3';
-    expect(isAccidentalSymbol(note)).toBe(true);
+    expect(hasAccidentalSymbol(note)).toBe(true);
   });
 
   it('return false on "B#"', () => {
     const note = 'B#';
-    expect(isAccidentalSymbol(note)).toBe(false);
+    expect(hasAccidentalSymbol(note)).toBe(false);
   });
 
   it('return false on "Ab3"', () => {
     const note = 'Ab3';
-    expect(isAccidentalSymbol(note)).toBe(false);
+    expect(hasAccidentalSymbol(note)).toBe(false);
   });
 
   it('return false on "F"', () => {
     const note = 'F';
-    expect(isAccidentalSymbol(note)).toBe(false);
+    expect(hasAccidentalSymbol(note)).toBe(false);
   });
 
   it('should throw on invalid scientific note', () => {
     const note = 'Fr';
-    expect(() => isAccidentalSymbol(note)).toThrow();
+    expect(() => hasAccidentalSymbol(note)).toThrow();
   });
 });
