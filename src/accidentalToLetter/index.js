@@ -10,7 +10,7 @@ import {
 import noteToObject from '../noteToObject';
 import objectToNote from '../objectToNote';
 
-const symbolToLetter = (scientificNote: ScientificNote) => {
+const accidentalToLetter = (scientificNote: ScientificNote) => {
   const noteObject = noteToObject(scientificNote);
   const { accidental } = noteObject;
 
@@ -20,4 +20,4 @@ const symbolToLetter = (scientificNote: ScientificNote) => {
   return objectToNote(noteObject);
 };
 
-export default symbolToLetter;
+export default accidentalToLetter;
