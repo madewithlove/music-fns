@@ -1,10 +1,10 @@
 import transferAccidentalStyle from './';
 
 describe('transferAccidentalStyle', () => {
-  it('convert "C#" to "C#"', () => {
-    const reference = 'C';
+  it('convert "C#" to "C♯"', () => {
+    const reference = 'F♯';
     const note = 'C#';
-    expect(transferAccidentalStyle(reference, note)).toBe('C#');
+    expect(transferAccidentalStyle(reference, note)).toBe('C♯');
   });
 
   it('convert "A♭" to "Ab"', () => {
