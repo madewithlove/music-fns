@@ -1,22 +1,32 @@
-import Notes from './Notes';
+import NOTES from './NOTES';
+import { FLAT, SHARP } from './Accidental';
 
-describe('Notes', () => {
+describe('NOTES', () => {
   it('should return correct serie of notes', () => {
     const notes = [
-      'C',
-      'C#',
-      'D',
-      'D#',
-      'E',
-      'F',
-      'F#',
-      'G',
-      'G#',
-      'A',
-      'A#',
-      'B'
+      ['C', 'B♯'],
+      ['C♯', 'D♭'],
+      ['D'],
+      ['D♯', 'E♭'],
+      ['E', 'F♭'],
+      ['F', 'E♯'],
+      ['F♯', 'G♭'],
+      ['G'],
+      ['G♯', 'A♭'],
+      ['A'],
+      ['A♯', 'B♭'],
+      ['B', 'C♭']
     ];
 
-    expect(Notes).toEqual(notes);
+    expect(NOTES).toEqual(notes);
+  });
+});
+
+describe('Accidental', () => {
+  it('should return correct flat', () => {
+    expect(FLAT).toEqual('♭');
+  });
+  it('should return correct flat', () => {
+    expect(SHARP).toEqual('♯');
   });
 });
