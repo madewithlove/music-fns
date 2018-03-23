@@ -1,7 +1,5 @@
 import accidentalToLetter from './';
 
-// ♯ ♭
-
 describe('accidentalToLetter', () => {
   it('convert "B♯" to "B#"', () => {
     const note = 'B♯';

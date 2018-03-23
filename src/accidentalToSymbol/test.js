@@ -1,7 +1,5 @@
 import accidentalToSymbol from './';
 
-// ♯ ♭
-
 describe('accidentalToSymbol', () => {
   it('convert "B#" to "B♯"', () => {
     const note = 'B#';
