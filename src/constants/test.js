@@ -1,7 +1,7 @@
-import Notes from './Notes';
-import { flat, sharp } from './Accidental';
+import NOTES from './NOTES';
+import { FLAT, SHARP } from './Accidental';
 
-describe('Notes', () => {
+describe('NOTES', () => {
   it('should return correct serie of notes', () => {
     const notes = [
       ['C', 'B♯'],
@@ -18,15 +18,15 @@ describe('Notes', () => {
       ['B', 'C♭']
     ];
 
-    expect(Notes).toEqual(notes);
+    expect(NOTES).toEqual(notes);
   });
 });
 
 describe('Accidental', () => {
   it('should return correct flat', () => {
-    expect(flat).toEqual('♭');
+    expect(FLAT).toEqual('♭');
   });
   it('should return correct flat', () => {
-    expect(sharp).toEqual('♯');
+    expect(SHARP).toEqual('♯');
   });
 });

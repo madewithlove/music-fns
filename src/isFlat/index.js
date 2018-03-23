@@ -2,11 +2,11 @@
 
 import noteToObject from '../noteToObject';
 import normalizeAccidental from '../normalizeAccidental';
-import { flat } from '../constants/Accidental';
+import { FLAT } from '../constants/Accidental';
 
 const isFlat = (scientificNote: ScientificNote) => {
   const { accidental = '' } = noteToObject(normalizeAccidental(scientificNote));
-  return accidental === flat;
+  return accidental === FLAT;
 };
 
 export default isFlat;

@@ -1,7 +1,7 @@
-export const flat = '♭';
-export const sharp = '♯';
+export const FLAT = '♭';
+export const SHARP = '♯';
 
 export default {
-  flat,
-  sharp
+  FLAT,
+  SHARP
 };

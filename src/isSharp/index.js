@@ -2,11 +2,11 @@
 
 import noteToObject from '../noteToObject';
 import normalizeAccidental from '../normalizeAccidental';
-import { sharp } from '../constants/Accidental';
+import { SHARP } from '../constants/Accidental';
 
 const isSharp = (scientificNote: ScientificNote) => {
   const { accidental = '' } = noteToObject(normalizeAccidental(scientificNote));
-  return accidental === sharp;
+  return accidental === SHARP;
 };
 
 export default isSharp;
