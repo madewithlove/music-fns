@@ -1,12 +1,9 @@
 // @flow
 
 import noteToObject from '../noteToObject';
-import accidentalToSymbol from '../accidentalToSymbol';
-import { SHARP_SYMBOL } from '../constants/Accidental';
+import { SHARP } from '../constants/Accidental';
 
-const isSharp = (scientificNote: ScientificNote) => {
-  const { accidental = '' } = noteToObject(accidentalToSymbol(scientificNote));
-  return accidental === SHARP_SYMBOL;
-};
+const isSharp = (scientificNote: ScientificNote) =>
+  noteToObject(scientificNote).accidental === SHARP;
 
 export default isSharp;

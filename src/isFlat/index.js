@@ -1,12 +1,9 @@
 // @flow
 
 import noteToObject from '../noteToObject';
-import accidentalToSymbol from '../accidentalToSymbol';
-import { FLAT_SYMBOL } from '../constants/Accidental';
+import { FLAT } from '../constants/Accidental';
 
-const isFlat = (scientificNote: ScientificNote) => {
-  const { accidental = '' } = noteToObject(accidentalToSymbol(scientificNote));
-  return accidental === FLAT_SYMBOL;
-};
+const isFlat = (scientificNote: ScientificNote) =>
+  noteToObject(scientificNote).accidental === FLAT;
 
 export default isFlat;

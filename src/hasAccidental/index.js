@@ -2,9 +2,7 @@
 
 import noteToObject from '../noteToObject';
 
-const hasAccidental = (scientificNote: ScientificNote) => {
-  const { accidental } = noteToObject(scientificNote);
-  return typeof accidental !== 'undefined';
-};
+const hasAccidental = (scientificNote: ScientificNote) =>
+  typeof noteToObject(scientificNote).accidental !== 'undefined';
 
 export default hasAccidental;
