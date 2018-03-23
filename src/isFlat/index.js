@@ -1,11 +1,11 @@
 // @flow
 
 import noteToObject from '../noteToObject';
-import normalizeAccidental from '../normalizeAccidental';
+import accidentalToSymbol from '../accidentalToSymbol';
 import { FLAT_SYMBOL } from '../constants/Accidental';
 
 const isFlat = (scientificNote: ScientificNote) => {
-  const { accidental = '' } = noteToObject(normalizeAccidental(scientificNote));
+  const { accidental = '' } = noteToObject(accidentalToSymbol(scientificNote));
   return accidental === FLAT_SYMBOL;
 };
 
