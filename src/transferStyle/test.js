@@ -1,24 +1,5 @@
 import transferStyle from './';
 
-/*
-
-export default [
-  ['C', 'B♯'],
-  ['C♯', 'D♭'],
-  ['D'],
-  ['D♯', 'E♭'],
-  ['E', 'F♭'],
-  ['F', 'E♯'],
-  ['F♯', 'G♭'],
-  ['G'],
-  ['G♯', 'A♭'],
-  ['A'],
-  ['A♯', 'B♭'],
-  ['B', 'C♭']
-];
-
-*/
-
 describe('transferStyle', () => {
   it('convert "Eb" to "D#" with reference "B#"', () => {
     const reference = 'B#';
@@ -52,12 +33,12 @@ describe('transferStyle', () => {
 
   it('should throw on invalid reference or note', () => {
     const reference = 'Fr';
-    const note = 'Fr';
+    const note = 'Ab4';
     expect(() => transferStyle(reference, note)).toThrow();
   });
 
   it('should throw on invalid reference or note', () => {
-    const reference = 'Fr';
+    const reference = 'G#4';
     const note = 'Fr';
     expect(() => transferStyle(reference, note)).toThrow();
   });
