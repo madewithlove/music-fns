@@ -1,10 +1,8 @@
 // @flow
 
-import noteToObject from '../noteToObject';
+import changeOctave from '../changeOctave';
 
-const stripOctave = (scientificNote: ScientificNote) => {
-  const { note = '', accidental = '' } = noteToObject(scientificNote);
-  return `${note}${accidental}`;
-};
+const stripOctave = (scientificNote: ScientificNote) =>
+  changeOctave(scientificNote);
 
 export default stripOctave;
