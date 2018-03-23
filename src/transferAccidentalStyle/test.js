@@ -1,21 +1,3 @@
-/*
-
-export default [
-  ['C', 'B♯'],
-  ['C♯', 'D♭'],
-  ['D'],
-  ['D♯', 'E♭'],
-  ['E', 'F♭'],
-  ['F', 'E♯'],
-  ['F♯', 'G♭'],
-  ['G'],
-  ['G♯', 'A♭'],
-  ['A'],
-  ['A♯', 'B♭'],
-  ['B', 'C♭']
-];
-
-*/
 import transferAccidentalStyle from './';
 
 describe('transferAccidentalStyle', () => {
