@@ -5,6 +5,7 @@
   "main": "dist",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint --config ./.eslintrc src",
     "lint:fix": "npm run lint -- --fix",
     "flow": "flow",
