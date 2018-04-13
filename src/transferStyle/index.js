@@ -1,7 +1,7 @@
 // @flow
 
 // should transfer flat or sharp style preference (sharp / flat - symbol / letter)
-// if reference has no accidental it should return sharp / symbol by default
+// if reference has no accidental it should mirror it's input style
 
 import transferAccidentalStyle from '../transferAccidentalStyle';
 import transferAccidental from '../transferAccidental';
