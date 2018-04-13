@@ -8,8 +8,8 @@ declare type NoteObject = {
 };
 
 declare type Note = string;
-declare type Accidental = 'SHARP' | 'FLAT';
-declare type AccidentalType = 'LETTER' | 'SYMBOL';
+declare type Accidental = 'SHARP' | 'FLAT' | '';
+declare type AccidentalType = 'LETTER' | 'SYMBOL' | '';
 declare type Octave = number;
 
 declare type ScientificNote = string;
