@@ -16,7 +16,8 @@ const getNormalizedPosition = (position: number, interval: number): number => {
 
 const transpose = (
   scientificNote: ScientificNote,
-  interval: Interval
+  interval: Interval,
+  reference: ScientificNote = null
 ): ScientificNote => {
   const position = getChromaticCPosition(scientificNote);
 
@@ -29,11 +30,14 @@ const transpose = (
   const newNote = NOTES[normalizedPosition][0];
 
   const newNoteObject = noteToObject(newNote);
-  newNoteObject.octave = oldNoteObject.octave + octave;
+
+  if (oldNoteObject.octave) {
+    newNoteObject.octave = oldNoteObject.octave + octave;
+  }
 
   const parsedNewNote = objectToNote(newNoteObject);
 
-  return transferStyle(scientificNote, parsedNewNote);
+  return transferStyle(reference || scientificNote, parsedNewNote);
 };
 
 export default transpose;

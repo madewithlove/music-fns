@@ -14,6 +14,24 @@ describe('transpose', () => {
     expect(transpose(note, interval)).toBe('F♯3');
   });
 
+  it('should return "A♯2" when transposing "E♭3" 5 semitones down', () => {
+    const note = 'E♭3';
+    const interval = -Interval.S * 5;
+    expect(transpose(note, interval)).toBe('B♭2');
+  });
+
+  it('should return "A♯2" when transposing "E♯3" 7 semitones down', () => {
+    const note = 'E♯3';
+    const interval = -Interval.S * 7;
+    expect(transpose(note, interval)).toBe('A♯2');
+  });
+
+  it('should return "E2" when transposing "E♯4" 2 octaves & 1 semitone down', () => {
+    const note = 'E♯4';
+    const interval = -Interval.O * 2 - Interval.S;
+    expect(transpose(note, interval)).toBe('E2');
+  });
+
   it('should return "A♭2" when transposing "A♭2" 0 semitones', () => {
     const note = 'A♭2';
     const interval = 0;
@@ -32,19 +50,19 @@ describe('transpose', () => {
     expect(transpose(note, interval)).toBe('A♭4');
   });
 
-  it('should return "A1" when transposing "A2" a full octave down', () => {
+  it('should return "A1" when transposing "A2" 1 octave down', () => {
     const note = 'A2';
     const interval = -Interval.O;
     expect(transpose(note, interval)).toBe('A1');
   });
 
-  it('should return "C9" when transposing "F10" a 5 semitones and an octave down', () => {
+  it('should return "C9" when transposing "F10" 5 semitones & 1 octave down', () => {
     const note = 'F10';
     const interval = -(Interval.S * 5 + Interval.O);
     expect(transpose(note, interval)).toBe('C9');
   });
 
-  it('should return "B2" when transposing "D6" a 3 octaves and 3 semitones down', () => {
+  it('should return "B2" when transposing "D6" 3 octaves & 3 semitones down', () => {
     const note = 'D6';
     const interval = -Interval.O * 3 - 3 * Interval.S;
     expect(transpose(note, interval)).toBe('B2');
@@ -56,10 +74,46 @@ describe('transpose', () => {
     expect(transpose(note, interval)).toBe('C2');
   });
 
-  it('should return "F4" when transposing "E4" 1 semitones up', () => {
+  it('should return "E3" when transposing "G♭5" 2 octaves and 2 semitones down', () => {
+    const note = 'G♭5';
+    const interval = -Interval.O * 2 - 2 * Interval.S;
+    expect(transpose(note, interval)).toBe('E3');
+  });
+
+  it('should return "E3" when transposing "G♯3" 4 semitones down', () => {
+    const note = 'G♯3';
+    const interval = -Interval.S * 4;
+    expect(transpose(note, interval)).toBe('E3');
+  });
+
+  it('should return "F4" when transposing "E4" 1 semitone up', () => {
     const note = 'E4';
     const interval = Interval.S;
     expect(transpose(note, interval)).toBe('F4');
+  });
+
+  it('should return "F" when transposing "E" 1 semitone up', () => {
+    const note = 'E';
+    const interval = Interval.S;
+    expect(transpose(note, interval)).toBe('F');
+  });
+
+  it('should return "C" when transposing "B" 1 semitone down', () => {
+    const note = 'C';
+    const interval = -Interval.S;
+    expect(transpose(note, interval)).toBe('B');
+  });
+
+  it('should return "G♯" when transposing "B" 3 semitones down', () => {
+    const note = 'B';
+    const interval = -3 * Interval.S;
+    expect(transpose(note, interval)).toBe('G♯');
+  });
+
+  it('should return "G" when transposing "G" 2 octaves down', () => {
+    const note = 'G';
+    const interval = -2 * Interval.O;
+    expect(transpose(note, interval)).toBe('G');
   });
 
   it('should throw on invalid scientific note', () => {
