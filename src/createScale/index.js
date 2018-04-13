@@ -3,7 +3,7 @@
 import transpose from '../transpose';
 
 type options = {
-  includeRootEnd: Boolean
+  includeRootEnd: boolean
 };
 
 const createScale = (
