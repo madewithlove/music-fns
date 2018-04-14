@@ -4,7 +4,7 @@ import { LETTER } from '../constants/Accidental';
 
 import noteToObject from '../noteToObject';
 
-const hasAccidentalLetter = (scientificNote: ScientificNote) =>
+const isAccidentalLetter = (scientificNote: ScientificNote) =>
   noteToObject(scientificNote).accidentalType === LETTER;
 
-export default hasAccidentalLetter;
+export default isAccidentalLetter;
