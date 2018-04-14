@@ -17,8 +17,12 @@ const getNormalizedPosition = (position: number, interval: number): number => {
 const transpose = (
   scientificNote: ScientificNote,
   interval: Interval,
-  reference: ScientificNote = null
+  reference?: ScientificNote = null
 ): ScientificNote => {
+  if (typeof interval !== 'number') {
+    throw new Error(`Interval must be a number`);
+  }
+
   const position = getChromaticCPosition(scientificNote);
 
   const oldNoteObject = noteToObject(scientificNote);
