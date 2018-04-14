@@ -1,8 +1,8 @@
 // @flow
 
-import getAccidental from '../getAccidental';
+import noteToObject from '../noteToObject';
 
 const hasAccidental = (scientificNote: ScientificNote) =>
-  typeof getAccidental(scientificNote) !== 'undefined';
+  typeof noteToObject(scientificNote).accidental !== 'undefined';
 
 export default hasAccidental;
