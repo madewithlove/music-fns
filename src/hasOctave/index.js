@@ -1,8 +1,8 @@
 // @flow
 
-import noteToObject from '../noteToObject';
+import getOctave from '../getOctave';
 
 const hasOctave = (scientificNote: ScientificNote) =>
-  typeof noteToObject(scientificNote).octave !== 'undefined';
+  typeof getOctave(scientificNote) !== 'undefined';
 
 export default hasOctave;
