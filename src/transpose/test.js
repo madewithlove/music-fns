@@ -121,4 +121,19 @@ describe('transpose', () => {
     const interval = 6;
     expect(() => transpose(note, interval)).toThrow();
   });
+
+  it('should throw on invalid reference note', () => {
+    const note = 'G';
+    const interval = 6;
+    const reference = 'Fr';
+    expect(() => transpose(note, interval, reference)).toThrow();
+  });
+
+  it('should throw an error on invalid interval', () => {
+    const note = 'G';
+    const interval = 'ok';
+    expect(() => transpose(note, interval)).toThrowError(
+      'Interval must be a number'
+    );
+  });
 });
