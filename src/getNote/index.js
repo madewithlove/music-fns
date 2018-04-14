@@ -2,7 +2,7 @@
 
 import changeOctave from '../changeOctave';
 
-const stripOctave = (scientificNote: ScientificNote) =>
+const getNote = (scientificNote: ScientificNote) =>
   changeOctave(scientificNote);
 
-export default stripOctave;
+export default getNote;
