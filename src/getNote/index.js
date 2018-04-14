@@ -1,8 +1,8 @@
 // @flow
 
-import changeOctave from '../changeOctave';
+import noteToObject from '../noteToObject';
 
 const getNote = (scientificNote: ScientificNote) =>
-  changeOctave(scientificNote);
+  noteToObject(scientificNote).note;
 
 export default getNote;
