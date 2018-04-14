@@ -53,4 +53,23 @@ describe('createScale', () => {
 
     expect(createScale(root, Mode.LOCRIAN)).toEqual(scale);
   });
+
+  it('should throw on invalid scientific note', () => {
+    const root = 'Fr';
+    expect(() => createScale(root, Mode.LOCRIAN)).toThrow();
+  });
+
+  it('should throw an error on incorrect scale interval array', () => {
+    const root = 'A♭3';
+    expect(() => createScale(root, [])).toThrowError(
+      `Provide a valid collection of scale intervals ex: [1, 2, 1, 2, 1]`
+    );
+  });
+
+  it('should throw an error on incorrect scale interval array', () => {
+    const root = 'A♭3';
+    expect(() => createScale(root, 'test')).toThrowError(
+      `Provide a valid collection of scale intervals ex: [1, 2, 1, 2, 1]`
+    );
+  });
 });
