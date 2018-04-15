@@ -18,7 +18,10 @@ const createChord = (root: ScientificNote, chord: Chord): ScientificNotes => {
     throw new Error(`First interval of chord should be 0 (Root)`);
   }
 
-  return chord.reduce((acc, v) => [...acc, transpose(root, v)], []);
+  return chord.reduce(
+    (acc, interval) => [...acc, transpose(root, interval)],
+    []
+  );
 };
 
 export default createChord;
