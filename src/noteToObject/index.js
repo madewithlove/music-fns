@@ -42,10 +42,10 @@ const noteToObject = (scientificNote: ScientificNote): NoteObject => {
     throw new Error(`"${scientificNote}" is not a valid scientific note.`);
   }
 
-  const [, note, accidental, octave] = SCIENTIFIC_NOTE.exec(scientificNote);
+  const [, root, accidental, octave] = SCIENTIFIC_NOTE.exec(scientificNote);
 
   return {
-    note: note.toUpperCase(),
+    root: root.toUpperCase(),
     ...parseAccidental(accidental),
     octave: octave ? Number(octave) : undefined
   };

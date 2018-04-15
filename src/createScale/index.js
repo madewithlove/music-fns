@@ -11,7 +11,11 @@ const createScale = (
   scale: Scale,
   { includeRootEnd = false }: options = {}
 ): ScientificNotes => {
-  if (!Array.isArray(scale) || scale.length === 0) {
+  if (
+    !Array.isArray(scale) ||
+    scale.length === 0 ||
+    scale.some(i => typeof i !== 'number')
+  ) {
     throw new Error(
       `Provide a valid collection of scale intervals ex: [1, 2, 1, 2, 1]`
     );

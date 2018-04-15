@@ -1,11 +1,11 @@
 // @flow
 
-import getFullNote from '../getFullNote';
+import getNote from '../getNote';
 import accidentalToSymbol from '../accidentalToSymbol';
 import NOTES from '../constants/NOTES';
 
 const getChromaticCPosition = (scientificNote: ScientificNote) => {
-  const noteWithoutOctave = getFullNote(accidentalToSymbol(scientificNote));
+  const noteWithoutOctave = getNote(accidentalToSymbol(scientificNote));
   return NOTES.findIndex(n => n.some(nn => nn === noteWithoutOctave));
 };
 

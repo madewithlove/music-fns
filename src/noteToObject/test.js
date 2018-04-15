@@ -11,7 +11,7 @@ describe('noteToObject', () => {
     const note = 'A';
 
     expect(noteToObject(note)).toEqual({
-      note: 'A',
+      root: 'A',
       accidental: undefined,
       octave: undefined
     });
@@ -21,7 +21,7 @@ describe('noteToObject', () => {
     const note = 'A#';
 
     expect(noteToObject(note)).toEqual({
-      note: 'A',
+      root: 'A',
       accidental: 'SHARP',
       accidentalType: 'LETTER',
       octave: undefined
@@ -32,7 +32,7 @@ describe('noteToObject', () => {
     const note = 'A#4';
 
     expect(noteToObject(note)).toEqual({
-      note: 'A',
+      root: 'A',
       accidental: 'SHARP',
       accidentalType: 'LETTER',
       octave: 4
@@ -43,7 +43,7 @@ describe('noteToObject', () => {
     const note = 'A♯7';
 
     expect(noteToObject(note)).toEqual({
-      note: 'A',
+      root: 'A',
       accidental: 'SHARP',
       accidentalType: 'SYMBOL',
       octave: 7
@@ -54,7 +54,7 @@ describe('noteToObject', () => {
     const note = 'Cb3';
 
     expect(noteToObject(note)).toEqual({
-      note: 'C',
+      root: 'C',
       accidental: 'FLAT',
       accidentalType: 'LETTER',
       octave: 3
@@ -65,7 +65,7 @@ describe('noteToObject', () => {
     const note = 'C♭8';
 
     expect(noteToObject(note)).toEqual({
-      note: 'C',
+      root: 'C',
       accidental: 'FLAT',
       accidentalType: 'SYMBOL',
       octave: 8
@@ -76,7 +76,7 @@ describe('noteToObject', () => {
     const note = 'A2';
 
     expect(noteToObject(note)).toEqual({
-      note: 'A',
+      root: 'A',
       accidental: undefined,
       accidentalType: undefined,
       octave: 2
@@ -87,7 +87,7 @@ describe('noteToObject', () => {
     const note = 'B♭9';
 
     expect(noteToObject(note)).toEqual({
-      note: 'B',
+      root: 'B',
       accidental: 'FLAT',
       accidentalType: 'SYMBOL',
       octave: 9

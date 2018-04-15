@@ -68,6 +68,13 @@ describe('createScale', () => {
 
   it('should throw an error on incorrect scale interval array', () => {
     const root = 'A♭3';
+    expect(() => createScale(root, [1, 2, 'ok'])).toThrowError(
+      `Provide a valid collection of scale intervals ex: [1, 2, 1, 2, 1]`
+    );
+  });
+
+  it('should throw an error on incorrect scale interval array', () => {
+    const root = 'A♭3';
     expect(() => createScale(root, 'test')).toThrowError(
       `Provide a valid collection of scale intervals ex: [1, 2, 1, 2, 1]`
     );

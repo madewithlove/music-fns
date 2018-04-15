@@ -1,7 +1,7 @@
 // @flow
 
 declare type NoteObject = {
-  note: Note,
+  root: Note,
   accidental?: Accidental,
   accidentalType?: AccidentalType,
   octave?: Octave

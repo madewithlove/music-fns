@@ -29,13 +29,13 @@ const getAccidental = (
 
 const objectToNote = (noteObject: NoteObject): ScientificNote => {
   const {
-    note = '',
+    root = '',
     accidental = '',
     accidentalType = '',
     octave = ''
   } = noteObject;
 
-  const scientificNote: ScientificNote = `${note.toUpperCase()}${getAccidental(
+  const scientificNote: ScientificNote = `${root.toUpperCase()}${getAccidental(
     accidental,
     accidentalType
   )}${octave}`;

@@ -48,4 +48,18 @@ describe('createChord', () => {
       'Provide a valid collection of chord intervals ex: [0, 1, 3]'
     );
   });
+
+  it('should throw an error on incorrect chord interval array', () => {
+    const root = 'A♭3';
+    expect(() => createChord(root, [0, 2, 'ok'])).toThrowError(
+      'Provide a valid collection of chord intervals ex: [0, 1, 3]'
+    );
+  });
+
+  it('should throw an error on incorrect chord interval array', () => {
+    const root = 'A♭3';
+    expect(() => createChord(root, [1, 2])).toThrowError(
+      'First interval of chord should be 0 (Root)'
+    );
+  });
 });
