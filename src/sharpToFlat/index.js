@@ -1,3 +1,5 @@
+// @flow
+
 import getChromaticCPosition from '../getChromaticCPosition';
 import accidentalToSymbol from '../accidentalToSymbol';
 import noteToObject from '../noteToObject';
@@ -7,8 +9,6 @@ import NOTES from '../constants/NOTES';
 
 import isSharp from '../isSharp';
 import { FLAT } from '../constants/Accidental';
-
-// @flow
 
 const sharpToFlat = (scientificNote: ScientificNote): ScientificNote => {
   if (!isSharp(scientificNote)) return scientificNote;
