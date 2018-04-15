@@ -21,11 +21,12 @@ const createScale = (
     );
   }
 
-  const arr = [root];
-  scale.forEach(interval =>
-    arr.push(transpose(arr[arr.length - 1], interval, root))
+  const notes = scale.reduce(
+    (acc, interval) => [...acc, transpose(acc[acc.length - 1], interval, root)],
+    [root]
   );
-  return includeRootEnd ? arr : arr.slice(0, -1);
+
+  return includeRootEnd ? notes : notes.slice(0, -1);
 };
 
 export default createScale;
