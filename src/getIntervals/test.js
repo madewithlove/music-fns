@@ -53,6 +53,14 @@ describe('getIntervals', () => {
     expect(getIntervals(['C', 'E', 'G'])).toEqual([4, 3]);
   });
 
+  it('should return the correct intervals between ["D", "B", "A"] backwards', () => {
+    expect(getIntervals(['D', 'B', 'A'], { direction: -1 })).toEqual([-3, -2]);
+  });
+
+  it('should return the correct intervals between "D", "B" and "A" backwards', () => {
+    expect(getIntervals(['D', 'B', 'A'], { direction: -1 })).toEqual([-3, -2]);
+  });
+
   it('should return the correct intervals between "C", "E" and "G" with fromRoot option', () => {
     expect(getIntervals(['C', 'E', 'G'], { fromRoot: true })).toEqual([4, 7]);
   });
@@ -74,7 +82,16 @@ describe('getIntervals', () => {
   it('should throw on invalid scientific note', () => {
     const note = 'Fr';
     const note2 = 'G#2';
-    expect(() => getIntervals([note, note2])).toThrow();
+    expect(() => getIntervals([note, note2])).toThrow(
+      'You can only calculate intervals for a uniform array (minimum size 2) of notes with or without octave'
+    );
+  });
+
+  it('should throw on invalid amount of notes', () => {
+    const note = 'G#2';
+    expect(() => getIntervals([note])).toThrow(
+      'You can only calculate intervals for a uniform array (minimum size 2) of notes with or without octave'
+    );
   });
 
   it('should throw on invalid direction', () => {
@@ -88,7 +105,9 @@ describe('getIntervals', () => {
   it('should throw on invalid scientific note', () => {
     const note = 'G#2';
     const note2 = 'Fr';
-    expect(() => getIntervals([note, note2])).toThrow();
+    expect(() => getIntervals([note, note2])).toThrow(
+      'You can only calculate intervals for a uniform array (minimum size 2) of notes with or without octave'
+    );
   });
 
   it('should throw on invalid scientific note', () => {
