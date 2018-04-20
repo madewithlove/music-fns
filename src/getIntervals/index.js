@@ -51,16 +51,23 @@ const getIntervals = (
     );
   }
 
-  const intervals = notes.reduce((acc, note1, i) => {
+  let intervals = notes.reduce((acc, note1, i) => {
     const note2 = notes[i + 1];
     if (!note2) return acc;
 
-    const interval = getInterval(fromRoot ? notes[0] : note1, note2, {
-      fromRoot,
+    const interval = getInterval(note1, note2, {
       direction
     });
+
     return [...acc, interval];
   }, []);
+
+  if (fromRoot) {
+    intervals = intervals.map((interval, i, arr) => {
+      if (i === 0) return interval;
+      return arr.slice(i - 1).reduce((acc, v) => acc + v, 0);
+    });
+  }
 
   return intervals;
 };
