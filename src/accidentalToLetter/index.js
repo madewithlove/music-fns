@@ -4,12 +4,17 @@ import { LETTER, SYMBOL } from '../constants/Accidental';
 
 import noteToObject from '../noteToObject';
 import objectToNote from '../objectToNote';
+import isValidNote from '../isValidNote';
 
-const accidentalToLetter = (scientificNote: ScientificNote): ScientificNote => {
-  const noteObject = noteToObject(scientificNote);
+const accidentalToLetter = (note: ScientificNote): ScientificNote => {
+  if (!isValidNote(note)) {
+    throw new Error(`"${note}" is not a valid note.`);
+  }
+
+  const noteObject = noteToObject(note);
   const { accidentalType } = noteObject;
 
-  if (accidentalType !== SYMBOL) return scientificNote;
+  if (accidentalType !== SYMBOL) return note;
 
   noteObject.accidentalType = LETTER;
   return objectToNote(noteObject);

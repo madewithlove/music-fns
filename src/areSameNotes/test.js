@@ -1,5 +1,3 @@
-// https://en.wikipedia.org/wiki/Pentatonic_scale
-
 import areSameNotes from './';
 
 describe('areSameNotes', () => {
@@ -33,21 +31,21 @@ describe('areSameNotes', () => {
     expect(areSameNotes([note, note2])).toEqual(true);
   });
 
-  it('should throw on invalid scientific note', () => {
+  it('should return false when comparing invalid scientific notes', () => {
     const note = 'Fr';
     const note2 = 'G#2';
-    expect(() => areSameNotes([note, note2])).toThrow();
+    expect(areSameNotes([note, note2])).toEqual(false);
   });
 
-  it('should throw on invalid scientific note', () => {
+  it('should return false when comparing invalid scientific notes', () => {
     const note = 'G#2';
     const note2 = 'Fr';
-    expect(() => areSameNotes(note, note2)).toThrow();
+    expect(areSameNotes([note, note2])).toEqual(false);
   });
 
-  it('should throw on invalid scientific note', () => {
+  it('should return false when comparing invalid scientific notes', () => {
     const note = 'Fr';
     const note2 = 'Fr';
-    expect(() => areSameNotes([note, note2])).toThrow();
+    expect(areSameNotes([note, note2])).toEqual(false);
   });
 });

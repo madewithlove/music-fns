@@ -2,9 +2,21 @@
 
 import getChromaticCPosition from '../getChromaticCPosition';
 import getOctave from '../getOctave';
+import isValidNoteArray from '../isValidNoteArray';
 
-const isSameNote = (notes: ScientificNotes) =>
-  notes.map(getChromaticCPosition).every((v, _, arr) => v === arr[0]) &&
-  notes.map(getOctave).every((v, _, arr) => v === arr[0]);
+const areSameNotes = (notes: ScientificNotes) => {
+  if (!isValidNoteArray(notes)) {
+    return false;
+  }
 
-export default isSameNote;
+  try {
+    return (
+      notes.map(getChromaticCPosition).every((v, _, arr) => v === arr[0]) &&
+      notes.map(getOctave).every((v, _, arr) => v === arr[0])
+    );
+  } catch (e) {
+    return false;
+  }
+};
+
+export default areSameNotes;

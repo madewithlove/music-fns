@@ -11,19 +11,26 @@ type options = {
 const isValidScale = (scale: Scale, { direction = 1 }: options = {}) => {
   if (!isValidNoteArray(scale)) return false;
 
-  const intervals = getIntervals(scale, { direction });
+  try {
+    const intervals = getIntervals(scale, { direction });
 
-  const isInUniformDirection =
-    intervals.every(interval => interval >= 0) ||
-    intervals.every(interval => interval <= 0);
+    const isInUniformDirection =
+      intervals.every(interval => interval >= 0) ||
+      intervals.every(interval => interval <= 0);
 
-  const hasZeroIntervals = intervals.some(interval => interval === ROOT);
+    const hasZeroIntervals = intervals.some(interval => interval === ROOT);
 
-  if (!isInUniformDirection || hasZeroIntervals) return false;
+    if (!isInUniformDirection || hasZeroIntervals) return false;
 
-  const intervalsFromRoot = getIntervals(scale, { fromRoot: true, direction });
+    const intervalsFromRoot = getIntervals(scale, {
+      fromRoot: true,
+      direction
+    });
 
-  return intervalsFromRoot[intervalsFromRoot.length - 1] <= OCTAVE;
+    return intervalsFromRoot[intervalsFromRoot.length - 1] <= OCTAVE;
+  } catch (e) {
+    return false;
+  }
 };
 
 export default isValidScale;

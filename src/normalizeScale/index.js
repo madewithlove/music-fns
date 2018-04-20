@@ -14,8 +14,9 @@ const normalizeScale = (
   intervalAmount: number,
   { direction = 1 }: options = {}
 ): Scale => {
-  if (!isValidScale(scale, { direction }))
+  if (!isValidScale(scale, { direction })) {
     throw new Error(`${JSON.stringify(scale)} is not a valid scale`);
+  }
 
   const normalizedScale =
     scale.length === intervalAmount

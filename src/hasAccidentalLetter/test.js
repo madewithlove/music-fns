@@ -26,8 +26,8 @@ describe('hasAccidentalLetter', () => {
     expect(hasAccidentalLetter(note)).toBe(false);
   });
 
-  it('should throw on invalid scientific note', () => {
+  it('return false on invalid scientific note', () => {
     const note = 'Fr';
-    expect(() => hasAccidentalLetter(note)).toThrow();
+    expect(hasAccidentalLetter(note)).toBe(false);
   });
 });

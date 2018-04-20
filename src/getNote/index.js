@@ -2,11 +2,14 @@
 
 import getRoot from '../getRoot';
 import getAccidental from '../getAccidental';
+import isValidNote from '../isValidNote';
 
-const getNote = (scientificNote: ScientificNote) => {
-  const root = getRoot(scientificNote);
-  const accidental = getAccidental(scientificNote);
-  return `${root}${accidental || ''}`;
+const getNote = (note: ScientificNote) => {
+  if (!isValidNote(note)) {
+    throw new Error(`"${note}" is not a valid note.`);
+  }
+
+  return `${getRoot(note)}${getAccidental(note) || ''}`;
 };
 
 export default getNote;

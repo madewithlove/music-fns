@@ -5,6 +5,7 @@ import Interval from '../constants/Interval';
 import noteToObject from '../noteToObject';
 import objectToNote from '../objectToNote';
 import transferStyle from '../transferStyle';
+import isValidNote from '../isValidNote';
 
 // @flow
 
@@ -15,17 +16,25 @@ const getNormalizedPosition = (position: number, interval: number): number => {
 };
 
 const transpose = (
-  scientificNote: ScientificNote,
+  note: ScientificNote,
   interval: Interval,
   reference?: ScientificNote = null
 ): ScientificNote => {
+  if (!isValidNote(note)) {
+    throw new Error(`"${note}" is not a valid note.`);
+  }
+
   if (typeof interval !== 'number') {
     throw new Error(`Interval must be a number`);
   }
 
-  const position = getChromaticCPosition(scientificNote);
+  if (reference && !isValidNote(reference)) {
+    throw new Error(`"${reference}" is not a valid note.`);
+  }
 
-  const oldNoteObject = noteToObject(scientificNote);
+  const position = getChromaticCPosition(note);
+
+  const oldNoteObject = noteToObject(note);
 
   const calculatedPosition = position + interval;
   const normalizedPosition = getNormalizedPosition(position, interval);
@@ -41,7 +50,7 @@ const transpose = (
 
   const parsedNewNote = objectToNote(newNoteObject);
 
-  return transferStyle(reference || scientificNote, parsedNewNote);
+  return transferStyle(reference || note, parsedNewNote);
 };
 
 export default transpose;

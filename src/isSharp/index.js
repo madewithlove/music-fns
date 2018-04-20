@@ -1,9 +1,15 @@
 // @flow
 
 import noteToObject from '../noteToObject';
+import isValidNote from '../isValidNote';
 import { SHARP } from '../constants/Accidental';
 
-const isSharp = (scientificNote: ScientificNote) =>
-  noteToObject(scientificNote).accidental === SHARP;
+const isSharp = (note: ScientificNote) => {
+  if (!isValidNote(note)) {
+    return false;
+  }
+
+  return noteToObject(note).accidental === SHARP;
+};
 
 export default isSharp;

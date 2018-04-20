@@ -4,24 +4,29 @@ import getChromaticCPosition from '../getChromaticCPosition';
 import accidentalToSymbol from '../accidentalToSymbol';
 import noteToObject from '../noteToObject';
 import objectToNote from '../objectToNote';
+import isValidNote from '../isValidNote';
 
 import NOTES from '../constants/NOTES';
 
 import isSharp from '../isSharp';
 import { FLAT } from '../constants/Accidental';
 
-const sharpToFlat = (scientificNote: ScientificNote): ScientificNote => {
-  if (!isSharp(scientificNote)) return scientificNote;
+const sharpToFlat = (note: ScientificNote): ScientificNote => {
+  if (!isValidNote(note)) {
+    throw new Error(`"${note}" is not a valid note.`);
+  }
 
-  const { octave, accidentalType } = noteToObject(scientificNote);
-  const normalizedNote = accidentalToSymbol(scientificNote);
+  if (!isSharp(note)) return note;
+
+  const { octave, accidentalType } = noteToObject(note);
+  const normalizedNote = accidentalToSymbol(note);
   const chromaCPosition = getChromaticCPosition(normalizedNote);
 
   const convertedNote = NOTES[chromaCPosition]
     .map(noteToObject)
     .find(n => n.accidental === FLAT);
 
-  if (!convertedNote) return scientificNote;
+  if (!convertedNote) return note;
 
   return objectToNote({
     ...convertedNote,

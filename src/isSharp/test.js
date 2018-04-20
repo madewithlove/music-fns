@@ -26,8 +26,8 @@ describe('isSharp', () => {
     expect(isSharp(note)).toBe(false);
   });
 
-  it('should throw on invalid scientific note', () => {
+  it('should return false on invalid scientific note', () => {
     const note = 'Fr';
-    expect(() => isSharp(note)).toThrow();
+    expect(isSharp(note)).toBe(false);
   });
 });
