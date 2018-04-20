@@ -3,7 +3,10 @@
 import transpose from '../transpose';
 import { ROOT } from '../constants/Interval/Names';
 
-const createChord = (root: ScientificNote, chord: Chord): ScientificNotes => {
+const createChord = (
+  root: ScientificNote,
+  chord: Intervals
+): ScientificNotes => {
   if (
     !Array.isArray(chord) ||
     chord.length === 0 ||

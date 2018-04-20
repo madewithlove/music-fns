@@ -8,7 +8,7 @@ type options = {
 
 const createScale = (
   root: ScientificNote,
-  scale: Scale,
+  scale: Intervals,
   { includeRootEnd = false }: options = {}
 ): ScientificNotes => {
   if (
