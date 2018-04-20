@@ -11,13 +11,16 @@
   },
   "globals": {
     "Accidental": true,
+    "AccidentalType": true,
     "Scale": true,
     "Chord": true,
     "ScientificNote": true,
     "NoteObject": true,
     "Interval": true,
+    "Intervals": true,
     "Note": true,
     "ScientificNotes": true,
-    "Octave": true
+    "Octave": true,
+    "direction": true
   }
 }

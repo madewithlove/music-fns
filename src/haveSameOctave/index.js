@@ -1,17 +1,13 @@
 // @flow
 
 import noteToObject from '../noteToObject';
+import isValidNoteArray from '../isValidNoteArray';
 
 const uniq = arr => arr.filter((e, i, a) => a.indexOf(e) === i);
 
-const haveSameOctave = (scientificNotes: ScientificNotes = []) => {
-  if (scientificNotes.length < 2) {
-    throw new Error('Provide 2 or more scientific notes.');
-  }
-  const diffOctaves = uniq(
-    scientificNotes.map(noteToObject).map(o => o.octave)
-  );
-  return diffOctaves.length === 1;
+const haveSameOctave = (notes: ScientificNotes = []) => {
+  if (!isValidNoteArray(notes) || notes.length < 2) return false;
+  return uniq(notes.map(noteToObject).map(o => o.octave)).length === 1;
 };
 
 export default haveSameOctave;
