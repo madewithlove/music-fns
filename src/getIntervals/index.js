@@ -20,10 +20,10 @@ const getInterval = (
 
   let difference = note2Position - note1Position;
 
-  const octave1 = getOctave(scientificNote);
-  const octave2 = getOctave(scientificNote2);
+  const octave1 = getOctave(scientificNote) || 0;
+  const octave2 = getOctave(scientificNote2) || 0;
 
-  if (typeof octave1 === 'undefined' && typeof octave2 === 'undefined') {
+  if (octave1 === 'undefined' && typeof octave2 === 'undefined') {
     if (difference < 0 && direction === 1)
       difference = OCTAVE - Math.abs(difference);
     if (direction === -1 && difference > 0) difference -= OCTAVE;
