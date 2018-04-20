@@ -17,8 +17,10 @@
     "ScientificNote": true,
     "NoteObject": true,
     "Interval": true,
+    "Intervals": true,
     "Note": true,
     "ScientificNotes": true,
-    "Octave": true
+    "Octave": true,
+    "direction": true
   }
 }
