@@ -2,14 +2,24 @@
 
 // https://en.wikipedia.org/wiki/Diatonic_scale
 
-import { S, T } from '../constants/Interval/Short';
 import isHeptatonicScale from '../isHeptatonicScale';
+import getIntervals from '../getIntervals';
+import normalizeScale from '../normalizeScale';
 
-const isDiatonicScale = (scale: Scale) => {
-  if (!isHeptatonicScale(scale)) return false;
+import { SEMITONE, TONE } from '../constants/Interval/Names';
 
-  const semitones = scale.filter(i => i === S).length;
-  const tones = scale.filter(i => i === T).length;
+type options = {
+  direction?: direction
+};
+
+const isDiatonicScale = (scale: Scale, { direction = 1 }: options = {}) => {
+  if (!isHeptatonicScale(scale, { direction })) return false;
+
+  const normalizedScale = normalizeScale(scale, 7, { direction });
+  const intervals = getIntervals(normalizedScale);
+
+  const semitones = intervals.filter(i => i === SEMITONE).length;
+  const tones = intervals.filter(i => i === TONE).length;
 
   return semitones === 2 && tones === 5;
 };
