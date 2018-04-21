@@ -10,6 +10,7 @@ import isHemitonicScale from '../src/isHemitonicScale';
 import isValidScale from '../src/isValidScale';
 import sharpToFlat from '../src/sharpToFlat';
 import accidentalToLetter from '../src/accidentalToLetter';
+import normalizeScale from '../src/normalizeScale';
 
 const createScalesForOctave = octave => {
   const root = objectToNote({
@@ -44,7 +45,9 @@ describe('scales', () => {
       .map(createScalesForOctave)
       .reduce((acc, v) => [...acc, ...v], []);
 
-    const intervals = scales.map(s => getIntervals(s));
+    const intervals = scales.map(s =>
+      getIntervals(normalizeScale(s, Scale.MAJOR.length))
+    );
 
     expect(scales.every(isHeptatonicScale)).toBe(true);
     expect(scales.every(isDiatonicScale)).toBe(true);
@@ -52,7 +55,7 @@ describe('scales', () => {
     expect(scales.every(isHemitonicScale)).toBe(true);
 
     expect(
-      intervals.every(interval => intervals[0].join(',') === interval.join(','))
+      intervals.every(interval => Scale.MAJOR.join(',') === interval.join(','))
     ).toBe(true);
   });
 });

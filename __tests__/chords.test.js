@@ -3,6 +3,7 @@ import Chord from '../src/constants/Chord';
 import transpose from '../src/transpose';
 import getIntervals from '../src/getIntervals';
 import objectToNote from '../src/objectToNote';
+import normalizeScale from '../src/normalizeScale';
 import { OCTAVE } from '../src/constants/Interval/Names';
 import sharpToFlat from '../src/sharpToFlat';
 import accidentalToLetter from '../src/accidentalToLetter';
@@ -40,10 +41,13 @@ describe('chords', () => {
       .map(createChordsForOctave)
       .reduce((acc, v) => [...acc, ...v], []);
 
-    const intervals = chords.map(s => getIntervals(s, { fromRoot: true }));
+    const intervals = chords.map(s => [
+      0,
+      ...getIntervals(s, { fromRoot: true })
+    ]);
 
     expect(
-      intervals.every(interval => intervals[0].join(',') === interval.join(','))
+      intervals.every(interval => Chord.MAJOR.join(',') === interval.join(','))
     ).toBe(true);
   });
 });
