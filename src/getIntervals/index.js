@@ -1,6 +1,7 @@
 // @flow
 
 import getOctave from '../getOctave';
+import hasOctave from '../hasOctave';
 import getChromaticCPosition from '../getChromaticCPosition';
 import isValidNoteArray from '../isValidNoteArray';
 import { OCTAVE } from '../constants/Interval';
@@ -11,17 +12,17 @@ type options = {
 };
 
 const getInterval = (
-  scientificNote: ScientificNote,
-  scientificNote2: ScientificNote,
+  note: ScientificNote,
+  note2: ScientificNote,
   { direction = 1 }: options = {}
 ) => {
-  const note1Position = getChromaticCPosition(scientificNote);
-  const note2Position = getChromaticCPosition(scientificNote2);
+  const note1Position = getChromaticCPosition(note);
+  const note2Position = getChromaticCPosition(note2);
 
   let difference = note2Position - note1Position;
 
-  const octave1 = getOctave(scientificNote) || -1;
-  const octave2 = getOctave(scientificNote2) || -1;
+  const octave1 = hasOctave(note) ? getOctave(note) : -1;
+  const octave2 = hasOctave(note2) ? getOctave(note2) : -1;
 
   if (octave1 === -1 && octave2 === -1) {
     if (difference < 0 && direction === 1)
