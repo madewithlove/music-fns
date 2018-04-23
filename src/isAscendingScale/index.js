@@ -8,9 +8,7 @@ type options = {
 };
 
 const isAscendingScale = (scale: Scale, { direction = 1 }: options = {}) => {
-  if (direction !== 1) return false;
-
-  if (!isValidScale(scale)) {
+  if (!isValidScale(scale, { direction })) {
     return false;
   }
 
