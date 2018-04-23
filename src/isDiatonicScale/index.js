@@ -15,7 +15,7 @@ type options = {
 const isDiatonicScale = (scale: Scale, { direction = 1 }: options = {}) => {
   if (!isHeptatonicScale(scale, { direction })) return false;
 
-  const normalizedScale = normalizeScale(scale, 7, { direction });
+  const normalizedScale = normalizeScale(scale, { direction });
   const intervals = getIntervals(normalizedScale);
 
   const semitones = intervals.filter(i => i === SEMITONE).length;
