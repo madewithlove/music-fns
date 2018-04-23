@@ -4,7 +4,6 @@
 
 import isValidScale from '../isValidScale';
 import normalizeScale from '../normalizeScale';
-import getNote from '../getNote';
 
 type options = {
   direction?: direction

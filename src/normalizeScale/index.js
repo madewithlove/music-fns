@@ -6,7 +6,6 @@ import { OCTAVE } from '../constants/Interval/Names';
 import isValidScale from '../isValidScale';
 import isDescendingScale from '../isDescendingScale';
 import isAscendingScale from '../isAscendingScale';
-import getIntervals from '../getIntervals';
 import getNote from '../getNote';
 
 type options = {
