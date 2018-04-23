@@ -2,6 +2,13 @@
 
 import getScaleDegree from '../getScaleDegree';
 
-const getTonic = (scale: Scale): ScientificNote => getScaleDegree(scale, 1);
+type options = {
+  direction?: direction
+};
+
+const getTonic = (
+  scale: Scale,
+  { direction = 1 }: options = {}
+): ScientificNote => getScaleDegree(scale, 1, { direction });
 
 export default getTonic;

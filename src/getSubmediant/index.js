@@ -2,7 +2,13 @@
 
 import getScaleDegree from '../getScaleDegree';
 
-const getSubmediant = (scale: Scale): ScientificNote =>
-  getScaleDegree(scale, 6);
+type options = {
+  direction?: direction
+};
+
+const getSubmediant = (
+  scale: Scale,
+  { direction = 1 }: options = {}
+): ScientificNote => getScaleDegree(scale, 6, { direction });
 
 export default getSubmediant;

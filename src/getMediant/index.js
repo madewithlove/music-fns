@@ -2,6 +2,13 @@
 
 import getScaleDegree from '../getScaleDegree';
 
-const getMediant = (scale: Scale): ScientificNote => getScaleDegree(scale, 3);
+type options = {
+  direction?: direction
+};
+
+const getMediant = (
+  scale: Scale,
+  { direction = 1 }: options = {}
+): ScientificNote => getScaleDegree(scale, 3, { direction });
 
 export default getMediant;

@@ -2,7 +2,13 @@
 
 import getScaleDegree from '../getScaleDegree';
 
-const getSupertonic = (scale: Scale): ScientificNote =>
-  getScaleDegree(scale, 2);
+type options = {
+  direction?: direction
+};
+
+const getSupertonic = (
+  scale: Scale,
+  { direction = 1 }: options = {}
+): ScientificNote => getScaleDegree(scale, 2, { direction });
 
 export default getSupertonic;
