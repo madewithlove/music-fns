@@ -3,7 +3,15 @@
 import isDiatonicScale from '../isDiatonicScale';
 import normalizeScale from '../normalizeScale';
 
-const getDegree = (scale: Scale, degree: number): ScientificNote => {
+type options = {
+  direction?: direction
+};
+
+const getDegree = (
+  scale: Scale,
+  degree: number,
+  { direction = 1 }: options = {}
+): ScientificNote => {
   if (degree < 1 || degree > 8) {
     throw new Error('Degree must be between 1 - 8.');
   }
@@ -12,7 +20,7 @@ const getDegree = (scale: Scale, degree: number): ScientificNote => {
       `"${JSON.stringify(scale)}" is not a valid diatonic scale.`
     );
   }
-  const normalizedScale = normalizeScale(scale, 7);
+  const normalizedScale = normalizeScale(scale, { direction });
   return normalizedScale[degree - 1];
 };
 
