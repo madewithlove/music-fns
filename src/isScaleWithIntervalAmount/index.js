@@ -19,28 +19,15 @@ const isScaleWithIntervalAmount = (
     throw new Error('Direction should be 1 (up) or -1 (down)');
   }
 
-  if (![intervalAmount, intervalAmount + 1].includes(scale.length)) {
-    return false;
-  }
-
-  let normalizedScale = [];
-
   try {
-    normalizedScale = normalizeScale(scale, intervalAmount, {
-      direction
-    });
+    const normalizedScale = normalizeScale(scale, { direction });
+    return (
+      normalizedScale.length === intervalAmount + 1 &&
+      isValidScale(normalizedScale)
+    );
   } catch (e) {
     return false;
   }
-
-  const start = normalizedScale[0];
-  const end = normalizedScale[normalizedScale.length - 1];
-
-  if (getNote(start) !== getNote(end)) {
-    return false;
-  }
-
-  return isValidScale(normalizedScale);
 };
 
 export default isScaleWithIntervalAmount;
