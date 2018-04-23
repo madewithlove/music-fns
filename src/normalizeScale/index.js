@@ -6,6 +6,8 @@ import { OCTAVE } from '../constants/Interval/Names';
 import isValidScale from '../isValidScale';
 import isDescendingScale from '../isDescendingScale';
 import isAscendingScale from '../isAscendingScale';
+import getIntervals from '../getIntervals';
+import getNote from '../getNote';
 
 type options = {
   direction: direction
@@ -19,15 +21,17 @@ const calculateInterval = (scale, direction = 1) => {
 
 const normalizeScale = (
   scale: Scale,
-  intervalAmount: number,
   { direction = 1 }: options = {}
 ): Scale => {
   if (!isValidScale(scale, { direction })) {
     throw new Error(`${JSON.stringify(scale)} is not a valid scale`);
   }
 
+  const start = scale[0];
+  const end = scale[scale.length - 1];
+
   const normalizedScale =
-    scale.length === intervalAmount
+    getNote(start) !== getNote(end)
       ? [...scale, transpose(scale[0], calculateInterval(scale, direction))]
       : scale;
 
