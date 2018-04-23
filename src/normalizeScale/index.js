@@ -4,9 +4,17 @@ import transpose from '../transpose';
 import { OCTAVE } from '../constants/Interval/Names';
 
 import isValidScale from '../isValidScale';
+import isDescendingScale from '../isDescendingScale';
+import isAscendingScale from '../isAscendingScale';
 
 type options = {
   direction: direction
+};
+
+const calculateInterval = (scale, direction = 1) => {
+  if (isDescendingScale(scale)) return -OCTAVE;
+  else if (isAscendingScale(scale)) return OCTAVE;
+  return direction === 1 ? OCTAVE : -OCTAVE;
 };
 
 const normalizeScale = (
@@ -20,10 +28,11 @@ const normalizeScale = (
 
   const normalizedScale =
     scale.length === intervalAmount
-      ? [...scale, transpose(scale[0], direction === 1 ? OCTAVE : -OCTAVE)]
+      ? [...scale, transpose(scale[0], calculateInterval(scale, direction))]
       : scale;
 
-  if (direction === -1) normalizedScale.reverse();
+  if (direction === -1 || isDescendingScale(scale)) normalizedScale.reverse();
+
   return normalizedScale;
 };
 
