@@ -15,11 +15,13 @@ const getDegree = (
   if (degree < 1 || degree > 8) {
     throw new Error('Degree must be between 1 - 8.');
   }
-  if (!isDiatonicScale(scale)) {
+
+  if (!isDiatonicScale(scale, { direction })) {
     throw new Error(
       `"${JSON.stringify(scale)}" is not a valid diatonic scale.`
     );
   }
+
   const normalizedScale = normalizeScale(scale, { direction });
   return normalizedScale[degree - 1];
 };
