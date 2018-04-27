@@ -16,6 +16,21 @@ describe('isAscendingScale', () => {
     expect(isAscendingScale(scale)).toBe(true);
   });
 
+  it('should return true on ascending scale', () => {
+    const scale = ['C1', 'D1', 'E1', 'F1', 'G1', 'A1', 'B1', 'C2'];
+    expect(isAscendingScale(scale, { direction: -1 })).toBe(true);
+  });
+
+  it('should return true on ascending scale', () => {
+    const scale = ['C1', 'D1', 'E1', 'F1', 'G1', 'A1', 'B1', 'C2'];
+    expect(isAscendingScale(scale, { direction: -1 })).toBe(true);
+  });
+
+  it('should return true on ascending scale', () => {
+    const scale = ['C1', 'D1', 'E1', 'F1', 'G1', 'A1', 'B1', 'C2'];
+    expect(isAscendingScale(scale)).toBe(true);
+  });
+
   it('should return false on ascending scale', () => {
     const scale = ['C2', 'B1', 'A1', 'G1', 'F1', 'E1', 'D1', 'C1'];
     expect(isAscendingScale(scale)).toBe(false);

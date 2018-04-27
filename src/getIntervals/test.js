@@ -25,6 +25,12 @@ describe('getIntervals', () => {
     expect(getIntervals([note, note2])).toEqual([12]);
   });
 
+  it('should return the correct interval between "D1" and "D2"', () => {
+    const note = 'D1';
+    const note2 = 'D2';
+    expect(getIntervals([note, note2], { direction: -1 })).toEqual([12]);
+  });
+
   it('should return the correct interval between "D3" and "D1"', () => {
     const note = 'D3';
     const note2 = 'D1';
