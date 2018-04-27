@@ -7,14 +7,15 @@ import isValidScale from '../isValidScale';
 import isDescendingScale from '../isDescendingScale';
 import isAscendingScale from '../isAscendingScale';
 import getNote from '../getNote';
+import hasOctave from '../hasOctave';
 
 type options = {
-  direction: direction
+  direction?: direction
 };
 
 const calculateInterval = (scale, direction = 1) => {
   if (isDescendingScale(scale)) return -OCTAVE;
-  else if (isAscendingScale(scale)) return OCTAVE;
+  if (isAscendingScale(scale)) return OCTAVE;
   return direction === 1 ? OCTAVE : -OCTAVE;
 };
 
@@ -34,7 +35,11 @@ const normalizeScale = (
       ? [...scale, transpose(scale[0], calculateInterval(scale, direction))]
       : scale;
 
-  if (direction === -1 || isDescendingScale(scale)) normalizedScale.reverse();
+  if (
+    isDescendingScale(scale) ||
+    (scale.every(n => !hasOctave(n)) && direction === -1)
+  )
+    normalizedScale.reverse();
 
   return normalizedScale;
 };
