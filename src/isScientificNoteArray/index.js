@@ -1,9 +1,9 @@
 // @flow
 
 import hasOctave from '../hasOctave';
-import isValidNote from '../isValidNote';
+import isScientificNote from '../isScientificNote';
 
-const isValidNoteArray = (notes: ScientificNotes) => {
+const isScientificNoteArray = (notes: ScientificNotes) => {
   if (!Array.isArray(notes)) return false;
 
   try {
@@ -11,10 +11,10 @@ const isValidNoteArray = (notes: ScientificNotes) => {
       notes.filter(n => hasOctave(n)).length === notes.length ||
       notes.filter(n => !hasOctave(n)).length === notes.length;
 
-    return notes.every(n => isValidNote(n)) && isValid;
+    return notes.every(n => isScientificNote(n)) && isValid;
   } catch (e) {
     return false;
   }
 };
 
-export default isValidNoteArray;
+export default isScientificNoteArray;

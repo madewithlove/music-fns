@@ -2,7 +2,7 @@
 
 // https://en.wikipedia.org/wiki/Heptatonic_scale
 
-import isValidScale from '../isValidScale';
+import isScale from '../isScale';
 import normalizeScale from '../normalizeScale';
 import getNote from '../getNote';
 
@@ -40,7 +40,7 @@ const isScaleWithIntervalAmount = (
     return false;
   }
 
-  return isValidScale(normalizedScale);
+  return isScale(normalizedScale);
 };
 
 export default isScaleWithIntervalAmount;

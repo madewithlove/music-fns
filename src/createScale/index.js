@@ -1,7 +1,7 @@
 // @flow
 
 import transpose from '../transpose';
-import isValidIntervalArray from '../isValidIntervalArray';
+import isIntervalArray from '../isIntervalArray';
 
 type options = {
   includeRootEnd: boolean
@@ -12,7 +12,7 @@ const createScale = (
   scale: Intervals,
   { includeRootEnd = false }: options = {}
 ): ScientificNotes => {
-  if (!isValidIntervalArray(scale)) {
+  if (!isIntervalArray(scale)) {
     throw new Error(
       `Provide a valid collection of scale intervals ex: [1, 2, 1, 2, 1]`
     );
