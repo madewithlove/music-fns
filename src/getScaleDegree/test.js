@@ -14,6 +14,18 @@ describe('getScaleDegree', () => {
   });
 
   it('should return degree on correct diatonic scale and degree', () => {
+    const scale = ['C', 'B', 'A', 'G', 'F', 'E', 'D'];
+    expect(getScaleDegree(scale, 1, { direction: -1 })).toBe('C');
+    expect(getScaleDegree(scale, 2, { direction: -1 })).toBe('D');
+    expect(getScaleDegree(scale, 3, { direction: -1 })).toBe('E');
+    expect(getScaleDegree(scale, 4, { direction: -1 })).toBe('F');
+    expect(getScaleDegree(scale, 5, { direction: -1 })).toBe('G');
+    expect(getScaleDegree(scale, 6, { direction: -1 })).toBe('A');
+    expect(getScaleDegree(scale, 7, { direction: -1 })).toBe('B');
+    expect(getScaleDegree(scale, 8, { direction: -1 })).toBe('C');
+  });
+
+  it('should return degree on correct diatonic scale and degree', () => {
     const scale = ['C1', 'D1', 'E1', 'F1', 'G1', 'A1', 'B1'];
     expect(getScaleDegree(scale, 1)).toBe('C1');
     expect(getScaleDegree(scale, 2)).toBe('D1');
