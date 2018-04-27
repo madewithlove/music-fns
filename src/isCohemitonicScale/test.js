@@ -14,6 +14,11 @@ describe('isCohemitonicScale', () => {
   });
 
   it('should return false on non cohemitonic scale', () => {
+    const scale = ['C', 'C#', 'D#', 'E', 'A', 'A#', 'B'];
+    expect(isCohemitonicScale(scale)).toBe(false);
+  });
+
+  it('should return false on non cohemitonic scale', () => {
     const scale = ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D'];
     expect(isCohemitonicScale(scale)).toBe(false);
   });
