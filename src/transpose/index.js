@@ -43,8 +43,9 @@ const transpose = (
   const newNote = NOTES[normalizedPosition][0];
 
   const newNoteObject = noteToObject(newNote);
+  newNoteObject.octave = undefined;
 
-  if (oldNoteObject.octave) {
+  if (typeof oldNoteObject.octave !== 'undefined') {
     newNoteObject.octave = oldNoteObject.octave + octave;
   }
 

@@ -47,7 +47,7 @@ const noteToObject = (scientificNote: ScientificNote): NoteObject => {
   return {
     root: root.toUpperCase(),
     ...parseAccidental(accidental),
-    octave: octave ? Number(octave) : undefined
+    octave: typeof octave !== 'undefined' ? Number(octave) : undefined
   };
 };
 

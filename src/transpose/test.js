@@ -14,6 +14,12 @@ describe('transpose', () => {
     expect(transpose(note, interval)).toBe('F♯3');
   });
 
+  it('should return "D0" when transposing "C0" 2 semitones up', () => {
+    const note = 'C0';
+    const interval = Interval.S * 2;
+    expect(transpose(note, interval)).toBe('D0');
+  });
+
   it('should return "A♯2" when transposing "E♭3" 5 semitones down', () => {
     const note = 'E♭3';
     const interval = -Interval.S * 5;
