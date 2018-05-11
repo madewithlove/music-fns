@@ -1,6 +1,6 @@
 // @flow
 
-import isValidNoteArray from '../isValidNoteArray';
+import isScientificNoteArray from '../isScientificNoteArray';
 import getIntervals from '../getIntervals';
 import { OCTAVE, ROOT } from '../constants/Interval/Names';
 
@@ -8,8 +8,8 @@ type options = {
   direction: direction
 };
 
-const isValidScale = (scale: Scale, { direction = 1 }: options = {}) => {
-  if (!isValidNoteArray(scale)) return false;
+const isScale = (scale: Scale, { direction = 1 }: options = {}) => {
+  if (!isScientificNoteArray(scale)) return false;
 
   try {
     const intervals = getIntervals(scale, { direction });
@@ -33,4 +33,4 @@ const isValidScale = (scale: Scale, { direction = 1 }: options = {}) => {
   }
 };
 
-export default isValidScale;
+export default isScale;

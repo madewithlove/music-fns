@@ -4,7 +4,7 @@ import sharpToFlat from '../sharpToFlat';
 import flatToSharp from '../flatToSharp';
 
 import noteToObject from '../noteToObject';
-import isValidNote from '../isValidNote';
+import isScientificNote from '../isScientificNote';
 import hasAccidental from '../hasAccidental';
 
 import { FLAT } from '../constants/Accidental';
@@ -13,11 +13,11 @@ const transferAccidental = (
   reference: ScientificNote,
   note: ScientificNote
 ): ScientificNote => {
-  if (!isValidNote(reference)) {
+  if (!isScientificNote(reference)) {
     throw new Error(`"${reference}" is not a valid note.`);
   }
 
-  if (!isValidNote(note)) {
+  if (!isScientificNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 

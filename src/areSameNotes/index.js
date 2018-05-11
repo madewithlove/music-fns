@@ -2,10 +2,10 @@
 
 import getChromaticCPosition from '../getChromaticCPosition';
 import getOctave from '../getOctave';
-import isValidNoteArray from '../isValidNoteArray';
+import isScientificNoteArray from '../isScientificNoteArray';
 
 const areSameNotes = (notes: ScientificNotes) => {
-  if (!isValidNoteArray(notes)) {
+  if (!isScientificNoteArray(notes)) {
     return false;
   }
 

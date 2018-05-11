@@ -4,7 +4,7 @@
 
 import { SEMITONE } from '../constants/Interval/Names';
 
-import isValidScale from '../isValidScale';
+import isScale from '../isScale';
 import getIntervals from '../getIntervals';
 
 type options = {
@@ -12,7 +12,7 @@ type options = {
 };
 
 const isHemitonicScale = (scale: Scale, { direction = 1 }: options = {}) => {
-  if (!isValidScale(scale, { direction })) return false;
+  if (!isScale(scale, { direction })) return false;
 
   const intervals = getIntervals(scale, { direction });
   return intervals.filter(i => Math.abs(i) === SEMITONE).length > 0;

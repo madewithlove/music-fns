@@ -3,10 +3,10 @@
 import { LETTER } from '../constants/Accidental';
 
 import noteToObject from '../noteToObject';
-import isValidNote from '../isValidNote';
+import isScientificNote from '../isScientificNote';
 
 const hasAccidentalLetter = (note: ScientificNote) => {
-  if (!isValidNote(note)) {
+  if (!isScientificNote(note)) {
     return false;
   }
 
