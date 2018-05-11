@@ -26,11 +26,6 @@ const isScaleWithIntervalAmount = (
   } catch (e) {
     return false;
   }
-
-  const start = normalizedScale[0];
-  const end = normalizedScale[normalizedScale.length - 1];
-
-  return isScale(normalizedScale);
 };
 
 export default isScaleWithIntervalAmount;
