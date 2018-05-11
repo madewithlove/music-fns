@@ -38,11 +38,11 @@ describe('noteToFrequency', () => {
 
   it('should throw error on invalid note', () => {
     const note = 'C#';
-    expect(() => noteToFrequency(note)).toThrow(' ');
+    expect(() => noteToFrequency(note)).toThrow();
   });
 
   it('should throw error on invalid tuning standard', () => {
     const note = 'A4';
-    expect(() => noteToFrequency(note, { standard: 'ok' })).toThrow(' ');
+    expect(() => noteToFrequency(note, { standard: 'ok' })).toThrow();
   });
 });
