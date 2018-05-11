@@ -1,10 +1,10 @@
 // @flow
 
 import noteToObject from '../noteToObject';
-import isValidNote from '../isValidNote';
+import isScientificNote from '../isScientificNote';
 
 const getOctave = (note: ScientificNote) => {
-  if (!isValidNote(note)) {
+  if (!isScientificNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 

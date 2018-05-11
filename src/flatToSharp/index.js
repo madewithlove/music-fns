@@ -2,7 +2,7 @@ import getChromaticCPosition from '../getChromaticCPosition';
 import accidentalToSymbol from '../accidentalToSymbol';
 import noteToObject from '../noteToObject';
 import objectToNote from '../objectToNote';
-import isValidNote from '../isValidNote';
+import isScientificNote from '../isScientificNote';
 
 import NOTES from '../constants/NOTES';
 
@@ -12,7 +12,7 @@ import { SHARP } from '../constants/Accidental';
 // @flow
 
 const flatToSharp = (note: ScientificNote): ScientificNote => {
-  if (!isValidNote(note)) {
+  if (!isScientificNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 

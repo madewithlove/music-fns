@@ -2,7 +2,7 @@
 
 import SCIENTIFIC_NOTE from '../constants/Regex/SCIENTIFIC_NOTE';
 
-const isValidNote = (scientificNote: ScientificNote) =>
+const isScientificNote = (scientificNote: ScientificNote) =>
   SCIENTIFIC_NOTE.test(scientificNote);
 
-export default isValidNote;
+export default isScientificNote;

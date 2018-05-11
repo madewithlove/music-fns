@@ -2,8 +2,9 @@
 
 // https://en.wikipedia.org/wiki/Heptatonic_scale
 
-import isValidScale from '../isValidScale';
+import isScale from '../isScale';
 import normalizeScale from '../normalizeScale';
+import getNote from '../getNote';
 
 type options = {
   direction?: direction
@@ -27,6 +28,11 @@ const isScaleWithIntervalAmount = (
   } catch (e) {
     return false;
   }
+
+  const start = normalizedScale[0];
+  const end = normalizedScale[normalizedScale.length - 1];
+
+  return isScale(normalizedScale);
 };
 
 export default isScaleWithIntervalAmount;

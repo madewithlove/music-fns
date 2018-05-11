@@ -71,6 +71,10 @@ describe('getIntervals', () => {
     expect(getIntervals(['C', 'E', 'G'], { fromRoot: true })).toEqual([4, 7]);
   });
 
+  it('should return the correct intervals between "A#0", "C1"', () => {
+    expect(getIntervals(['A♯0', 'C1'])).toEqual([2]);
+  });
+
   it('should throw when comparing a note with octave and one without octave scientific', () => {
     const note = 'A';
     const note2 = 'B1';

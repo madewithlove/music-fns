@@ -2,7 +2,7 @@
 
 // https://en.wikipedia.org/wiki/Anhemitonic_scale
 
-import isValidScale from '../isValidScale';
+import isScale from '../isScale';
 import getIntervals from '../getIntervals';
 import normalizeScale from '../normalizeScale';
 
@@ -13,7 +13,7 @@ type options = {
 };
 
 const isAnhemitonicscale = (scale: Scale, { direction = 1 }: options = {}) => {
-  if (!isValidScale(scale, { direction })) return false;
+  if (!isScale(scale, { direction })) return false;
 
   const normalizedScale = normalizeScale(scale, { direction });
   const intervals = getIntervals(normalizedScale);

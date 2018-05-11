@@ -1,7 +1,7 @@
 // @flow
 
 import SCIENTIFIC_NOTE from '../constants/Regex/SCIENTIFIC_NOTE';
-import isValidNote from '../isValidNote';
+import isScientificNote from '../isScientificNote';
 
 import {
   FLAT_LETTER,
@@ -38,7 +38,7 @@ const parseAccidental = acc => ({
 });
 
 const noteToObject = (scientificNote: ScientificNote): NoteObject => {
-  if (!isValidNote(scientificNote)) {
+  if (!isScientificNote(scientificNote)) {
     throw new Error(`"${scientificNote}" is not a valid scientific note.`);
   }
 
@@ -47,7 +47,7 @@ const noteToObject = (scientificNote: ScientificNote): NoteObject => {
   return {
     root: root.toUpperCase(),
     ...parseAccidental(accidental),
-    octave: octave ? Number(octave) : undefined
+    octave: typeof octave !== 'undefined' ? Number(octave) : undefined
   };
 };
 

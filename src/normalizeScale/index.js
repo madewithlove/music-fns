@@ -3,7 +3,7 @@
 import transpose from '../transpose';
 import { OCTAVE } from '../constants/Interval/Names';
 
-import isValidScale from '../isValidScale';
+import isScale from '../isScale';
 import isDescendingScale from '../isDescendingScale';
 import isAscendingScale from '../isAscendingScale';
 import getNote from '../getNote';
@@ -23,7 +23,7 @@ const normalizeScale = (
   scale: Scale,
   { direction = 1 }: options = {}
 ): Scale => {
-  if (!isValidScale(scale, { direction })) {
+  if (!isScale(scale, { direction })) {
     throw new Error(`${JSON.stringify(scale)} is not a valid scale`);
   }
 
