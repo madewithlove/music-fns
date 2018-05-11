@@ -40,4 +40,9 @@ describe('noteToFrequency', () => {
     const note = 'C#';
     expect(() => noteToFrequency(note)).toThrow(' ');
   });
+
+  it('should throw error on invalid tuning standard', () => {
+    const note = 'A4';
+    expect(() => noteToFrequency(note, { standard: 'ok' })).toThrow(' ');
+  });
 });
