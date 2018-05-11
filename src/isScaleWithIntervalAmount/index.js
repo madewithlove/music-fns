@@ -23,7 +23,7 @@ const isScaleWithIntervalAmount = (
     const normalizedScale = normalizeScale(scale, { direction });
     return (
       normalizedScale.length === intervalAmount + 1 &&
-      isValidScale(normalizedScale)
+      isScale(normalizedScale)
     );
   } catch (e) {
     return false;

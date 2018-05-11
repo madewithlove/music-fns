@@ -1,6 +1,6 @@
 // @flow
 
-import isValidScale from '../isValidScale';
+import isScale from '../isScale';
 import getIntervals from '../getIntervals';
 
 type options = {
@@ -8,7 +8,7 @@ type options = {
 };
 
 const isAscendingScale = (scale: Scale, { direction = 1 }: options = {}) => {
-  if (!isValidScale(scale, { direction })) {
+  if (!isScale(scale, { direction })) {
     return false;
   }
 
