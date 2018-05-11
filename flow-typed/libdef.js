@@ -8,6 +8,7 @@ declare type NoteObject = {
 };
 
 declare type direction = 1 | -1;
+declare type standard = number;
 
 declare type Note = string;
 declare type Accidental = 'SHARP' | 'FLAT' | '';

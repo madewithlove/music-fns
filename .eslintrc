@@ -21,6 +21,7 @@
     "Note": true,
     "ScientificNotes": true,
     "Octave": true,
-    "direction": true
+    "direction": true,
+    "standard": true
   }
 }
