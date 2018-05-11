@@ -4,7 +4,6 @@
 
 import isScale from '../isScale';
 import normalizeScale from '../normalizeScale';
-import getNote from '../getNote';
 
 type options = {
   direction?: direction
@@ -22,8 +21,7 @@ const isScaleWithIntervalAmount = (
   try {
     const normalizedScale = normalizeScale(scale, { direction });
     return (
-      normalizedScale.length === intervalAmount + 1 &&
-      isScale(normalizedScale)
+      normalizedScale.length === intervalAmount + 1 && isScale(normalizedScale)
     );
   } catch (e) {
     return false;
