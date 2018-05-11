@@ -1,11 +1,11 @@
+// @flow
+
 import getIntervals from '../getIntervals';
 import isScientificNote from '../isScientificNote';
 import hasOctave from '../hasOctave';
 
-// @flow
-
 type options = {
-  standard: ?standard
+  standard: standard
 };
 
 export default (note: ScientificNote, { standard = 440 }: options = {}) => {
