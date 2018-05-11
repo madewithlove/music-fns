@@ -74,6 +74,15 @@ describe('isMode', () => {
     expect(isMode(mode)).toBe(true);
   });
 
+  it('should return true on Locrian Mode', () => {
+    const mode = ['B1', 'C2', 'D2', 'E2', 'F2', 'G2', 'A2', 'B2'];
+    expect(isMode(mode)).toBe(true);
+  });
+  it('should return true on Locrian Mode', () => {
+    const mode = ['B1', 'C2', 'D2', 'E2', 'F2', 'G2', 'A2'];
+    expect(isMode(mode)).toBe(true);
+  });
+
   it('should return false when input is not a mode', () => {
     const scale = [2, 1, 2, 1, 2, 2, 2];
     expect(isMode(scale)).toBe(false);

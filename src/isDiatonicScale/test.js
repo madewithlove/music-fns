@@ -19,6 +19,11 @@ describe('isDiatonicScale', () => {
   });
 
   it('should return true on diatonic scale', () => {
+    const scale = ['C1', 'D1', 'E1', 'F1', 'G1', 'A1', 'B1'];
+    expect(isDiatonicScale(scale, { direction: -1 })).toBe(true);
+  });
+
+  it('should return true on diatonic scale', () => {
     const scale = ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'];
     expect(isDiatonicScale(scale)).toBe(true);
   });

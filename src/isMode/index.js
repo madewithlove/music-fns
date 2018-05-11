@@ -5,8 +5,7 @@
 import isDiatonicScale from '../isDiatonicScale';
 import Mode from '../constants/Mode';
 import getIntervals from '../getIntervals';
-import transpose from '../transpose';
-import { OCTAVE } from '../constants/Interval/Names';
+import normalizeScale from '../normalizeScale';
 
 type options = {
   direction?: direction
@@ -21,10 +20,8 @@ const isMode = (scale: Scale, { direction = 1 }: options = {}) => {
 
   if (direction === -1) scale.reverse();
 
-  const parsedScale =
-    scale.length === 7 ? [...scale, transpose(scale[0], OCTAVE)] : scale;
-
-  const intervals = getIntervals(parsedScale);
+  const normalizedScale = normalizeScale(scale);
+  const intervals = getIntervals(normalizedScale);
 
   const modes = Object.keys(Mode).map(k => Mode[k]);
   return modes.some(m => m.join(',') === intervals.join(','));

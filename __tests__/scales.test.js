@@ -7,7 +7,7 @@ import { OCTAVE } from '../src/constants/Interval/Names';
 import isHeptatonicScale from '../src/isHeptatonicScale';
 import isDiatonicScale from '../src/isDiatonicScale';
 import isHemitonicScale from '../src/isHemitonicScale';
-import isValidScale from '../src/isValidScale';
+import isScale from '../src/isScale';
 import sharpToFlat from '../src/sharpToFlat';
 import accidentalToLetter from '../src/accidentalToLetter';
 import normalizeScale from '../src/normalizeScale';
@@ -51,7 +51,7 @@ describe('scales', () => {
 
     expect(scales.every(isHeptatonicScale)).toBe(true);
     expect(scales.every(isDiatonicScale)).toBe(true);
-    expect(scales.every(isValidScale)).toBe(true);
+    expect(scales.every(isScale)).toBe(true);
     expect(scales.every(isHemitonicScale)).toBe(true);
 
     expect(
