@@ -9,7 +9,8 @@
     "lint": "eslint --config ./.eslintrc src",
     "lint:fix": "npm run lint -- --fix",
     "flow": "flow",
-    "build": "babel src --out-dir dist --ignore test.js"
+    "build": "babel src --out-dir dist --ignore test.js",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
