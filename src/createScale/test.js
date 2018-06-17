@@ -28,14 +28,14 @@ describe('createScale', () => {
 
   it('should create a correct A5 Prometheus scale', () => {
     const root = 'A5';
-    const scale = ['A5', 'B5', 'C♯6', 'D♯6', 'F♯6', 'G6'];
+    const scale = ['A5', 'B5', 'C#6', 'D#6', 'F#6', 'G6'];
 
     expect(createScale(root, Scale.PROMETHEUS)).toEqual(scale);
   });
 
   it('should create a correct D Major scale', () => {
     const root = 'D2';
-    const scale = ['D2', 'E2', 'F♯2', 'G2', 'A2', 'B2', 'C♯3'];
+    const scale = ['D2', 'E2', 'F#2', 'G2', 'A2', 'B2', 'C#3'];
 
     expect(createScale(root, Scale.MAJOR)).toEqual(scale);
   });

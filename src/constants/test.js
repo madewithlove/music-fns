@@ -9,18 +9,18 @@ import {
 describe('NOTES', () => {
   it('should return correct serie of notes', () => {
     const notes = [
-      ['C', 'B♯'],
-      ['C♯', 'D♭'],
+      ['C', 'B#'],
+      ['C#', 'Db'],
       ['D'],
-      ['D♯', 'E♭'],
-      ['E', 'F♭'],
-      ['F', 'E♯'],
-      ['F♯', 'G♭'],
+      ['D#', 'Eb'],
+      ['E', 'Fb'],
+      ['F', 'E#'],
+      ['F#', 'Gb'],
       ['G'],
-      ['G♯', 'A♭'],
+      ['G#', 'Ab'],
       ['A'],
-      ['A♯', 'B♭'],
-      ['B', 'C♭']
+      ['A#', 'Bb'],
+      ['B', 'Cb']
     ];
 
     expect(NOTES).toEqual(notes);
