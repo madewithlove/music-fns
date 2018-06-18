@@ -138,7 +138,7 @@ describe('transpose', () => {
   it('should throw an error on invalid interval', () => {
     const note = 'G';
     const interval = 'ok';
-    expect(() => transpose(note, interval)).toThrowError(
+    expect(() => transpose(note, interval)).toThrow(
       'Interval must be a number'
     );
   });

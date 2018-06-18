@@ -61,21 +61,21 @@ describe('createScale', () => {
 
   it('should throw an error on incorrect scale interval array', () => {
     const root = 'A♭3';
-    expect(() => createScale(root, [])).toThrowError(
+    expect(() => createScale(root, [])).toThrow(
       `Provide a valid collection of scale intervals ex: [1, 2, 1, 2, 1]`
     );
   });
 
   it('should throw an error on incorrect scale interval array', () => {
     const root = 'A♭3';
-    expect(() => createScale(root, [1, 2, 'ok'])).toThrowError(
+    expect(() => createScale(root, [1, 2, 'ok'])).toThrow(
       `Provide a valid collection of scale intervals ex: [1, 2, 1, 2, 1]`
     );
   });
 
   it('should throw an error on incorrect scale interval array', () => {
     const root = 'A♭3';
-    expect(() => createScale(root, 'test')).toThrowError(
+    expect(() => createScale(root, 'test')).toThrow(
       `Provide a valid collection of scale intervals ex: [1, 2, 1, 2, 1]`
     );
   });
