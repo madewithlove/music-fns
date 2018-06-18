@@ -8,6 +8,7 @@ import accidentalToLetter from './accidentalToLetter';
 import accidentalToSymbol from './accidentalToSymbol';
 import areSameNotes from './areSameNotes';
 import createChord from './createChord';
+import createPattern from './createPattern';
 import createScale from './createScale';
 import flatToSharp from './flatToSharp';
 import getAccidental from './getAccidental';
@@ -73,6 +74,7 @@ export default {
   accidentalToSymbol,
   areSameNotes,
   createChord,
+  createPattern,
   createScale,
   flatToSharp,
   getAccidental,
