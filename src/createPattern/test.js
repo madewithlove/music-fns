@@ -23,8 +23,8 @@ describe('createPattern', () => {
     const notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
     const positions = [0, 7, 0, 3];
 
-    expect(() => createPattern(notes, positions)).toThrowError(
-      `Please provide a pattern array with note positions`
+    expect(() => createPattern(notes, positions)).toThrow(
+      `Please provide a pattern array with note positions (max position: 6)`
     );
   });
 
@@ -32,7 +32,7 @@ describe('createPattern', () => {
     const notes = ['C', 'Fr', 'E', 'F', 'G', 'A', 'B'];
     const positions = [0, 2, 0, 2];
 
-    expect(() => createPattern(notes, positions)).toThrowError(
+    expect(() => createPattern(notes, positions)).toThrow(
       `Please provide an array of scientific notes`
     );
   });
