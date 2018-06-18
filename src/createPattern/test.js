@@ -24,7 +24,7 @@ describe('createPattern', () => {
     const positions = [0, 7, 0, 3];
 
     expect(() => createPattern(notes, positions)).toThrow(
-      `Please provide a pattern array with note positions (max position: 6)`
+      `Please provide an array with note positions (max position: 6)`
     );
   });
 

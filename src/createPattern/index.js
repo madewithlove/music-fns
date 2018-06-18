@@ -12,7 +12,7 @@ const createPattern = (
 
   if (!Array.isArray(positions) || positions.some(v => v > notes.length - 1)) {
     throw new Error(
-      `Please provide a pattern array with note positions (max position: ${notes.length -
+      `Please provide an array with note positions (max position: ${notes.length -
         1})`
     );
   }
