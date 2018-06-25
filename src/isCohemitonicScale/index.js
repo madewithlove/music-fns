@@ -18,19 +18,20 @@ const isCohemitonicScale = (scale: Scale, { direction = 1 }: options = {}) => {
   const normalizedScale = normalizeScale(scale, { direction });
   const intervals = getIntervals(normalizedScale);
 
-  return (
-    intervals
-      .reduce((acc, interval, i) => {
-        if (interval === SEMITONE) {
-          if (acc.length === 0) return [[interval]];
-          if (intervals[i - 1] !== SEMITONE) return [...acc, [interval]];
+  const groups = intervals.reduce((acc, interval, i) => {
+    if (interval === SEMITONE) {
+      if (acc.length === 0) return [[interval]];
+      if (intervals[i - 1] !== SEMITONE) return [...acc, [interval]];
 
-          acc[acc.length - 1].push(interval);
-          return acc;
-        }
-        return acc;
-      }, [])
-      .filter(group => group.length >= 2).length >= 2
+      acc[acc.length - 1].push(interval);
+      return acc;
+    }
+    return acc;
+  }, []);
+
+  return (
+    groups.filter(group => group.length >= 2).length >= 2 ||
+    groups.filter(group => group.length > 2).length >= 1
   );
 };
 
