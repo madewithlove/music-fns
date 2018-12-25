@@ -4,7 +4,7 @@ import getChromaticCPosition from '../getChromaticCPosition';
 import accidentalToSymbol from '../accidentalToSymbol';
 import noteToObject from '../noteToObject';
 import objectToNote from '../objectToNote';
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 
 import NOTES from '../constants/NOTES';
 
@@ -12,7 +12,7 @@ import isSharp from '../isSharp';
 import { FLAT } from '../constants/Accidental';
 
 const sharpToFlat = (note: ScientificNote): ScientificNote => {
-  if (!isScientificNote(note)) {
+  if (!isNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 

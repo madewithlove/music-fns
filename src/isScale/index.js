@@ -1,6 +1,6 @@
 // @flow
 
-import isScientificNoteArray from '../isScientificNoteArray';
+import areNotes from '../areNotes';
 import getIntervals from '../getIntervals';
 import { OCTAVE, ROOT } from '../constants/Interval/Names';
 
@@ -9,7 +9,7 @@ type options = {
 };
 
 const isScale = (scale: Scale, { direction = 1 }: options = {}) => {
-  if (!isScientificNoteArray(scale)) return false;
+  if (!areNotes(scale)) return false;
 
   try {
     const intervals = getIntervals(scale, { direction });

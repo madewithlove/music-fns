@@ -1,10 +1,10 @@
 // @flow
 
 import noteToObject from '../noteToObject';
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 
 const hasAccidental = (note: ScientificNote) => {
-  if (!isScientificNote(note)) {
+  if (!isNote(note)) {
     return false;
   }
 

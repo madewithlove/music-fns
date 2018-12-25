@@ -1,14 +1,14 @@
 // @flow
 
 import transpose from '../transpose';
-import isIntervalArray from '../isIntervalArray';
+import areIntervals from '../areIntervals';
 import { ROOT } from '../constants/Interval/Names';
 
 const createChord = (
   root: ScientificNote,
   chord: Intervals
 ): ScientificNotes => {
-  if (!isIntervalArray(chord)) {
+  if (!areIntervals(chord)) {
     throw new Error(
       `Provide a valid collection of chord intervals ex: [0, 1, 3]`
     );

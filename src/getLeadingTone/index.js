@@ -1,14 +1,22 @@
 // @flow
 
-import getScaleDegree from '../getScaleDegree';
+import getNoteOnDegree from '../getNoteOnDegree';
+import isDiatonic from '../isDiatonic';
 
 type options = {
   direction?: direction
 };
 
 const getLeadingTone = (
-  scale: Scale,
+  diatonicScale: Scale,
   { direction = 1 }: options = {}
-): ScientificNote => getScaleDegree(scale, 7, { direction });
+): ScientificNote => {
+  if (!isDiatonic(diatonicScale, { direction })) {
+    throw new Error(
+      `${JSON.stringify(diatonicScale)} is not a diatonic scale.`
+    );
+  }
+  return getNoteOnDegree(diatonicScale, 7, { direction });
+};
 
 export default getLeadingTone;

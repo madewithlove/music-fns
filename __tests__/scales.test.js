@@ -4,13 +4,13 @@ import transpose from '../src/transpose';
 import getIntervals from '../src/getIntervals';
 import objectToNote from '../src/objectToNote';
 import { OCTAVE } from '../src/constants/Interval/Names';
-import isHeptatonicScale from '../src/isHeptatonicScale';
-import isDiatonicScale from '../src/isDiatonicScale';
-import isHemitonicScale from '../src/isHemitonicScale';
+import isHeptatonic from '../src/isHeptatonic';
+import isDiatonic from '../src/isDiatonic';
+import isHemitonic from '../src/isHemitonic';
 import isScale from '../src/isScale';
 import sharpToFlat from '../src/sharpToFlat';
 import accidentalToLetter from '../src/accidentalToLetter';
-import normalizeScale from '../src/normalizeScale';
+import normalize from '../src/normalize';
 
 const createScalesForOctave = octave => {
   const root = objectToNote({
@@ -46,13 +46,13 @@ describe('scales', () => {
       .reduce((acc, v) => [...acc, ...v], []);
 
     const intervals = scales.map(s =>
-      getIntervals(normalizeScale(s, Scale.MAJOR.length))
+      getIntervals(normalize(s, Scale.MAJOR.length))
     );
 
-    expect(scales.every(isHeptatonicScale)).toBe(true);
-    expect(scales.every(isDiatonicScale)).toBe(true);
+    expect(scales.every(isHeptatonic)).toBe(true);
+    expect(scales.every(isDiatonic)).toBe(true);
     expect(scales.every(isScale)).toBe(true);
-    expect(scales.every(isHemitonicScale)).toBe(true);
+    expect(scales.every(isHemitonic)).toBe(true);
 
     expect(
       intervals.every(interval => Scale.MAJOR.join(',') === interval.join(','))

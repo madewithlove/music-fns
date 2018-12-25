@@ -3,7 +3,7 @@
 import getOctave from '../getOctave';
 import hasOctave from '../hasOctave';
 import getChromaticCPosition from '../getChromaticCPosition';
-import isScientificNoteArray from '../isScientificNoteArray';
+import areNotes from '../areNotes';
 import { OCTAVE } from '../constants/Interval';
 
 type options = {
@@ -42,7 +42,7 @@ const getIntervals = (
     throw new Error('Direction should be 1 (up) or -1 (down)');
   }
 
-  if (!isScientificNoteArray(notes) || notes.length < 2) {
+  if (!areNotes(notes) || notes.length < 2) {
     throw new Error(
       'You can only calculate intervals for a uniform array (minimum size 2) of notes with or without octave'
     );

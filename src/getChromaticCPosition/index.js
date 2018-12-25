@@ -1,13 +1,13 @@
 // @flow
 
 import getNote from '../getNote';
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 
 import NOTES from '../constants/NOTES';
 import accidentalToLetter from '../accidentalToLetter';
 
 const getChromaticCPosition = (note: ScientificNote) => {
-  if (!isScientificNote(note)) {
+  if (!isNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 

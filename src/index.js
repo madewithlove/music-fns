@@ -6,9 +6,9 @@ import NOTES from './constants/NOTES';
 
 import accidentalToLetter from './accidentalToLetter';
 import accidentalToSymbol from './accidentalToSymbol';
-import areSameNotes from './areSameNotes';
+import areEqual from './areEqual';
 import createChord from './createChord';
-import createPattern from './createPattern';
+import createMelody from './createMelody';
 import createScale from './createScale';
 import flatToSharp from './flatToSharp';
 import getAccidental from './getAccidental';
@@ -20,7 +20,7 @@ import getMediant from './getMediant';
 import getNote from './getNote';
 import getOctave from './getOctave';
 import getRoot from './getRoot';
-import getScaleDegree from './getScaleDegree';
+import getNoteOnDegree from './getNoteOnDegree';
 import getSubdominant from './getSubdominant';
 import getSubmediant from './getSubmediant';
 import getSupertonic from './getSupertonic';
@@ -30,30 +30,30 @@ import hasAccidentalLetter from './hasAccidentalLetter';
 import hasAccidentalSymbol from './hasAccidentalSymbol';
 import hasOctave from './hasOctave';
 import haveSameOctave from './haveSameOctave';
-import isAnhemitonicScale from './isAnhemitonicScale';
-import isAscendingScale from './isAscendingScale';
-import isCohemitonicScale from './isCohemitonicScale';
-import isDescendingScale from './isDescendingScale';
-import isDiatonicScale from './isDiatonicScale';
+import isAnhemitonic from './isAnhemitonic';
+import isAscending from './isAscending';
+import isCohemitonic from './isCohemitonic';
+import isDescending from './isDescending';
+import isDiatonic from './isDiatonic';
 import isFlat from './isFlat';
-import isHemitonicScale from './isHemitonicScale';
-import isHeptatonicScale from './isHeptatonicScale';
-import isHexatonicScale from './isHexatonicScale';
-import isIntervalArray from './isIntervalArray';
+import isHemitonic from './isHemitonic';
+import isHeptatonic from './isHeptatonic';
+import isHexatonic from './isHexatonic';
+import areIntervals from './areIntervals';
 import isMode from './isMode';
 import isNatural from './isNatural';
-import isOctatonicScale from './isOctatonicScale';
+import isOctatonic from './isOctatonic';
 import isOctave from './isOctave';
-import isPentatonicScale from './isPentatonicScale';
+import isPentatonic from './isPentatonic';
 import isScale from './isScale';
-import isScaleWithIntervalAmount from './isScaleWithIntervalAmount';
-import isScientificNote from './isScientificNote';
-import isScientificNoteArray from './isScientificNoteArray';
+import hasIntervalAmount from './hasIntervalAmount';
+import isNote from './isNote';
+import areNotes from './areNotes';
 import isSemitone from './isSemitone';
 import isSharp from './isSharp';
 import isTone from './isTone';
 import isTriad from './isTriad';
-import normalizeScale from './normalizeScale';
+import normalize from './normalize';
 import noteToFrequency from './noteToFrequency';
 import noteToMidi from './noteToMidi';
 import noteToObject from './noteToObject';
@@ -72,9 +72,9 @@ export default {
 
   accidentalToLetter,
   accidentalToSymbol,
-  areSameNotes,
+  areEqual,
   createChord,
-  createPattern,
+  createMelody,
   createScale,
   flatToSharp,
   getAccidental,
@@ -86,7 +86,7 @@ export default {
   getNote,
   getOctave,
   getRoot,
-  getScaleDegree,
+  getNoteOnDegree,
   getSubdominant,
   getSubmediant,
   getSupertonic,
@@ -96,30 +96,30 @@ export default {
   hasAccidentalSymbol,
   hasOctave,
   haveSameOctave,
-  isAnhemitonicScale,
-  isAscendingScale,
-  isCohemitonicScale,
-  isDescendingScale,
-  isDiatonicScale,
+  isAnhemitonic,
+  isAscending,
+  isCohemitonic,
+  isDescending,
+  isDiatonic,
   isFlat,
-  isHemitonicScale,
-  isHeptatonicScale,
-  isHexatonicScale,
-  isIntervalArray,
+  isHemitonic,
+  isHeptatonic,
+  isHexatonic,
+  areIntervals,
   isMode,
   isNatural,
-  isOctatonicScale,
+  isOctatonic,
   isOctave,
-  isPentatonicScale,
+  isPentatonic,
   isScale,
-  isScaleWithIntervalAmount,
-  isScientificNote,
-  isScientificNoteArray,
+  hasIntervalAmount,
+  isNote,
+  areNotes,
   isSemitone,
   isSharp,
   isTone,
   isTriad,
-  normalizeScale,
+  normalize,
   noteToFrequency,
   noteToMidi,
   noteToObject,

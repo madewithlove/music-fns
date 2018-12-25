@@ -5,7 +5,7 @@ import sharpToFlat from '../src/sharpToFlat';
 import accidentalToLetter from '../src/accidentalToLetter';
 import getChromaticCPosition from '../src/getChromaticCPosition';
 import getIntervals from '../src/getIntervals';
-import normalizeScale from '../src/normalizeScale';
+import normalize from '../src/normalize';
 
 const createScalesForOctave = octave => {
   const root = objectToNote({
@@ -37,7 +37,7 @@ describe('scales', () => {
       scale.map(getChromaticCPosition)
     );
     const intervals = scales.map(scale =>
-      getIntervals(normalizeScale(scale, Scale.CHROMATIC.length))
+      getIntervals(normalize(scale, Scale.CHROMATIC.length))
     );
 
     expect(

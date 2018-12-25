@@ -4,26 +4,26 @@ import sharpToFlat from '../sharpToFlat';
 import flatToSharp from '../flatToSharp';
 
 import noteToObject from '../noteToObject';
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 import hasAccidental from '../hasAccidental';
 
 import { FLAT } from '../constants/Accidental';
 
 const transferAccidental = (
-  reference: ScientificNote,
-  note: ScientificNote
+  note: ScientificNote,
+  referenceNote: ScientificNote
 ): ScientificNote => {
-  if (!isScientificNote(reference)) {
-    throw new Error(`"${reference}" is not a valid note.`);
+  if (!isNote(referenceNote)) {
+    throw new Error(`"${referenceNote}" is not a valid reference note.`);
   }
 
-  if (!isScientificNote(note)) {
+  if (!isNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 
-  if (!hasAccidental(reference)) return note;
+  if (!hasAccidental(referenceNote)) return note;
 
-  const { accidental: rAccidental } = noteToObject(reference);
+  const { accidental: rAccidental } = noteToObject(referenceNote);
   const { accidental: iAccidental } = noteToObject(note);
 
   if (rAccidental === iAccidental) return note;

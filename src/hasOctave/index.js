@@ -1,10 +1,10 @@
 // @flow
 
 import getOctave from '../getOctave';
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 
 const hasOctave = (note: ScientificNote) => {
-  if (!isScientificNote(note)) {
+  if (!isNote(note)) {
     return false;
   }
 

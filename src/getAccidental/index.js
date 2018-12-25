@@ -2,7 +2,7 @@
 
 import isFlat from '../isFlat';
 import isSharp from '../isSharp';
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 
 import {
   FLAT_SYMBOL,
@@ -15,7 +15,7 @@ import hasAccidental from '../hasAccidental';
 import hasAccidentalLetter from '../hasAccidentalLetter';
 
 const getAccidental = (note: ScientificNote) => {
-  if (!isScientificNote(note)) {
+  if (!isNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 

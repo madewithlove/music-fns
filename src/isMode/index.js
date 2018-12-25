@@ -2,10 +2,10 @@
 
 // https://en.wikipedia.org/wiki/Mode_(music)
 
-import isDiatonicScale from '../isDiatonicScale';
+import isDiatonic from '../isDiatonic';
 import Mode from '../constants/Mode';
 import getIntervals from '../getIntervals';
-import normalizeScale from '../normalizeScale';
+import normalize from '../normalize';
 
 type options = {
   direction?: direction
@@ -16,11 +16,11 @@ const isMode = (scale: Scale, { direction = 1 }: options = {}) => {
     throw new Error('Direction should be 1 (up) or -1 (down)');
   }
 
-  if (!isDiatonicScale(scale)) return false;
+  if (!isDiatonic(scale)) return false;
 
   if (direction === -1) scale.reverse();
 
-  const normalizedScale = normalizeScale(scale);
+  const normalizedScale = normalize(scale);
   const intervals = getIntervals(normalizedScale);
 
   const modes = Object.keys(Mode).map(k => Mode[k]);

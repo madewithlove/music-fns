@@ -2,10 +2,10 @@
 
 import getRoot from '../getRoot';
 import getAccidental from '../getAccidental';
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 
 const getNote = (note: ScientificNote) => {
-  if (!isScientificNote(note)) {
+  if (!isNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 

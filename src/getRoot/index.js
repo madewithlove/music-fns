@@ -1,10 +1,10 @@
 // @flow
 
 import noteToObject from '../noteToObject';
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 
 const getRoot = (note: ScientificNote) => {
-  if (!isScientificNote(note)) {
+  if (!isNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 

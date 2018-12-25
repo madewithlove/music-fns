@@ -1,6 +1,6 @@
 // @flow
 
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 
 import {
   FLAT,
@@ -40,7 +40,7 @@ const objectToNote = (noteObject: NoteObject): ScientificNote => {
     accidentalType
   )}${octave}`;
 
-  if (!isScientificNote(scientificNote)) {
+  if (!isNote(scientificNote)) {
     throw new Error(
       `"${JSON.stringify(noteObject)}" is not a valid note object.`
     );

@@ -1,7 +1,7 @@
 // @flow
 
 import getIntervals from '../getIntervals';
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 import hasOctave from '../hasOctave';
 
 type options = {
@@ -9,7 +9,7 @@ type options = {
 };
 
 export default (note: ScientificNote, { standard = 440 }: options = {}) => {
-  if (!isScientificNote(note)) {
+  if (!isNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 

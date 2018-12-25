@@ -4,10 +4,10 @@
 
 import { MAJOR, MINOR, DIMINISHED, AUGMENTED } from '../constants/Chord';
 import getIntervals from '../getIntervals';
-import isScientificNoteArray from '../isScientificNoteArray';
+import areNotes from '../areNotes';
 
 const isTriad = (chord: Chord) => {
-  if (!isScientificNoteArray(chord)) return false;
+  if (!areNotes(chord)) return false;
 
   const intervals = [0, ...getIntervals(chord, { fromRoot: true })];
 

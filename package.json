@@ -1,7 +1,8 @@
 {
   "name": "music-fns",
-  "version": "0.1.0-alpha.5",
-  "description": "JavaScript music utility library",
+  "version": "0.1.0",
+  "description":
+    "JavaScript music utility library that contains small music notation related functions.",
   "main": "dist",
   "scripts": {
     "test": "jest",

@@ -5,23 +5,23 @@
 
 import transferAccidentalStyle from '../transferAccidentalStyle';
 import transferAccidental from '../transferAccidental';
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 
 const transferStyle = (
-  reference: ScientificNote,
-  note: ScientificNote
+  note: ScientificNote,
+  referenceNote: ScientificNote
 ): ScientificNote => {
-  if (!isScientificNote(reference)) {
-    throw new Error(`"${reference}" is not a valid note.`);
+  if (!isNote(referenceNote)) {
+    throw new Error(`"${referenceNote}" is not a valid reference note.`);
   }
 
-  if (!isScientificNote(note)) {
+  if (!isNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 
   return transferAccidental(
-    reference,
-    transferAccidentalStyle(reference, note)
+    transferAccidentalStyle(note, referenceNote),
+    referenceNote
   );
 };
 

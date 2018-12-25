@@ -5,7 +5,7 @@ import Interval from '../constants/Interval';
 import noteToObject from '../noteToObject';
 import objectToNote from '../objectToNote';
 import transferStyle from '../transferStyle';
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 
 // @flow
 
@@ -20,7 +20,7 @@ const transpose = (
   interval: Interval,
   reference?: ScientificNote = null
 ): ScientificNote => {
-  if (!isScientificNote(note)) {
+  if (!isNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 
@@ -28,7 +28,7 @@ const transpose = (
     throw new Error(`Interval must be a number`);
   }
 
-  if (reference && !isScientificNote(reference)) {
+  if (reference && !isNote(reference)) {
     throw new Error(`"${reference}" is not a valid note.`);
   }
 
@@ -51,7 +51,7 @@ const transpose = (
 
   const parsedNewNote = objectToNote(newNoteObject);
 
-  return transferStyle(reference || note, parsedNewNote);
+  return transferStyle(parsedNewNote, reference || note);
 };
 
 export default transpose;

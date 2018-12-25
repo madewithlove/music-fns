@@ -1,7 +1,7 @@
 // @flow
 
 import getIntervals from '../getIntervals';
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 import hasOctave from '../hasOctave';
 
 type options = {
@@ -10,8 +10,8 @@ type options = {
 
 // standard: which note is 60? TIL: this is vendor specific
 
-export default (note: ScientificNote, { standard = 'C3' }: options = {}) => {
-  if (!isScientificNote(note)) {
+export default (note: ScientificNote, { standard = 'C4' }: options = {}) => {
+  if (!isNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 
@@ -19,7 +19,7 @@ export default (note: ScientificNote, { standard = 'C3' }: options = {}) => {
     throw new Error(`"${note}" does not contain octave information.`);
   }
 
-  if (!isScientificNote(standard)) {
+  if (!isNote(standard)) {
     throw new Error(`"${standard}" is not a valid note`);
   }
 

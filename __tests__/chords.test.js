@@ -3,7 +3,7 @@ import Chord from '../src/constants/Chord';
 import transpose from '../src/transpose';
 import getIntervals from '../src/getIntervals';
 import objectToNote from '../src/objectToNote';
-import normalizeScale from '../src/normalizeScale';
+import normalize from '../src/normalize';
 import { OCTAVE } from '../src/constants/Interval/Names';
 import sharpToFlat from '../src/sharpToFlat';
 import accidentalToLetter from '../src/accidentalToLetter';

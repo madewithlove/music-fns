@@ -5,25 +5,25 @@ import accidentalToSymbol from '../accidentalToSymbol';
 
 import noteToObject from '../noteToObject';
 import hasAccidental from '../hasAccidental';
-import isScientificNote from '../isScientificNote';
+import isNote from '../isNote';
 
 import { LETTER } from '../constants/Accidental';
 
 const transferAccidentalStyle = (
-  reference: ScientificNote,
-  note: ScientificNote
+  note: ScientificNote,
+  referenceNote: ScientificNote
 ): ScientificNote => {
-  if (!isScientificNote(reference)) {
-    throw new Error(`"${reference}" is not a valid note.`);
+  if (!isNote(referenceNote)) {
+    throw new Error(`"${referenceNote}" is not a valid reference note.`);
   }
 
-  if (!isScientificNote(note)) {
+  if (!isNote(note)) {
     throw new Error(`"${note}" is not a valid note.`);
   }
 
-  if (!hasAccidental(reference)) return note;
+  if (!hasAccidental(referenceNote)) return note;
 
-  const { accidentalType: rAccidentalType } = noteToObject(reference);
+  const { accidentalType: rAccidentalType } = noteToObject(referenceNote);
   const { accidentalType: iAccidentalType } = noteToObject(note);
 
   if (rAccidentalType === iAccidentalType) return note;
