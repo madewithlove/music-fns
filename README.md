@@ -685,7 +685,7 @@ console.log(Mode.MIXOLYDIAN);
 
 #### + `createScale(root, intervals, [options]):scale`
 
-Creates a scale (or mode) by providing a root note and an intervals (use the `Scale` constant). You can provide `includeRootEnd` to also include the root note transposed an octave up.
+Creates a scale (or mode) by providing a root note and an intervals (use the `Scale` or `Mode` constant). You can provide `includeRootEnd` to also include the root note transposed an octave up.
 
 ```js
 import { Scale, Mode, createScale } from 'music-fns';
