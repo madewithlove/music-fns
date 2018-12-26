@@ -8,8 +8,8 @@ export const d2 = DIMINISHED_SECOND;
 export const AUGMENTED_UNISON = S;
 export const A1 = AUGMENTED_UNISON;
 
-export const DIMISHED_THIRD = T;
-export const d3 = DIMISHED_THIRD;
+export const DIMINISHED_THIRD = T;
+export const d3 = DIMINISHED_THIRD;
 
 export const AUGMENTED_SECOND = 3 * S;
 export const A2 = AUGMENTED_SECOND;
@@ -50,7 +50,7 @@ export default {
   d2,
   AUGMENTED_UNISON,
   A1,
-  DIMISHED_THIRD,
+  DIMINISHED_THIRD,
   d3,
   AUGMENTED_SECOND,
   A2,

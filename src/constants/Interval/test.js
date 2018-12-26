@@ -37,7 +37,7 @@ describe('should return correct intervals for Augmented and Diminished', () => {
     d2: 0,
     AUGMENTED_UNISON: 1,
     A1: 1,
-    DIMISHED_THIRD: 2,
+    DIMINISHED_THIRD: 2,
     d3: 2,
     AUGMENTED_SECOND: 3,
     A2: 3,
