@@ -38,6 +38,10 @@ export const M7 = MAJOR_SEVENTH;
 export const PERFECT_OCTAVE = O;
 export const P8 = PERFECT_OCTAVE;
 
+export const MINOR = [m2, m3, m6, m7];
+export const MAJOR = [M2, M3, M6, M7];
+export const PERFECT = [P4, P5, P8, P1];
+
 export default {
   PERFECT_UNISON,
   P1,
