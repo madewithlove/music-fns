@@ -35,6 +35,7 @@ import isAscending from './isAscending';
 import isCohemitonic from './isCohemitonic';
 import isDescending from './isDescending';
 import isDiatonic from './isDiatonic';
+import isFifth from './isFifth';
 import isFlat from './isFlat';
 import isHemitonic from './isHemitonic';
 import isHeptatonic from './isHeptatonic';
@@ -101,6 +102,7 @@ export default {
   isCohemitonic,
   isDescending,
   isDiatonic,
+  isFifth,
   isFlat,
   isHemitonic,
   isHeptatonic,

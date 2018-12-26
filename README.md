@@ -598,6 +598,17 @@ console.log(isTone(getIntervals(['C3', 'D3'])[0]));
 // > true;
 ```
 
+#### + `isFifth(interval):boolean`
+
+Returns `true` if the interval is a perfect fifth `(7)`.
+
+```js
+import { getIntervals, isFifth } from 'music-fns';
+
+console.log(isFifth(getIntervals(['C4', 'G4'])[0]));
+// > true;
+```
+
 #### + `isOctave(number):boolean`
 
 Returns `true` if the interval is an octave `(12)`.
