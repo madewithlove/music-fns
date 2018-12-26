@@ -856,7 +856,7 @@ console.log(isOctatonic(['D', 'E', 'F', 'G', 'A♭', 'B♭']));
 
 #### + `isDiatonic(scale, [options]):boolean`
 
-Returns `true` if the scale is diatonic (5 tones where and 2 semitones, where the semitones are separated at least 2 steps from each other).
+Returns `true` if the scale is diatonic (5 tones & 2 semitones, where the semitones are separated at least 2 steps from each other).
 
 ```js
 import { isDiatonic } from 'music-fns';
