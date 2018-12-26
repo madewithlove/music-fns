@@ -1059,11 +1059,6 @@ Creates a melody using a provided array of notes and a pattern.
 ```js
 import { Chord, createMelody } from 'music-fns';
 
-console.log(
-  createMelody(
-    createScale('C2', Scale.MAJOR),
-    [0, 2, 0, 1, 0, 3
-  )
-);
+console.log(createMelody(createScale('C2', Scale.MAJOR), [0, 2, 0, 1, 0, 3]));
 // > [ 'C2', 'E2', 'C2', 'D2', 'C2', 'F2' ]
 ```
