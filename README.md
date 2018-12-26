@@ -598,6 +598,23 @@ console.log(isTone(getIntervals(['C3', 'D3'])[0]));
 // > true;
 ```
 
+#### + `isThird(interval):boolean`
+
+Returns `true` if the interval is a third (diminished, minor, major or augmented) `(2, 3, 4, 5)`.
+
+```js
+import { getIntervals, isThird } from 'music-fns';
+
+console.log(isThird(getIntervals(['C4', 'E4'])[0]));
+// > true;
+
+console.log(isThird(getIntervals(['A4', 'C4'])[0]));
+// > true;
+
+console.log(isThird(getIntervals(['C4', 'E#4'])[0]));
+// > true;
+```
+
 #### + `isFifth(interval):boolean`
 
 Returns `true` if the interval is a fifth (diminished, perfect or augmented) `(6, 7, 8)`.
