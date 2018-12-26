@@ -1062,3 +1062,7 @@ import { Chord, createMelody } from 'music-fns';
 console.log(createMelody(createScale('C2', Scale.MAJOR), [0, 2, 0, 1, 0, 3]));
 // > [ 'C2', 'E2', 'C2', 'D2', 'C2', 'F2' ]
 ```
+
+## Thanks.
+
+Thanks to our employer [madewithlove](https://madewithlove.be/) for letting us work on this during our weekly [Friyays](https://madewithlove.be/company-benefits-in-2019-at-madewithlove/).
