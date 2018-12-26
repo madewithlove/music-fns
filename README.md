@@ -600,12 +600,18 @@ console.log(isTone(getIntervals(['C3', 'D3'])[0]));
 
 #### + `isFifth(interval):boolean`
 
-Returns `true` if the interval is a perfect fifth `(7)`.
+Returns `true` if the interval is a fifth (diminished, perfect or augmented) `(6, 7, 8)`.
 
 ```js
 import { getIntervals, isFifth } from 'music-fns';
 
 console.log(isFifth(getIntervals(['C4', 'G4'])[0]));
+// > true;
+
+console.log(isFifth(getIntervals(['C4', 'Gb4'])[0]));
+// > true;
+
+console.log(isFifth(getIntervals(['C4', 'G#4'])[0]));
 // > true;
 ```
 
