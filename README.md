@@ -41,7 +41,7 @@ Documentation is still WIP, PRs welcome.
 
 #### + `NOTES`
 
-An nested array providing containing a chromatic C scale with its variations.
+An nested array that contains a chromatic C scale with its possible note variations.
 
 ```js
 import { NOTES } from 'music-fns';
@@ -89,7 +89,7 @@ console.log(getNote('A#4'));
 // > 'A#'
 ```
 
-#### + `getOctave(note):?number`
+#### + `getOctave(note):?octave`
 
 Returns the octave information (or `undefined`) from a note.
 
@@ -103,7 +103,7 @@ console.log(getOctave('A#'));
 // > undefined
 ```
 
-#### + `getAccidental(note):?string`
+#### + `getAccidental(note):?accidental`
 
 Returns the accidental (or `undefined`) from a note.
 
@@ -258,7 +258,7 @@ console.log(areEqual(['A3', 'F3']));
 // > false
 ```
 
-#### + `getChromaticCPosition(note):number`
+#### + `getChromaticCPosition(note):position`
 
 Returns the (0-indexed) position of the specific root within a chromatic C scale (equals the `NOTES` constant).
 
@@ -286,7 +286,7 @@ console.log(haveSameOctave(['A#1', 'D3', 'G3']));
 // > false
 ```
 
-#### + `noteToFrequency(note, [options]):number`
+#### + `noteToFrequency(note, [options]):frequency`
 
 Converts a note to a frequency (in Hz). You can use a different base frequency for A4 via `standard`.
 
@@ -303,7 +303,7 @@ console.log(noteToFrequency('A4', { standard: 442 }));
 // > 442
 ```
 
-#### + `noteToMidi(note, [options]):number`
+#### + `noteToMidi(note, [options]):midiNumber`
 
 Converts a note to its MIDI number. C4 = 60 in our implementation. You can provide a different middle C via `standard`.
 
@@ -320,7 +320,7 @@ console.log(noteToMidi('C3', { standard: 'C3' }));
 // > 60
 ```
 
-#### + `noteToObject(note):object`
+#### + `noteToObject(note):noteObject`
 
 Converts a note to an object describing the note.
 
@@ -358,7 +358,7 @@ console.log(noteToObject('Ab4'));
 } */
 ```
 
-#### + `objectToNote(note):note`
+#### + `objectToNote(noteObject):note`
 
 Converts an object describing the note to a note.
 
