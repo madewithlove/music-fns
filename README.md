@@ -854,9 +854,23 @@ console.log(isOctatonic(['D', 'E', 'F', 'G', 'A♭', 'B♭']));
 // > false
 ```
 
+#### + `isDiatonic(scale, [options]):boolean`
+
+Returns `true` if the scale is diatonic (5 tones where and 2 semitones, where the semitones are separated at least 2 steps from each other).
+
+```js
+import { isDiatonic } from 'music-fns';
+
+console.log(isDiatonic(['C', 'D', 'E', 'F', 'G', 'A', 'B']));
+// > true
+
+console.log(isDiatonic(['C', 'D', 'E', 'F#', 'G#', 'A#', 'B']));
+// > false
+```
+
 #### + `isHemitonic(scale, [options]):boolean`
 
-Returns `true` if the scale is hemitonic (contains 1 or more semitone).
+Returns `true` if the scale is hemitonic (contains 1 or more semitones).
 
 ```js
 import { isHemitonic } from 'music-fns';
