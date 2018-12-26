@@ -1050,7 +1050,7 @@ console.log(isTriad(['F2', 'A2', 'C3', 'D4']));
 
 ### Melody
 
-#### methods
+#### METHODS
 
 #### + `createMelody(notes, pattern):notes`
 
