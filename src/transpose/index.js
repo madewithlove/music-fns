@@ -1,3 +1,5 @@
+// @flow
+
 import getChromaticCPosition from '../getChromaticCPosition';
 import Interval from '../constants/Interval';
 
@@ -11,7 +13,6 @@ import objectToNote from '../objectToNote';
 const normalizePosition = (position: number): number =>
   position >= 0 ? position : NOTES.length - Math.abs(position % NOTES.length);
 
-// @flow
 const transpose = (
   note: ScientificNote,
   interval: Interval,
@@ -33,7 +34,7 @@ const transpose = (
   const oldOctave = getOctave(note);
 
   const oldPosition =
-    (oldOctave === undefined ? 0 : oldOctave * NOTES.length) +
+    (typeof oldOctave === 'undefined' ? 0 : oldOctave * NOTES.length) +
     oldChromaticCPosition;
 
   const newPosition = normalizePosition(oldPosition + interval);
@@ -42,7 +43,7 @@ const transpose = (
     objectToNote({
       ...noteToObject(NOTES[newPosition % NOTES.length][0]),
       octave:
-        oldOctave === undefined
+        typeof oldOctave === 'undefined'
           ? undefined
           : Math.floor(newPosition / NOTES.length)
     }),
