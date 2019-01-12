@@ -712,7 +712,7 @@ console.log(Mode.IONIAN);
 // > [ 2, 2, 1, 2, 2, 2, 1 ]
 
 console.log(Mode.MIXOLYDIAN);
-// > [ 2, 2, 1, 2, 2, 2, 1 ]
+// > [ 2, 2, 1, 2, 2, 1, 2 ]
 ```
 
 #### METHODS
