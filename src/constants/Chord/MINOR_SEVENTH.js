@@ -3,4 +3,7 @@
 import MINOR from './MINOR';
 import { MINOR_SEVENTH } from '../Interval/MinorMajor';
 
-export default [...MINOR, MINOR_SEVENTH];
+const names = ['m7', 'MINOR_SEVENTH'];
+const intervals = [...MINOR.intervals, MINOR_SEVENTH];
+
+export default { names, intervals };

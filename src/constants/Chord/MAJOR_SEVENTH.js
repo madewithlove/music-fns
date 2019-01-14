@@ -3,4 +3,7 @@
 import MAJOR from './MAJOR';
 import { MAJOR_SEVENTH } from '../Interval/MinorMajor';
 
-export default [...MAJOR, MAJOR_SEVENTH];
+const names = ['maj7', 'MAJOR_SEVENTH'];
+const intervals = [...MAJOR.intervals, MAJOR_SEVENTH];
+
+export default { names, intervals };

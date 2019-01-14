@@ -4,4 +4,7 @@ import { ROOT } from '../Interval/Names';
 import { MINOR_THIRD } from '../Interval/MinorMajor';
 import { DIMINISHED_FIFTH } from '../Interval/AugmentedDiminished';
 
-export default [ROOT, MINOR_THIRD, DIMINISHED_FIFTH];
+const names = ['dim', 'DIMINISHED'];
+const intervals = [ROOT, MINOR_THIRD, DIMINISHED_FIFTH];
+
+export default { names, intervals };
