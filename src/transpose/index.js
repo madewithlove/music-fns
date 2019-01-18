@@ -1,19 +1,17 @@
-import getChromaticCPosition from '../getChromaticCPosition';
-import NOTES from '../constants/NOTES';
-import Interval from '../constants/Interval';
-
-import noteToObject from '../noteToObject';
-import objectToNote from '../objectToNote';
-import transferStyle from '../transferStyle';
-import isNote from '../isNote';
-
 // @flow
 
-const getNormalizedPosition = (position: number, interval: number): number => {
-  const normalizedPosition = (position + interval) % NOTES.length;
-  if (normalizedPosition >= 0) return normalizedPosition;
-  return NOTES.length - Math.abs(normalizedPosition);
-};
+import getChromaticCPosition from '../getChromaticCPosition';
+import Interval from '../constants/Interval';
+
+import transferStyle from '../transferStyle';
+import getOctave from '../getOctave';
+import isNote from '../isNote';
+import noteToObject from '../noteToObject';
+import NOTES from '../constants/NOTES';
+import objectToNote from '../objectToNote';
+
+const normalizePosition = (position: number): number =>
+  position >= 0 ? position : NOTES.length - Math.abs(position % NOTES.length);
 
 const transpose = (
   note: ScientificNote,
@@ -32,26 +30,25 @@ const transpose = (
     throw new Error(`"${reference}" is not a valid note.`);
   }
 
-  const position = getChromaticCPosition(note);
+  const oldChromaticCPosition = getChromaticCPosition(note);
+  const oldOctave = getOctave(note);
 
-  const oldNoteObject = noteToObject(note);
+  const oldPosition =
+    (typeof oldOctave === 'undefined' ? 0 : oldOctave * NOTES.length) +
+    oldChromaticCPosition;
 
-  const calculatedPosition = position + interval;
-  const normalizedPosition = getNormalizedPosition(position, interval);
+  const newPosition = normalizePosition(oldPosition + interval);
 
-  const octave = Math.floor(calculatedPosition / NOTES.length);
-  const newNote = NOTES[normalizedPosition][0];
-
-  const newNoteObject = noteToObject(newNote);
-  newNoteObject.octave = undefined;
-
-  if (typeof oldNoteObject.octave !== 'undefined') {
-    newNoteObject.octave = oldNoteObject.octave + octave;
-  }
-
-  const parsedNewNote = objectToNote(newNoteObject);
-
-  return transferStyle(parsedNewNote, reference || note);
+  return transferStyle(
+    objectToNote({
+      ...noteToObject(NOTES[newPosition % NOTES.length][0]),
+      octave:
+        typeof oldOctave === 'undefined'
+          ? undefined
+          : Math.floor(newPosition / NOTES.length)
+    }),
+    reference || note
+  );
 };
 
 export default transpose;
