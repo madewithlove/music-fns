@@ -1,9 +1,12 @@
 // https://en.wikipedia.org/wiki/Major_seventh_chord
 
 import MAJOR from './MAJOR';
-import { MAJOR_SEVENTH } from '../Interval/MinorMajor';
+import { MAJOR_SEVENTH as MAJOR_SEVENTH_NOTE } from '../Interval/MinorMajor';
 
-const names = ['maj7', 'MAJOR_SEVENTH'];
-const intervals = [...MAJOR.intervals, MAJOR_SEVENTH];
+const MAJOR_SEVENTH = [...MAJOR.intervals, MAJOR_SEVENTH_NOTE];
+const maj7 = MAJOR_SEVENTH;
 
-export default { names, intervals };
+export default {
+  MAJOR_SEVENTH,
+  maj7
+};

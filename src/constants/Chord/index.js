@@ -7,17 +7,13 @@ import MINOR_SEVENTH from './MINOR_SEVENTH';
 import MINOR from './MINOR';
 import SEVENTH from './SEVENTH';
 
-function chordCompiler({ names, intervals }) {
-  return names.reduce((object, name) => ({ ...object, [name]: intervals }), {});
-}
-
 export default {
-  ...chordCompiler(AUGMENTED),
-  ...chordCompiler(DIMINISHED),
-  ...chordCompiler(MAJOR_SEVENTH),
-  ...chordCompiler(MAJOR),
-  ...chordCompiler(MINOR_MAJOR_SEVENTH),
-  ...chordCompiler(MINOR_SEVENTH),
-  ...chordCompiler(MINOR),
-  ...chordCompiler(SEVENTH)
+  ...AUGMENTED,
+  ...DIMINISHED,
+  ...MAJOR_SEVENTH,
+  ...MAJOR,
+  ...MINOR_MAJOR_SEVENTH,
+  ...MINOR_SEVENTH,
+  ...MINOR,
+  ...SEVENTH
 };

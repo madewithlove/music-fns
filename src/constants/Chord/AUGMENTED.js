@@ -4,7 +4,10 @@ import { ROOT } from '../Interval/Names';
 import { MAJOR_THIRD } from '../Interval/MinorMajor';
 import { AUGMENTED_FIFTH } from '../Interval/AugmentedDiminished';
 
-const names = ['aug', 'AUGMENTED'];
-const intervals = [ROOT, MAJOR_THIRD, AUGMENTED_FIFTH];
+const AUGMENTED = [ROOT, MAJOR_THIRD, AUGMENTED_FIFTH];
+const aug = AUGMENTED;
 
-export default { names, intervals };
+export default {
+  AUGMENTED,
+  aug
+};

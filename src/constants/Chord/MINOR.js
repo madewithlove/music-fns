@@ -3,7 +3,12 @@
 import { ROOT } from '../Interval/Names';
 import { MINOR_THIRD, PERFECT_FIFTH } from '../Interval/MinorMajor';
 
-const names = ['moll', 'm', 'MINOR'];
-const intervals = [ROOT, MINOR_THIRD, PERFECT_FIFTH];
+const MINOR = [ROOT, MINOR_THIRD, PERFECT_FIFTH];
+const m = MINOR;
+const moll = MINOR;
 
-export default { names, intervals };
+export default {
+  MINOR,
+  m,
+  moll
+};

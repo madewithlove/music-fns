@@ -1,4 +1,4 @@
-import Chord from './index.js';
+import Chord from './index';
 
 describe('Augmented Chord', () => {
   const pitches = [0, 4, 8];

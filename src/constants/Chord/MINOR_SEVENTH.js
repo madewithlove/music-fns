@@ -1,9 +1,12 @@
 // https://en.wikipedia.org/wiki/Minor_seventh_chord
 
 import MINOR from './MINOR';
-import { MINOR_SEVENTH } from '../Interval/MinorMajor';
+import { MINOR_SEVENTH as MINOR_SEVENTH_NOTE } from '../Interval/MinorMajor';
 
-const names = ['m7', 'MINOR_SEVENTH'];
-const intervals = [...MINOR.intervals, MINOR_SEVENTH];
+const MINOR_SEVENTH = [...MINOR.intervals, MINOR_SEVENTH_NOTE];
+const m7 = MINOR_SEVENTH;
 
-export default { names, intervals };
+export default {
+  MINOR_SEVENTH,
+  m7
+};
