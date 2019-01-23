@@ -1,0 +1,1 @@
+export type Accidental = string & ('♭' | 'b' | '♯' | '#' | 'SHARP' | 'FLAT' | '') | undefined;

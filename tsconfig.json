@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    // Generates corresponding '.d.ts' file.
+    "declaration": true,
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    // Redirect output structure to the directory.
+    "outDir": "dist",
+    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    "strict": true,
+    // Target latest version of ECMAScript.
+    "target": "esnext",
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "**/*/test.ts"
+  ]
+}
