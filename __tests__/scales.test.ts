@@ -1,6 +1,7 @@
 import createScale from '../src/createScale';
 import Scale from '../src/constants/Scale';
 import transpose from '../src/transpose';
+import getDirection from '../src/getDirection';
 import getIntervals from '../src/getIntervals';
 import objectToNote from '../src/objectToNote';
 import Interval from '../src/constants/Interval';
@@ -47,7 +48,7 @@ describe('scales', () => {
       .reduce((acc, v) => [...acc, ...v], []);
 
     const intervals = scales.map(s =>
-      getIntervals(normalize(s, { direction: Scale.MAJOR.length as direction }))
+      getIntervals(normalize(s, { direction: getDirection(Scale.MAJOR.length) }))
     );
 
     expect(scales.every((scale) => { return isHeptatonic(scale); })).toBe(true);

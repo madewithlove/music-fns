@@ -4,9 +4,9 @@ import objectToNote from '../src/objectToNote';
 import sharpToFlat from '../src/sharpToFlat';
 import accidentalToLetter from '../src/accidentalToLetter';
 import getChromaticCPosition from '../src/getChromaticCPosition';
+import getDirection from '../src/getDirection';
 import getIntervals from '../src/getIntervals';
 import normalize from '../src/normalize';
-import { direction } from '../src/types/direction';
 
 const createScalesForOctave = octave => {
   const root = objectToNote({
@@ -38,7 +38,7 @@ describe('scales', () => {
       scale.map(getChromaticCPosition)
     );
     const intervals = scales.map(scale =>
-      getIntervals(normalize(scale, { direction: Scale.CHROMATIC.length as unknown as direction }))
+      getIntervals(normalize(scale, { direction: getDirection(Scale.CHROMATIC.length) }))
     );
 
     expect(
