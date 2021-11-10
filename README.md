@@ -1113,4 +1113,4 @@ console.log(createMelody(createScale('C2', Scale.MAJOR), [0, 2, 0, 1, 0, 3]));
 
 ## Thanks.
 
-Thanks to our employer [madewithlove](https://madewithlove.be/) for letting us work on this during our weekly [Friyays](https://madewithlove.be/company-benefits-in-2019-at-madewithlove/).
+Thanks to our employer [madewithlove](https://madewithlove.com/?rel=music-fns) for letting us work on this during our weekly [Friyays](https://madewithlove.com/blog/this-is-madewithlove/company-benefits-in-2019-at-madewithlove/).
