@@ -1,8 +1,7 @@
 {
   "name": "music-fns",
   "version": "0.1.3",
-  "description":
-    "JavaScript music utility library that contains small music notation related functions.",
+  "description": "JavaScript music utility library that contains small music notation related functions.",
   "main": "dist",
   "scripts": {
     "test": "jest",
@@ -20,9 +19,15 @@
   "engines": {
     "node": ">=8"
   },
-  "keywords": ["music", "utility", "audio"],
+  "keywords": [
+    "music",
+    "utility",
+    "audio"
+  ],
   "author": "",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/madewithlove/music-fns/issues"
