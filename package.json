@@ -35,7 +35,9 @@
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch",
-    "test": "vitest"
+    "test": "vitest",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
     "microbundle": "^0.15.1",
