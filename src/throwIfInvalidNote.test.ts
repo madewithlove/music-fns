@@ -1,5 +1,4 @@
 import { describe, it, expect } from "vitest";
-import { isNote } from "./isNote";
 import {
   notesWithOctaveWithoutAccidental,
   notesWithOctaveAndWithAccidental,
@@ -7,6 +6,7 @@ import {
   notesWithoutOctaveWithAccidental,
   invalidNotes,
 } from "./testData";
+import { throwIfInvalidNote } from "./throwIfInvalidNote";
 
 const validNotes = [
   ...notesWithOctaveWithoutAccidental,
@@ -15,14 +15,13 @@ const validNotes = [
   ...notesWithoutOctaveWithAccidental,
 ];
 
-describe("isNote", () => {
-  it.each(validNotes)("should validate valid note", ({ note }) => {
-    expect(isNote(note)).toBe(true);
+describe("throwIfInvalidNote", () => {
+  it.each(validNotes)("should not throw for valid note", ({ note }) => {
+    expect(() => throwIfInvalidNote(note)).not.toThrow();
   });
 
-  // invalid notes
-  it.each(invalidNotes)("should validate invalid note: %s", (note) => {
+  it.each(invalidNotes)("should throw for invalid note: %s", (note) => {
     // @ts-expect-error checking if note is valid
-    expect(isNote(note)).toBe(false);
+    expect(() => throwIfInvalidNote(note)).toThrow();
   });
 });

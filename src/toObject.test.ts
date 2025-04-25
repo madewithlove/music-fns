@@ -2,7 +2,6 @@ import { describe, it, expect } from "vitest";
 import { toObject } from "./toObject";
 
 import {
-  invalidNotes,
   notesWithOctaveAndWithAccidental,
   notesWithOctaveWithoutAccidental,
   notesWithoutOctaveAndWithoutAccidental,
@@ -10,20 +9,12 @@ import {
 } from "./testData";
 
 describe("toObject", () => {
-  it.each(invalidNotes)(
-    "should throw an error for invalid note: %s",
-    (note) => {
-      // @ts-expect-error checking if note is valid
-      expect(() => toObject(note)).toThrow();
-    },
-  );
-
   it.each(notesWithOctaveWithoutAccidental)(
     "should correctly parse valid note WITH octave and WITHOUT accidental",
-    (note) => {
-      expect(toObject(note.note)).toEqual({
-        root: note.root,
-        octave: note.octave,
+    ({ note, root, octave }) => {
+      expect(toObject(note)).toEqual({
+        root,
+        octave,
         accidental: undefined,
       });
     },
@@ -31,20 +22,20 @@ describe("toObject", () => {
 
   it.each(notesWithOctaveAndWithAccidental)(
     "should correctly parse valid note WITH octave and WITH accidental",
-    (note) => {
-      expect(toObject(note.note)).toEqual({
-        root: note.root,
-        octave: note.octave,
-        accidental: note.accidental,
+    ({ note, root, octave, accidental }) => {
+      expect(toObject(note)).toEqual({
+        root,
+        octave,
+        accidental,
       });
     },
   );
 
   it.each(notesWithoutOctaveAndWithoutAccidental)(
     "should correctly parse valid note WITHOUT octave and WITHOUT accidental",
-    (note) => {
-      expect(toObject(note.note)).toEqual({
-        root: note.root,
+    ({ note, root }) => {
+      expect(toObject(note)).toEqual({
+        root,
         octave: undefined,
         accidental: undefined,
       });
@@ -53,11 +44,11 @@ describe("toObject", () => {
 
   it.each(notesWithoutOctaveWithAccidental)(
     "should correctly parse valid note WITHOUT octave and WITH accidental",
-    (note) => {
-      expect(toObject(note.note)).toEqual({
-        root: note.root,
+    ({ note, root, accidental }) => {
+      expect(toObject(note)).toEqual({
+        root,
         octave: undefined,
-        accidental: note.accidental,
+        accidental,
       });
     },
   );

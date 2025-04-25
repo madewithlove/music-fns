@@ -1,4 +1,13 @@
 import { isNote } from "./isNote";
+import { throwIfInvalidNote } from "./throwIfInvalidNote";
+import { toObject } from "./toObject";
+import { getRoot } from "./getRoot";
+import { getOctave } from "./getOctave";
+import { getAccidental } from "./getAccidental";
+import { hasAccidental } from "./hasAccidental";
+import { hasSharp } from "./hasSharp";
+import { hasFlat } from "./hasFlat";
+import { hasOctave } from "./hasOctave";
 
 declare const __brand: unique symbol;
 type Brand<T, B> = T & { [__brand]: B };
@@ -22,7 +31,18 @@ type NoteObject = {
   accidental?: Accidental;
 };
 
-export { isNote };
+export {
+  isNote,
+  throwIfInvalidNote,
+  toObject,
+  getRoot,
+  getOctave,
+  getAccidental,
+  hasAccidental,
+  hasSharp,
+  hasFlat,
+  hasOctave,
+};
 
 export type {
   Sharp,
