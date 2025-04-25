@@ -34,7 +34,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "microbundle",
-    "dev": "microbundle watch"
+    "dev": "microbundle watch",
+    "test": "vitest"
   },
   "devDependencies": {
     "microbundle": "^0.15.1",
