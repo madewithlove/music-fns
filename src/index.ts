@@ -1,3 +1,3 @@
-export function hello(name: string) {
-  return "hello " + name;
-}
+import { isNote } from "./isNote";
+
+export { isNote };
