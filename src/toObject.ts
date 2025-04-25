@@ -28,9 +28,10 @@ function getOctave(note: Note): Octave | undefined {
  * @throws {Error} If the note string is invalid or contains impossible combinations.
  *
  * @example
+ * toObject("E") // { root: "E" }
  * toObject("C4") // { root: "C", octave: 4 }
  * toObject("F#5") // { root: "F", octave: 5, accidental: "#" }
- * toObject("Bb4") // { root: "B", octave: 4, accidental: "b" }
+ * toObject("C#") // { root: "C", accidental: "#" }
  */
 export function toObject(note: string): NoteObject {
   const validNote = throwIfInvalidNote(note);

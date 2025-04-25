@@ -5,6 +5,12 @@ import { isNote } from "./isNote";
  * @param note - The note to check.
  * @throws {Error} If the note is invalid.
  * @returns The note if it is valid.
+ *
+ * @example
+ * ```ts
+ * throwIfInvalidNote("C4"); // "C4"
+ * throwIfInvalidNote("Q"); // throws Error
+ * ```
  */
 export function throwIfInvalidNote(note: string) {
   if (!isNote(note)) {

@@ -1,10 +1,17 @@
 import { getOctave } from "./getOctave";
 
 /**
- * Checks if a note has an octave
+ * Checks if a note has an octave (number)
  *
  * @param note - The note to check
- * @returns true if the note has an octave, false otherwise
+ * @throws {Error} If the note is invalid.
+ * @returns true if the note has an octave (number), false otherwise
+ *
+ * @example
+ * ```ts
+ * hasOctave("C4"); // true
+ * hasOctave("C"); // false
+ * ```
  */
 export function hasOctave(note: string) {
   const octave = getOctave(note);
