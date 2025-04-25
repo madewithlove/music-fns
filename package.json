@@ -35,5 +35,9 @@
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.1",
+    "vitest": "^3.1.2"
   }
 }
