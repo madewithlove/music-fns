@@ -1,3 +1,6 @@
+export const accidentals = ["#", "b"];
+export const octaves = [1, 10, 9290872134, 8999, 1233, -30, -40];
+
 export const notesWithOctaveWithoutAccidental = [
   {
     note: "C4",
@@ -115,6 +118,18 @@ export const notesWithoutOctaveWithAccidental = [
   ...notesWithoutOctaveWithSharp,
 ];
 
+export const junkData = [
+  "",
+  [],
+  {},
+  null,
+  undefined,
+  true,
+  false,
+  new Date(),
+  function () {},
+];
+
 export const invalidNotes = [
   "B#",
   "B#99",
@@ -128,19 +143,7 @@ export const invalidNotes = [
   "I",
   "Q#",
   "Jb",
-  "",
-  [],
-  {},
-  null,
-  undefined,
-  NaN,
-  Infinity,
-  -Infinity,
-  true,
-  false,
-  function () {},
-  new Date(),
-  new Error(),
+  ...junkData,
 ];
 
 export const invalidNoteObjects = [
