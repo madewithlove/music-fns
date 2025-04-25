@@ -8,22 +8,25 @@ type Sharp = "#";
 type Accidental = Flat | Sharp;
 type Octave = Brand<number, "Octave">;
 type Root = "C" | "D" | "E" | "F" | "G" | "A" | "B";
-
+type Frequency = Brand<number, "Frequency">;
 type ImpossibleNotes = `${"E" | "B"}${Sharp}` | `${"F" | "C"}${Flat}`;
-type NoteWithoutOctave = Exclude<`${Root}${Accidental}`, ImpossibleNotes>;
+type NoteWithoutOctave =
+  | Root
+  | Exclude<`${Root}${Accidental}`, ImpossibleNotes>;
 type NoteWithOctave = `${NoteWithoutOctave}${Octave}`;
 type Note = NoteWithoutOctave | NoteWithOctave;
-type Frequency = Brand<number, "Frequency">;
 
 type NoteObject = {
-  accidental: Accidental;
-  octave: Octave;
   root: Root;
+  octave?: Octave;
+  accidental?: Accidental;
 };
 
 export { isNote };
 
 export type {
+  Sharp,
+  Flat,
   Note,
   Accidental,
   Octave,

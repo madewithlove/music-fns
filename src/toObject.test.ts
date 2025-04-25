@@ -5,53 +5,46 @@ describe("toObject", () => {
   it("should correctly parse valid notes without accidentals", () => {
     expect(toObject("C4")).toEqual({
       root: "C",
-      octave: "4",
-      accidental: undefined,
+      octave: 4,
     });
     expect(toObject("D5")).toEqual({
       root: "D",
-      octave: "5",
-      accidental: undefined,
+      octave: 5,
     });
     expect(toObject("E3")).toEqual({
       root: "E",
-      octave: "3",
-      accidental: undefined,
+      octave: 3,
     });
   });
 
-  it("should correctly parse valid notes with sharp accidentals", () => {
+  it("should correctly parse valid notes with accidentals", () => {
     expect(toObject("C#4")).toEqual({
       root: "C",
-      octave: "4",
+      octave: 4,
       accidental: "#",
     });
-    expect(toObject("F#5")).toEqual({
+    expect(toObject("F#")).toEqual({
       root: "F",
-      octave: "5",
       accidental: "#",
     });
     expect(toObject("G#3")).toEqual({
       root: "G",
-      octave: "3",
+      octave: 3,
       accidental: "#",
     });
-  });
-
-  it("should correctly parse valid notes with flat accidentals", () => {
     expect(toObject("Bb4")).toEqual({
       root: "B",
-      octave: "4",
+      octave: 4,
       accidental: "b",
     });
     expect(toObject("Eb5")).toEqual({
       root: "E",
-      octave: "5",
+      octave: 5,
       accidental: "b",
     });
     expect(toObject("Ab3")).toEqual({
       root: "A",
-      octave: "3",
+      octave: 3,
       accidental: "b",
     });
   });

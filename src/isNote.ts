@@ -1,6 +1,6 @@
 import { Note } from "src";
 
-const noteRegex = /^(?!B[#]|E[#]|C[b]|F[b])[A-G][#b]?\d+$/;
+const noteRegex = /^(?!B[#]|E[#]|C[b]|F[b])[A-G][#b]?(?:\d+)?$/;
 
 /**
  * Checks if a string represents a valid musical note.

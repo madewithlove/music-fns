@@ -55,13 +55,23 @@ describe("isNote", () => {
     expect(isNote(note)).toBe(expected);
   });
 
+  // Accidentals without octaves
+  it.each([
+    ["C#", true],
+    ["F#", true],
+    ["G#", true],
+    ["A#", true],
+    ["B#", false],
+    ["E#", false],
+  ])("should validate note %s", (note, expected) => {
+    expect(isNote(note)).toBe(expected);
+  });
+
   // Invalid formats
   it.each([
     ["", false], // Empty string
     ["H4", false], // Invalid note letter
     ["c4", false], // Lowercase note
-    ["C", false], // Missing octave
-    ["C#", false], // Missing octave with accidental
     ["C##4", false], // Multiple accidentals
     ["C4#", false], // Accidental after octave
     ["4C", false], // Wrong order
