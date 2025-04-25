@@ -3,10 +3,10 @@ import { Note } from "src";
 const noteRegex = /^(?!B[#]|E[#]|C[b]|F[b])[A-G][#b]?(?:\d+)?$/;
 
 /**
- * Checks if a string represents a valid musical note.
+ * Checks if a value represents a valid musical note.
  *
- * @param note - The string to check (e.g., "C4", "F#3", "Bb2")
- * @returns true if the string represents a valid note, false otherwise
+ * @param note - The value to check (e.g., "C4", "F#3", "Bb2")
+ * @returns true if the value represents a valid note, false otherwise
  *
  * @example
  * isNote("C4") // returns true
@@ -15,6 +15,6 @@ const noteRegex = /^(?!B[#]|E[#]|C[b]|F[b])[A-G][#b]?(?:\d+)?$/;
  * isNote("H4") // returns false
  * isNote("B#4") // returns false
  */
-export function isNote(note: string): note is Note {
-  return noteRegex.test(note);
+export function isNote(note: unknown): note is Note {
+  return typeof note === "string" && noteRegex.test(note);
 }

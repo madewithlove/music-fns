@@ -22,7 +22,6 @@ describe("isNote", () => {
 
   // invalid notes
   it.each(invalidNotes)("should validate invalid note: %s", (note) => {
-    // @ts-expect-error checking if note is valid
     expect(isNote(note)).toBe(false);
   });
 });

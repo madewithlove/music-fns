@@ -142,3 +142,16 @@ export const invalidNotes = [
   new Date(),
   new Error(),
 ];
+
+export const invalidNoteObjects = [
+  { accidental: "x", octave: 4, root: "C" },
+  { accidental: "#", octave: "4", root: "C" },
+  { accidental: "#", octave: 4, root: 1 },
+  { accidental: "#", octave: 4 },
+  { accidental: "#", root: 1 },
+  { octave: 4 },
+  { accidental: "#" },
+  { root: 1 },
+  { root: "C", accidental: 2 },
+  { octave: [], root: "B" },
+];
