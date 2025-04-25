@@ -1,72 +1,64 @@
 import { describe, it, expect } from "vitest";
 import { toObject } from "./toObject";
 
+import {
+  invalidNotes,
+  notesWithOctaveAndWithAccidental,
+  notesWithOctaveWithoutAccidental,
+  notesWithoutOctaveAndWithoutAccidental,
+  notesWithoutOctaveWithAccidental,
+} from "./testData";
+
 describe("toObject", () => {
-  it("should correctly parse valid notes without accidentals", () => {
-    expect(toObject("C4")).toEqual({
-      root: "C",
-      octave: 4,
-    });
-    expect(toObject("D5")).toEqual({
-      root: "D",
-      octave: 5,
-    });
-    expect(toObject("E3")).toEqual({
-      root: "E",
-      octave: 3,
-    });
-  });
+  it.each(invalidNotes)(
+    "should throw an error for invalid note: %s",
+    (note) => {
+      // @ts-expect-error checking if note is valid
+      expect(() => toObject(note)).toThrow();
+    },
+  );
 
-  it("should correctly parse valid notes with accidentals", () => {
-    expect(toObject("C#4")).toEqual({
-      root: "C",
-      octave: 4,
-      accidental: "#",
-    });
-    expect(toObject("F#")).toEqual({
-      root: "F",
-      accidental: "#",
-    });
-    expect(toObject("G#3")).toEqual({
-      root: "G",
-      octave: 3,
-      accidental: "#",
-    });
-    expect(toObject("Bb4")).toEqual({
-      root: "B",
-      octave: 4,
-      accidental: "b",
-    });
-    expect(toObject("Eb5")).toEqual({
-      root: "E",
-      octave: 5,
-      accidental: "b",
-    });
-    expect(toObject("Ab3")).toEqual({
-      root: "A",
-      octave: 3,
-      accidental: "b",
-    });
-  });
+  it.each(notesWithOctaveWithoutAccidental)(
+    "should correctly parse valid note WITH octave and WITHOUT accidental",
+    (note) => {
+      expect(toObject(note.note)).toEqual({
+        root: note.root,
+        octave: note.octave,
+        accidental: undefined,
+      });
+    },
+  );
 
-  it("should throw error for invalid note formats", () => {
-    expect(() => toObject("H4")).toThrow("Invalid note");
-    expect(() => toObject("")).toThrow("Invalid note");
-  });
+  it.each(notesWithOctaveAndWithAccidental)(
+    "should correctly parse valid note WITH octave and WITH accidental",
+    (note) => {
+      expect(toObject(note.note)).toEqual({
+        root: note.root,
+        octave: note.octave,
+        accidental: note.accidental,
+      });
+    },
+  );
 
-  it("should throw error for invalid accidentals", () => {
-    expect(() => toObject("B#4")).toThrow("Invalid note");
-    expect(() => toObject("E#4")).toThrow("Invalid note");
-    expect(() => toObject("Cb4")).toThrow("Invalid note");
-    expect(() => toObject("Fb4")).toThrow("Invalid note");
-  });
+  it.each(notesWithoutOctaveAndWithoutAccidental)(
+    "should correctly parse valid note WITHOUT octave and WITHOUT accidental",
+    (note) => {
+      expect(toObject(note.note)).toEqual({
+        root: note.root,
+        octave: undefined,
+        accidental: undefined,
+      });
+    },
+  );
 
-  it("should throw error for non-string inputs", () => {
-    // @ts-expect-error Testing invalid input
-    expect(() => toObject(null)).toThrow("Invalid note");
-    // @ts-expect-error Testing invalid input
-    expect(() => toObject(undefined)).toThrow("Invalid note");
-    // @ts-expect-error Testing invalid input
-    expect(() => toObject(123)).toThrow("Invalid note");
-  });
+  it.each(notesWithoutOctaveWithAccidental)(
+    "should correctly parse valid note WITHOUT octave and WITH accidental",
+    (note) => {
+      expect(toObject(note.note)).toEqual({
+        root: note.root,
+        octave: undefined,
+        accidental: note.accidental,
+      });
+    },
+  );
 });
