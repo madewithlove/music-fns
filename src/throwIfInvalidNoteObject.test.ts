@@ -1,5 +1,4 @@
 import { describe, it, expect } from "vitest";
-import { isNoteObject } from "./isNoteObject";
 import {
   notesWithOctaveWithoutAccidental,
   notesWithOctaveAndWithAccidental,
