@@ -33,7 +33,7 @@
   "umd:main": "./dist/index.umd.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "microbundle",
+    "build": "pnpm run check &&microbundle",
     "dev": "microbundle watch",
     "test:watch": "vitest watch",
     "test": "vitest --run",
