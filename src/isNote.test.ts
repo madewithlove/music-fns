@@ -43,22 +43,6 @@ describe("isNote", () => {
     expect(isNote(note)).toBe(expected);
   });
 
-  // Valid notes with unicode accidentals
-  it.each([
-    ["C♯4", true],
-    ["D♯4", true],
-    ["F♯4", true],
-    ["G♯4", true],
-    ["A♯4", true],
-    ["D♭4", true],
-    ["E♭4", true],
-    ["G♭4", true],
-    ["A♭4", true],
-    ["B♭4", true],
-  ])("should validate note with unicode accidental %s", (note, expected) => {
-    expect(isNote(note)).toBe(expected);
-  });
-
   // Test octave ranges
   it.each([
     ["C0", true],

@@ -12,7 +12,7 @@
  * isNote("B#4") // returns false
  */
 
-const noteRegex = /^(?!B[#♯]|E[#♯]|C[b♭]|F[b♭])[A-G][#b♯♭]?\d+$/;
+const noteRegex = /^(?!B[#]|E[#]|C[b]|F[b])[A-G][#b]?\d+$/;
 
 export function isNote(note: string): boolean {
   return noteRegex.test(note);
