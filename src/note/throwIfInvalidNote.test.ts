@@ -5,7 +5,7 @@ import {
   notesWithoutOctaveAndWithoutAccidental,
   notesWithoutOctaveWithAccidental,
   invalidNotes,
-} from "./testData";
+} from "../testData";
 import { throwIfInvalidNote } from "./throwIfInvalidNote";
 
 const validNotes = [

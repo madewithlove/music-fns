@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { isOctave } from "./isOctave";
-import { junkData, octaves } from "./testData";
+import { junkData, octaves } from "../testData";
 
 describe("isOctave", () => {
   it.each(octaves)("should validate valid octave: %s", (octave) => {

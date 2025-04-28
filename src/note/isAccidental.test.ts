@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { isAccidental } from "./isAccidental";
-import { junkData, accidentals } from "./testData";
+import { junkData, accidentals } from "../testData";
 
 describe("isAccidental", () => {
   it.each(accidentals)("should validate valid accidental: %s", (accidental) => {

@@ -5,7 +5,7 @@ import {
   notesWithOctaveAndWithAccidental,
   notesWithOctaveWithoutAccidental,
   notesWithoutOctaveAndWithoutAccidental,
-} from "./testData";
+} from "../testData";
 
 describe("isRoot", () => {
   it.each(notesWithoutOctaveAndWithoutAccidental)(

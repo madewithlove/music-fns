@@ -1,34 +1,35 @@
 import { describe, it, expect } from "vitest";
-import { getAccidental } from "./getAccidental";
+import { hasAccidental } from "./hasAccidental";
+
 import {
   notesWithOctaveAndWithAccidental,
   notesWithOctaveWithoutAccidental,
   notesWithoutOctaveAndWithoutAccidental,
   notesWithoutOctaveWithAccidental,
-} from "./testData";
+} from "../testData";
 
 const notesWithAccidental = [
-  ...notesWithOctaveAndWithAccidental,
   ...notesWithoutOctaveWithAccidental,
+  ...notesWithOctaveAndWithAccidental,
 ];
 
 const notesWithoutAccidental = [
-  ...notesWithOctaveWithoutAccidental,
   ...notesWithoutOctaveAndWithoutAccidental,
+  ...notesWithOctaveWithoutAccidental,
 ];
 
-describe("getAccidental", () => {
+describe("hasAccidental", () => {
   it.each(notesWithAccidental)(
-    "should return the accidental for a note",
-    ({ note, accidental }) => {
-      expect(getAccidental(note)).toBe(accidental);
+    "should return true for a note with accidental (# or b)",
+    ({ note }) => {
+      expect(hasAccidental(note)).toBe(true);
     },
   );
 
   it.each(notesWithoutAccidental)(
-    "should return undefined for a note without accidental",
+    "should return false for a note without accidental (# or b)",
     ({ note }) => {
-      expect(getAccidental(note)).toBeUndefined();
+      expect(hasAccidental(note)).toBe(false);
     },
   );
 });

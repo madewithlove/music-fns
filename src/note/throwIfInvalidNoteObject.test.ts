@@ -1,12 +1,12 @@
 import { describe, it, expect } from "vitest";
-import { toNote } from "./toNote";
 import {
   notesWithOctaveWithoutAccidental,
   notesWithOctaveAndWithAccidental,
   notesWithoutOctaveAndWithoutAccidental,
   notesWithoutOctaveWithAccidental,
   invalidNoteObjects,
-} from "./testData";
+} from "../testData";
+import { throwIfInvalidNoteObject } from "./throwIfInvalidNoteObject";
 
 const validNotes = [
   ...notesWithOctaveWithoutAccidental,
@@ -15,19 +15,23 @@ const validNotes = [
   ...notesWithoutOctaveWithAccidental,
 ];
 
-describe("toNote", () => {
+describe("throwIfInvalidNoteObject", () => {
   it.each(validNotes)(
-    "should convert note object to note string",
-    ({ accidental, octave, root, note }) => {
-      expect(toNote({ accidental, octave, root })).toBe(note);
+    "should validate valid note",
+    ({ accidental, octave, root }) => {
+      expect(() =>
+        throwIfInvalidNoteObject({ accidental, octave, root }),
+      ).not.toThrow();
     },
   );
 
   // invalid notes
   it.each(invalidNoteObjects)(
-    "should throw an error for invalid note object: %s",
+    "should validate invalid note: %s",
     ({ accidental, octave, root }) => {
-      expect(() => toNote({ accidental, octave, root })).toThrow();
+      expect(() =>
+        throwIfInvalidNoteObject({ accidental, octave, root }),
+      ).toThrow();
     },
   );
 });

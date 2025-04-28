@@ -1,4 +1,4 @@
-import { Accidental, Note, NoteObject, Octave, Root } from "./index";
+import { Accidental, Note, NoteObject, Octave, Root } from "../index";
 import { throwIfInvalidNote } from "./throwIfInvalidNote";
 
 const accidentalRegex = /[#b]/;
