@@ -1,4 +1,4 @@
-import { NoteObject } from "src";
+import { NoteObject } from "../";
 import { throwIfInvalidNoteObject } from "./throwIfInvalidNoteObject";
 import { throwIfInvalidNote } from "./throwIfInvalidNote";
 

@@ -1,4 +1,4 @@
-import { Octave } from ".";
+import { Octave } from "../";
 
 /**
  * Checks if a given value is a valid octave.

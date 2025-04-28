@@ -1,4 +1,6 @@
-import { getOctave, Interval, Note } from ".";
+import { getOctave } from "../note/getOctave";
+import { Note } from "../";
+import { Interval } from "../";
 import { getChromaticCPosition } from "./getChromaticCPosition";
 
 // an octave is 12 semitones

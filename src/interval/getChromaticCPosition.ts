@@ -1,7 +1,7 @@
-import { toObject } from "../note/toObject";
 import { Note } from "../";
+import { toObject } from "../note/toObject";
 
-const ChromaticCScale = [
+export const ChromaticCScale = [
   ["C"],
   ["C#", "Db"],
   ["D"],

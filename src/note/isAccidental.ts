@@ -1,4 +1,4 @@
-import { Accidental } from "src";
+import { Accidental } from "../";
 
 /**
  * Checks if a given value is a valid accidental.

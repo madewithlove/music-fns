@@ -1,4 +1,4 @@
-import { Root } from ".";
+import { Root } from "../";
 
 /**
  * Checks if a given value is a valid root note.

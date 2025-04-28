@@ -1,4 +1,4 @@
-import { Note } from "src";
+import { Note } from "../";
 
 const noteRegex = /^(?!B[#]|E[#]|C[b]|F[b])[A-G][#b]?(?:\d+)?$/;
 

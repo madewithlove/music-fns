@@ -1,4 +1,4 @@
-import { NoteObject } from ".";
+import { NoteObject } from "../";
 import { isAccidental } from "./isAccidental";
 import { isOctave } from "./isOctave";
 import { isRoot } from "./isRoot";
