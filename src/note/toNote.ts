@@ -1,5 +1,6 @@
-import { NoteObject, throwIfInvalidNote } from "src";
+import { NoteObject } from "src";
 import { throwIfInvalidNoteObject } from "./throwIfInvalidNoteObject";
+import { throwIfInvalidNote } from "./throwIfInvalidNote";
 
 /**
  * Converts a NoteObject into a note string.
