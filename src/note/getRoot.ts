@@ -1,3 +1,4 @@
+import type { Root } from "../";
 import { toObject } from "./toObject";
 
 /**
@@ -14,7 +15,7 @@ import { toObject } from "./toObject";
  * getRoot("A"); // "A"
  * ```
  */
-export function getRoot(note: string) {
+export function getRoot(note: string): Root {
   const noteObject = toObject(note);
   return noteObject.root;
 }

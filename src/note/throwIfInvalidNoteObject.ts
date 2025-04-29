@@ -1,4 +1,4 @@
-import { NoteObject } from "../";
+import type { NoteObject } from "../";
 import { isNoteObject } from "./isNoteObject";
 
 /**
@@ -11,7 +11,7 @@ import { isNoteObject } from "./isNoteObject";
  * throwIfInvalidNoteObject({ root: "C", octave: 4 }) // returns { root: "C", octave: 4 }
  * throwIfInvalidNoteObject({ root: "I", accidental: "b" }) // throws an error
  */
-export function throwIfInvalidNoteObject(noteObject: NoteObject) {
+export function throwIfInvalidNoteObject(noteObject: NoteObject): NoteObject {
   if (!isNoteObject(noteObject)) {
     throw new Error("Invalid note object");
   }

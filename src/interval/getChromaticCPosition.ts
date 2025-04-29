@@ -1,7 +1,7 @@
-import { Note } from "../";
-import { toObject } from "../note/toObject";
+import { getNoteWithoutOctave } from "../note/getNoteWithoutOctave";
+import type { Note, NoteWithoutOctave } from "../";
 
-export const ChromaticCScale = [
+export const ChromaticCScale: NoteWithoutOctave[][] = [
   ["C"],
   ["C#", "Db"],
   ["D"],
@@ -31,9 +31,8 @@ export const ChromaticCScale = [
  * getChromaticCPosition("E"); // 4
  * ```
  */
-export function getChromaticCPosition(note: Note) {
-  const noteObject = toObject(note);
-  const noteWithoutOctave = `${noteObject.root}${noteObject.accidental ?? ""}`;
+export function getChromaticCPosition(note: Note): number {
+  const noteWithoutOctave = getNoteWithoutOctave(note);
 
   return ChromaticCScale.findIndex((n) =>
     n.some((nn) => nn === noteWithoutOctave),

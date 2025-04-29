@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { hasSharp } from "./hasSharp";
+import { isSharp } from "./isSharp";
 
 import {
   notesWithOctaveAndWithAccidental,
@@ -11,26 +11,26 @@ import {
 const notesWithSharp = [
   ...notesWithoutOctaveWithAccidental,
   ...notesWithOctaveAndWithAccidental,
-].filter((note) => note.hasSharp);
+].filter((note) => note.isSharp);
 
 const notesWithoutSharp = [
   ...notesWithoutOctaveAndWithoutAccidental,
   ...notesWithOctaveWithoutAccidental,
-  ...notesWithOctaveAndWithAccidental.filter((note) => !note.hasSharp),
+  ...notesWithOctaveAndWithAccidental.filter((note) => !note.isSharp),
 ];
 
-describe("hasSharp", () => {
+describe("isSharp", () => {
   it.each(notesWithSharp)(
     "should return true for a note with sharp (#)",
     ({ note }) => {
-      expect(hasSharp(note)).toBe(true);
+      expect(isSharp(note)).toBe(true);
     },
   );
 
   it.each(notesWithoutSharp)(
     "should return false for a note without sharp (#)",
     ({ note }) => {
-      expect(hasSharp(note)).toBe(false);
+      expect(isSharp(note)).toBe(false);
     },
   );
 });

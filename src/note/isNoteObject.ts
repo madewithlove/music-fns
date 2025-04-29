@@ -1,7 +1,20 @@
-import { NoteObject } from "../";
-import { isAccidental } from "./isAccidental";
-import { isOctave } from "./isOctave";
-import { isRoot } from "./isRoot";
+import type { Accidental, NoteObject, Octave, Root } from "../";
+
+function isRoot(root: unknown): root is Root {
+  return typeof root === "string" && root.length === 1 && !!root.match(/[A-G]/);
+}
+
+function isOctave(octave: unknown): octave is Octave {
+  return typeof octave === "number";
+}
+
+function isAccidental(accidental: unknown): accidental is Accidental {
+  return (
+    typeof accidental === "string" &&
+    accidental.length === 1 &&
+    ["b", "#"].includes(accidental)
+  );
+}
 
 /**
  * Checks if a given value is a valid note object.
@@ -30,11 +43,23 @@ export function isNoteObject(noteObject: unknown): noteObject is NoteObject {
     return false;
   }
 
-  if (octave && !isOctave(octave)) {
-    return false;
+  if (accidental !== undefined) {
+    if (!isAccidental(accidental)) {
+      return false;
+    }
+
+    // B and E can't have a sharp accidental
+    if (["B", "E"].includes(root) && accidental === "#") {
+      return false;
+    }
+
+    // C and F can't have a flat accidental
+    if (["C", "F"].includes(root) && accidental === "b") {
+      return false;
+    }
   }
 
-  if (accidental && !isAccidental(accidental)) {
+  if (octave !== undefined && !isOctave(octave)) {
     return false;
   }
 

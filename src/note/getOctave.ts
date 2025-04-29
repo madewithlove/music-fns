@@ -1,3 +1,4 @@
+import type { Octave } from "../";
 import { toObject } from "./toObject";
 
 /**
@@ -14,7 +15,7 @@ import { toObject } from "./toObject";
  * getOctave("C"); // undefined
  * ```
  */
-export function getOctave(note: string) {
+export function getOctave(note: string): Octave | undefined {
   const noteObject = toObject(note);
   return noteObject.octave;
 }

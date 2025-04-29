@@ -1,7 +1,6 @@
 import { getOctave } from "../note/getOctave";
-import { Note } from "../";
-import { Interval } from "../";
 import { getChromaticCPosition } from "./getChromaticCPosition";
+import type { Intervals, Note, Interval } from "../";
 
 // an octave is 12 semitones
 const OCTAVE = 12;
@@ -59,7 +58,7 @@ function calculateIntervalBetween2Notes(
 export function getIntervals(
   notes: Note[],
   { fromRoot = false }: { fromRoot?: boolean } = {},
-): Interval[] {
+): Intervals {
   if (notes.length < 2) {
     throw new Error("At least 2 notes are required to calculate intervals.");
   }

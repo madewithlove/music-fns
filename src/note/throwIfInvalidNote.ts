@@ -1,3 +1,4 @@
+import { Note } from "src";
 import { isNote } from "./isNote";
 
 /**
@@ -12,7 +13,7 @@ import { isNote } from "./isNote";
  * throwIfInvalidNote("Q"); // throws Error
  * ```
  */
-export function throwIfInvalidNote(note: string) {
+export function throwIfInvalidNote(note: string): Note {
   if (!isNote(note)) {
     throw new Error(`Invalid note: ${note}`);
   }

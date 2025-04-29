@@ -13,7 +13,7 @@ import { getOctave } from "./getOctave";
  * hasOctave("C"); // false
  * ```
  */
-export function hasOctave(note: string) {
+export function hasOctave(note: string): boolean {
   const octave = getOctave(note);
   return octave !== undefined;
 }

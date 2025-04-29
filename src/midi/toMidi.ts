@@ -1,6 +1,6 @@
 import { getIntervals } from "../interval/getIntervals";
 import { hasOctave } from "../note/hasOctave";
-import { Interval, MidiNote, Note } from "../";
+import type { Interval, MidiNote, Note } from "../";
 import { unwrap } from "../utils/unwrap";
 
 /**

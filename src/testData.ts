@@ -21,8 +21,8 @@ export const notesWithOctaveWithoutAccidental = [
   ...note,
   accidental: undefined,
   hasAccidental: false,
-  hasSharp: false,
-  hasFlat: false,
+  isSharp: false,
+  isFlat: false,
 }));
 
 export const notesWithOctaveAndWithAccidental = [
@@ -32,8 +32,8 @@ export const notesWithOctaveAndWithAccidental = [
     octave: 4,
     accidental: "#",
     hasAccidental: true,
-    hasSharp: true,
-    hasFlat: false,
+    isSharp: true,
+    isFlat: false,
   },
   {
     note: "Eb5",
@@ -41,8 +41,8 @@ export const notesWithOctaveAndWithAccidental = [
     octave: 5,
     accidental: "b",
     hasAccidental: true,
-    hasSharp: false,
-    hasFlat: true,
+    isSharp: false,
+    isFlat: true,
   },
   {
     note: "Gb6",
@@ -50,8 +50,8 @@ export const notesWithOctaveAndWithAccidental = [
     octave: 6,
     accidental: "b",
     hasAccidental: true,
-    hasSharp: false,
-    hasFlat: true,
+    isSharp: false,
+    isFlat: true,
   },
   {
     note: "Ab6",
@@ -59,8 +59,8 @@ export const notesWithOctaveAndWithAccidental = [
     octave: 6,
     accidental: "b",
     hasAccidental: true,
-    hasSharp: false,
-    hasFlat: true,
+    isSharp: false,
+    isFlat: true,
   },
 ];
 
@@ -78,8 +78,8 @@ export const notesWithoutOctaveAndWithoutAccidental = [
   octave: undefined,
   accidental: undefined,
   hasAccidental: false,
-  hasSharp: false,
-  hasFlat: false,
+  isSharp: false,
+  isFlat: false,
   hasOctave: false,
 }));
 
@@ -93,8 +93,8 @@ export const notesWithoutOctaveWithFlat = [
   ...note,
   hasAccidental: true,
   octave: undefined,
-  hasSharp: false,
-  hasFlat: true,
+  isSharp: false,
+  isFlat: true,
   hasOctave: false,
 }));
 
@@ -108,8 +108,8 @@ export const notesWithoutOctaveWithSharp = [
   ...note,
   hasAccidental: true,
   octave: undefined,
-  hasSharp: true,
-  hasFlat: false,
+  isSharp: true,
+  isFlat: false,
   hasOctave: false,
 }));
 

@@ -1,4 +1,7 @@
+import type { FlatNote as FlatNoteWithoutOctave, Octave } from "../";
 import { getAccidental } from "./getAccidental";
+
+type FlatNote = FlatNoteWithoutOctave | `${FlatNoteWithoutOctave}${Octave}`;
 
 /**
  * Checks if a note has a flat (b) accidental
@@ -14,7 +17,7 @@ import { getAccidental } from "./getAccidental";
  * hasFlat("C5"); // false
  * ```
  */
-export function hasFlat(note: string) {
+export function isFlat(note: string): note is FlatNote {
   const accidental = getAccidental(note);
   return accidental === "b";
 }

@@ -18,15 +18,12 @@ export * from "./note/getOctave";
 export * from "./note/getRoot";
 
 export * from "./note/hasAccidental";
-export * from "./note/hasFlat";
-export * from "./note/hasOctave";
-export * from "./note/hasSharp";
-
-export * from "./note/isAccidental";
+export * from "./note/isFlat";
+export * from "./note/isNatural";
 export * from "./note/isNote";
 export * from "./note/isNoteObject";
-export * from "./note/isOctave";
-export * from "./note/isRoot";
+export * from "./note/hasOctave";
+export * from "./note/isSharp";
 
 export * from "./note/toNote";
 export * from "./note/toObject";
@@ -40,14 +37,16 @@ export type Octave = number;
 export type Root = "C" | "D" | "E" | "F" | "G" | "A" | "B";
 export type Frequency = number;
 export type Interval = number;
+export type Intervals = Interval[];
 export type Scale = Interval[];
 export type MidiNote = number;
-export type ImpossibleNotes = `${"E" | "B"}${Sharp}` | `${"F" | "C"}${Flat}`;
-export type NoteWithoutOctave =
-  | Root
-  | Exclude<`${Root}${Accidental}`, ImpossibleNotes>;
+export type FlatNote = Exclude<`${Root}${Flat}`, `${"F" | "C"}${Flat}`>;
+export type SharpNote = Exclude<`${Root}${Sharp}`, `${"E" | "B"}${Sharp}`>;
+export type NoteWithAccidental = FlatNote | SharpNote;
+export type NoteWithoutOctave = Root | NoteWithAccidental;
 export type NoteWithOctave = `${NoteWithoutOctave}${Octave}`;
 export type Note = NoteWithoutOctave | NoteWithOctave;
+export type Chord = Note[];
 
 export type NoteObject = {
   root: Root;

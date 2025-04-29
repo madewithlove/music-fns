@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { hasFlat } from "./hasFlat";
+import { isFlat } from "./isFlat";
 
 import {
   notesWithOctaveAndWithAccidental,
@@ -11,26 +11,26 @@ import {
 const notesWithFlat = [
   ...notesWithoutOctaveWithAccidental,
   ...notesWithOctaveAndWithAccidental,
-].filter((note) => note.hasFlat);
+].filter((note) => note.isFlat);
 
 const notesWithoutFlat = [
   ...notesWithoutOctaveAndWithoutAccidental,
   ...notesWithOctaveWithoutAccidental,
-  ...notesWithOctaveAndWithAccidental.filter((note) => !note.hasFlat),
+  ...notesWithOctaveAndWithAccidental.filter((note) => !note.isFlat),
 ];
 
-describe("hasFlat", () => {
+describe("isFlat", () => {
   it.each(notesWithFlat)(
     "should return true for a note with flat (b)",
     ({ note }) => {
-      expect(hasFlat(note)).toBe(true);
+      expect(isFlat(note)).toBe(true);
     },
   );
 
   it.each(notesWithoutFlat)(
     "should return false for a note without flat (b)",
     ({ note }) => {
-      expect(hasFlat(note)).toBe(false);
+      expect(isFlat(note)).toBe(false);
     },
   );
 });

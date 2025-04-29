@@ -1,3 +1,4 @@
+import type { Accidental } from "../";
 import { toObject } from "./toObject";
 
 /**
@@ -14,7 +15,7 @@ import { toObject } from "./toObject";
  * getAccidental("C"); // undefined
  * ```
  */
-export function getAccidental(note: string) {
+export function getAccidental(note: string): Accidental | undefined {
   const noteObject = toObject(note);
   return noteObject.accidental;
 }
