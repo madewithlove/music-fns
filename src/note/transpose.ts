@@ -13,8 +13,8 @@ function calculateNewPosition(position: number, interval: number): number {
 }
 
 function calculateOctaveChange(position: number, interval: number): number {
-  const rawChange = (position + interval) / Octave;
-  return position + interval < 0 ? Math.ceil(rawChange) : Math.floor(rawChange);
+  const totalSteps = position + interval;
+  return Math.floor(totalSteps / Octave);
 }
 
 /**
