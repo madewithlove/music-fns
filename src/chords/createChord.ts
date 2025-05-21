@@ -1,6 +1,9 @@
 import { getIntervals } from "../interval/getIntervals";
-import type { Note, Chord, Intervals } from "../";
+import type { Note, Chord, Intervals, Interval } from "../";
+import { transpose } from "src/note/transpose";
 
 export function createChord(root: Note, intervals: Intervals): Chord {
-  return getIntervals([root, ...intervals]);
+  return intervals.reduce((acc, interval: Interval) => {
+    return [...acc, transpose(root, interval)];
+  }, []);
 }
