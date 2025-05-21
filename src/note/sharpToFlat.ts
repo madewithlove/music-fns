@@ -23,6 +23,7 @@ export function sharpToFlat(note: Note): Note {
     throw new Error("note is not sharp");
   }
   const chromaticCPosition = getChromaticCPosition(note);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, flat] = ChromaticCScale[chromaticCPosition];
   return flat as Note;
 }

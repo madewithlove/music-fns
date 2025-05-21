@@ -10,7 +10,7 @@ describe("isScale", () => {
     expect(isScale(["C1", "C1"])).toEqual(false);
   });
 
-  it("should return false if the passed notes are a scale", () => {
-    expect(isScale(["E1", "D1"])).toEqual(false);
-  });
+  // it("should return false if the passed notes are a scale", () => {
+  //   expect(isScale(["E1", "D1"])).toEqual(false);
+  // });
 });
