@@ -1,4 +1,6 @@
-import { type Note, type Interval, toNote } from "../";
+import type { Note, Interval } from "../";
+import { getOctave } from "../note/getOctave";
+import { toNote } from "../note/toNote";
 import { toObject } from "./toObject";
 import {
   ChromaticCScale,
@@ -9,7 +11,10 @@ const Octave = 12;
 
 function calculateNewPosition(position: number, interval: number): number {
   const rawPosition = (position + interval) % Octave;
-  return rawPosition < 0 ? rawPosition + Octave : rawPosition;
+  if (rawPosition < 0) {
+    return rawPosition + Octave;
+  }
+  return rawPosition;
 }
 
 function calculateOctaveChange(position: number, interval: number): number {
@@ -31,26 +36,24 @@ function calculateOctaveChange(position: number, interval: number): number {
  * transpose("Bb4", -2) // "G4"
  */
 export function transpose(note: Note, interval: Interval): Note {
-  const noteObj = toObject(note);
+  const currentOctave = getOctave(note);
   const currentPosition = getChromaticCPosition(note);
 
-  const newPosition = calculateNewPosition(currentPosition, interval);
-  const octaveChange = calculateOctaveChange(currentPosition, interval);
-  const newNoteVariants = ChromaticCScale[newPosition];
+  const [sharpOrNatural, flat] =
+    ChromaticCScale[calculateNewPosition(currentPosition, interval)];
 
-  const newNoteWithoutOctave =
-    interval >= 0
-      ? newNoteVariants[0] // Use sharp notation when transposing up
-      : newNoteVariants[1] || newNoteVariants[0]; // Use flat notation when transposing down, fallback to sharp if flat not available
+  const transposedNoteWithoutOctave =
+    interval >= 0 ? sharpOrNatural : flat || sharpOrNatural;
 
-  if (noteObj.octave === undefined) {
-    return newNoteWithoutOctave as Note;
+  if (currentOctave === undefined) {
+    return transposedNoteWithoutOctave as Note;
   }
 
-  const newOctave = noteObj.octave + octaveChange;
+  const octave =
+    currentOctave + calculateOctaveChange(currentPosition, interval);
 
   return toNote({
-    ...toObject(newNoteWithoutOctave),
-    octave: newOctave,
+    ...toObject(transposedNoteWithoutOctave),
+    octave,
   });
 }

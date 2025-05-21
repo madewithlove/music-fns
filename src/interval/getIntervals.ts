@@ -14,9 +14,7 @@ function calculateIntervalBetween2Notes(
 
   // Validate octave consistency
   if ((startNoteOctave === undefined) !== (endNoteOctave === undefined)) {
-    throw new Error(
-      "Both notes must either include or exclude octave information.",
-    );
+    throw new Error("Notes must either include or exclude octave information.");
   }
 
   const chromaticInterval =

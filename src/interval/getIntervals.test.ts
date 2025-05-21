@@ -10,6 +10,10 @@ describe("getIntervals", () => {
     expect(getIntervals(["C", "C#"])).toEqual([1]);
   });
 
+  it("should return the intervals between a series of notes", () => {
+    expect(getIntervals(["E1", "D1"])).toEqual([-2]);
+  });
+
   it("should return the intervals between a series of notes with octaves", () => {
     expect(getIntervals(["C3", "C4", "B5", "C5"])).toEqual([12, 11, 1]);
   });
@@ -25,6 +29,11 @@ describe("getIntervals", () => {
   it("should return the intervals between a series of notes with octaves", () => {
     expect(getIntervals(["C5", "C4"])).toEqual([-12]);
   });
+
+  it("should return the intervals between a series of notes with octaves", () => {
+    expect(getIntervals(["C5", "A#3"])).toEqual([-14]);
+  });
+
   it("should return the intervals between a series of notes with octaves", () => {
     expect(getIntervals(["C", "B"])).toEqual([11]);
   });
