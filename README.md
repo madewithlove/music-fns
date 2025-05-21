@@ -48,9 +48,8 @@ pnpm i music-fns
 - [ ] ~isFifth~ -> isIntervalOfType
 - [ ] ~isOctave~ -> isIntervalOfType
 - [ ] isMode
-- [ ] isAscending (??)
-- [ ] isDescending (??)
 - [ ] hasIntervalAmount
+- [ ] ~getLeadingTone~ -> getNoteOnScale
 - [ ] ~getNoteOnDegree~ -> getNoteOnScale
 - [ ] ~getTonic~ -> getNoteOnScale
 - [ ] ~getSuperTonic~ -> getNoteOnScale
@@ -58,12 +57,16 @@ pnpm i music-fns
 - [ ] ~getSubdominant~ -> getNoteOnScale
 - [ ] ~getDominant~ -> getNoteOnScale
 - [ ] ~getSubmediant~ -> getNoteOnScale
-- [ ] ~getLeadingTone~ -> getNoteOnScale
-- [ ] normalize
 - [ ] ~isTriad~ -> isChordOfType
 - [ ] createMelody
 
-#### Removed
+#### unsure
+
+- [ ] isAscending (??)
+- [ ] isDescending (??)
+- [ ] normalize (??)
+
+#### removed
 
 - accidentalToLetter (no different accidental styles anymore)
 - accidentalToSymbol (no different accidental styles anymore)
