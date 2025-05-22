@@ -1,3 +1,7 @@
+// Functions related to chords
+
+export * from "./chords/createChord";
+
 // Functions related to frequency
 
 export * from "./frequency/toFrequency";
@@ -13,20 +17,28 @@ export * from "./midi/toMidi";
 
 // Functions related to handling notes
 
+export * from "./note/flatToSharp";
 export * from "./note/getAccidental";
+export * from "./note/getNoteWithoutOctave";
 export * from "./note/getOctave";
 export * from "./note/getRoot";
-
 export * from "./note/hasAccidental";
+export * from "./note/hasOctave";
 export * from "./note/isFlat";
 export * from "./note/isNatural";
 export * from "./note/isNote";
 export * from "./note/isNoteObject";
-export * from "./note/hasOctave";
 export * from "./note/isSharp";
-
+export * from "./note/sharpToFlat";
 export * from "./note/toNote";
 export * from "./note/toObject";
+export * from "./note/transpose";
+
+// Functions related to handling scales
+
+export * from "./scale/createScale";
+export * from "./scale/isScale";
+export * from "./scale/isScaleOfType";
 
 // Types
 
