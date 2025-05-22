@@ -6,8 +6,8 @@ import { unwrap } from "../utils/unwrap";
 /**
  * Converts a note to a MIDI note number
  *
- * @param note - The note to convert
- * @returns The MIDI note number
+ * @param {Note} The note to convert
+ * @returns {MidiNote} The MIDI note number
  * @throws {Error} If the note is invalid or does not have an octave
  *
  * @example
