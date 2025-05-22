@@ -56,3 +56,16 @@ jobs:
 
       - name: Test
         run: pnpm test
+
+      - id: "build"
+        name: "Build documentation"
+        run: pnpm generate-docs
+      - id: "upload-documentation"
+        name: "Upload Pages artifact"
+        uses: "actions/upload-pages-artifact@v2"
+        with:
+          path: "docs/"
+
+      - id: "deployment"
+        name: "Deploy documentation to GitHub Pages"
+        uses: "actions/deploy-pages@v2"
