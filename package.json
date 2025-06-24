@@ -41,8 +41,7 @@
     "format:check": "prettier --check . --log-level error",
     "lint": "eslint src/",
     "check": "npm-run-all -l --parallel format lint test types:check",
-    "types:check": "tsc --noEmit",
-    "generate-docs": "typedoc"
+    "types:check": "tsc --noEmit"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.1",
@@ -54,9 +53,5 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.31.0",
     "vitest": "^3.1.2"
-  },
-  "dependencies": {
-    "@typhonjs-typedoc/typedoc-theme-dmt": "^0.3.1",
-    "typedoc": "^0.28.4"
   }
 }

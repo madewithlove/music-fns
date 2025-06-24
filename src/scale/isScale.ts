@@ -1,5 +1,5 @@
-import { getIntervals, Note, Scale } from "src";
-
+import { Note, Scale } from "../";
+import { getIntervals } from "../interval/getIntervals";
 const Octave = 12;
 
 export function isScale(notes: Note[]): notes is Scale {

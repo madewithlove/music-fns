@@ -1,4 +1,6 @@
-import { isFlat, Note } from "../";
+import { isFlat } from "./isFlat";
+import { Note } from "../";
+
 import {
   ChromaticCScale,
   getChromaticCPosition,
