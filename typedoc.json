@@ -1,0 +1,13 @@
+{
+  "plugin": ["@typhonjs-typedoc/typedoc-theme-dmt"],
+
+  // Set the theme.
+  "theme": "default-modern",
+
+  "entryPoints": ["src/index.ts"], // Path to your TypeScript entry file(s)
+  "out": "docs", // Output directory for the documentation
+  "includeVersion": true, // Include project version in the docs
+  "excludePrivate": true, // Exclude private members
+  "excludeProtected": true, // Exclude protected members
+  "excludeExternals": true // Exclude external modules
+}
